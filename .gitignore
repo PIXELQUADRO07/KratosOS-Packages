@@ -60,3 +60,10 @@ Thumbs.db
 *.key
 *.pem
 *.keyring
+
+# ------------------------------------------------------------
+# Local build directories
+# ------------------------------------------------------------
+work/
+downloads/
+scripts/kratos-pack

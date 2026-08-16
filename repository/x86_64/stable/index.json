@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "packages": [
+    {
+      "name": "hello",
+      "version": "2.12",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "GNU hello world program",
+      "license": "GPL-3.0-or-later",
+      "sha256": "d9c4ec543c00d3771d94aeec686756c2d9c0dde5b79b6ccc8fa947fff8f00312",
+      "url": "packages/hello-2.12-1-x86_64.kpkg",
+      "depends": "",
+      "size": 123904,
+      "installed_size": 307278
+    }
+  ]
+}
