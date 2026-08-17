@@ -1,0 +1,22 @@
+name=readline
+version=8.2
+release=1
+arch=x86_64
+license="GPL-3.0-or-later"
+description="Library for interactive line editing"
+source="https://ftp.gnu.org/gnu/readline/readline-8.2.tar.gz"
+sha256="3feb7171f16a84ee82ca18a36d7b9be109a52c04f492a053331d7d1095007c35"
+depends="glibc,ncurses"
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --prefix=/usr \
+        --disable-static \
+        --with-curses
+    make -j$(nproc)
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}

@@ -1,0 +1,22 @@
+name=gzip
+version=1.14
+release=1
+arch=x86_64
+license="GPL-3.0-or-later"
+description="GNU data compression utility"
+source="https://ftp.gnu.org/gnu/gzip/gzip-1.14.tar.gz"
+sha256="613d6ea44f1248d7370c7ccdeee0dd0017a09e6c39de894b3c6f03f981191c6b"
+depends="glibc"
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --prefix=/usr \
+        --bindir=/bin
+
+    make -j$(nproc)
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}
