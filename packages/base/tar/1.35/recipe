@@ -1,0 +1,23 @@
+name=tar
+version=1.35
+release=1
+arch=x86_64
+license="GPL-3.0-or-later"
+description="The GNU tape archiver"
+source="https://ftp.gnu.org/gnu/tar/tar-1.35.tar.xz"
+sha256="4d62ff37342ec7aed748535323930c7cf94acf71c3591882b26a7ea50f3edc16"
+depends="glibc"
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --prefix=/usr \
+        --bindir=/bin \
+        --disable-nls
+
+    make -j$(nproc)
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}

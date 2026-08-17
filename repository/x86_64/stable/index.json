@@ -8,9 +8,9 @@
       "arch": "x86_64",
       "description": "The GNU Bourne Again SHell",
       "license": "GPL-3.0-or-later",
-      "sha256": "9cb49ee7aa677dd522397a4679405dd86f48adcaaf7bdef884089782246d36e2",
+      "sha256": "764978d1bda0e33e56d28ed7305b7191d5da2ccf9cdf75316e38c0ca22362549",
       "url": "packages/bash-5.3-1-x86_64.kpkg",
-      "depends": "readline,ncurses",
+      "depends": "glibc,readline,ncurses",
       "size": 3288576,
       "installed_size": 9169971
     },
@@ -21,11 +21,24 @@
       "arch": "x86_64",
       "description": "The basic file, shell and text manipulation utilities of the GNU operating system",
       "license": "GPL-3.0-or-later",
-      "sha256": "9b67646ed041038ec8e4fe9c0f21d2f5f95b9e46e8c0b23263bb80fafab7ee84",
+      "sha256": "5501ff25c131d7dd94358c8c7a2bb73eaa0039b12fac049cf4d08cc1b21aee2c",
       "url": "packages/coreutils-9.7-1-x86_64.kpkg",
       "depends": "glibc",
-      "size": 12221952,
+      "size": 12219904,
       "installed_size": 29567977
+    },
+    {
+      "name": "findutils",
+      "version": "4.10.0",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Basic directory searching utilities",
+      "license": "GPL-3.0-or-later",
+      "sha256": "03ac412a19712e76fac3f0c7ffc32a2e6ab4ceb4707a846cea22292fc0de1324",
+      "url": "packages/findutils-4.10.0-1-x86_64.kpkg",
+      "depends": "glibc",
+      "size": 930304,
+      "installed_size": 2299723
     },
     {
       "name": "grep",
@@ -34,11 +47,24 @@
       "arch": "x86_64",
       "description": "Search for PATTERNS in each FILE",
       "license": "GPL-3.0-or-later",
-      "sha256": "ef85cd0e5bf2d8b40ce72692ccef416db1be271250cf4d67433785f8713afb93",
+      "sha256": "a3c4aca05dcd1c5a1895c99710459311d3acd81a98a96b180c49a1cee2e93cc6",
       "url": "packages/grep-3.11-1-x86_64.kpkg",
       "depends": "glibc",
       "size": 384512,
       "installed_size": 915463
+    },
+    {
+      "name": "gzip",
+      "version": "1.14",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "GNU data compression utility",
+      "license": "GPL-3.0-or-later",
+      "sha256": "2c732df74c970df0c4e7d084580426aeeb28c04d48b385c4942deae9b71ea178",
+      "url": "packages/gzip-1.14-1-x86_64.kpkg",
+      "depends": "glibc",
+      "size": 215040,
+      "installed_size": 491121
     },
     {
       "name": "hello",
@@ -54,17 +80,56 @@
       "installed_size": 307278
     },
     {
+      "name": "ncurses",
+      "version": "6.5",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Library for text-based user interfaces",
+      "license": "MIT",
+      "sha256": "4f88b7e6af5396bdbce981a52d691a36fbd665a8ae4a5a9e0fdbd4d6f4f5d428",
+      "url": "packages/ncurses-6.5-1-x86_64.kpkg",
+      "depends": "glibc",
+      "size": 1530880,
+      "installed_size": 5618507
+    },
+    {
+      "name": "readline",
+      "version": "8.2",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Library for interactive line editing",
+      "license": "GPL-3.0-or-later",
+      "sha256": "027895b26adbfaa2bbd94e205bc52ad39c7ea1f62d6b43cb490b0662ff3ca478",
+      "url": "packages/readline-8.2-1-x86_64.kpkg",
+      "depends": "glibc,ncurses",
+      "size": 702976,
+      "installed_size": 1808464
+    },
+    {
       "name": "sed",
       "version": "4.9",
       "release": 1,
       "arch": "x86_64",
       "description": "Stream editor for filtering and transforming text",
       "license": "GPL-3.0-or-later",
-      "sha256": "d715e1ddc1e5aae81e34943215bd7bdea91d251b32087425902098a835f9064c",
+      "sha256": "6028ffb28c9b908908e36e1e7febfb64f759957ba5e7a6911e6079e025b0c7ef",
       "url": "packages/sed-4.9-1-x86_64.kpkg",
       "depends": "glibc",
       "size": 299520,
       "installed_size": 728291
+    },
+    {
+      "name": "tar",
+      "version": "1.35",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "The GNU tape archiver",
+      "license": "GPL-3.0-or-later",
+      "sha256": "cbb9ba7763c29248bbe8cabc4df78753a6548d73dc734a6fe1c7e655468f278e",
+      "url": "packages/tar-1.35-1-x86_64.kpkg",
+      "depends": "glibc",
+      "size": 1163776,
+      "installed_size": 2768298
     }
   ]
 }
