@@ -2,6 +2,45 @@
   "version": 1,
   "packages": [
     {
+      "name": "bash",
+      "version": "5.3",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "The GNU Bourne Again SHell",
+      "license": "GPL-3.0-or-later",
+      "sha256": "9cb49ee7aa677dd522397a4679405dd86f48adcaaf7bdef884089782246d36e2",
+      "url": "packages/bash-5.3-1-x86_64.kpkg",
+      "depends": "readline,ncurses",
+      "size": 3288576,
+      "installed_size": 9169971
+    },
+    {
+      "name": "coreutils",
+      "version": "9.7",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "The basic file, shell and text manipulation utilities of the GNU operating system",
+      "license": "GPL-3.0-or-later",
+      "sha256": "9b67646ed041038ec8e4fe9c0f21d2f5f95b9e46e8c0b23263bb80fafab7ee84",
+      "url": "packages/coreutils-9.7-1-x86_64.kpkg",
+      "depends": "glibc",
+      "size": 12221952,
+      "installed_size": 29567977
+    },
+    {
+      "name": "grep",
+      "version": "3.11",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Search for PATTERNS in each FILE",
+      "license": "GPL-3.0-or-later",
+      "sha256": "ef85cd0e5bf2d8b40ce72692ccef416db1be271250cf4d67433785f8713afb93",
+      "url": "packages/grep-3.11-1-x86_64.kpkg",
+      "depends": "glibc",
+      "size": 384512,
+      "installed_size": 915463
+    },
+    {
       "name": "hello",
       "version": "2.12",
       "release": 1,
@@ -13,6 +52,19 @@
       "depends": "",
       "size": 123904,
       "installed_size": 307278
+    },
+    {
+      "name": "sed",
+      "version": "4.9",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Stream editor for filtering and transforming text",
+      "license": "GPL-3.0-or-later",
+      "sha256": "d715e1ddc1e5aae81e34943215bd7bdea91d251b32087425902098a835f9064c",
+      "url": "packages/sed-4.9-1-x86_64.kpkg",
+      "depends": "glibc",
+      "size": 299520,
+      "installed_size": 728291
     }
   ]
 }

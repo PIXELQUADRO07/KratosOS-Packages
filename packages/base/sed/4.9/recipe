@@ -1,0 +1,23 @@
+name=sed
+version=4.9
+release=1
+arch=x86_64
+license="GPL-3.0-or-later"
+description="Stream editor for filtering and transforming text"
+source="https://ftp.gnu.org/gnu/sed/sed-4.9.tar.xz"
+sha256="6e226b732e1cd739464ad6862bd1a1aba42d7982922da7a53519631d24975181"
+depends="glibc"
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --prefix=/usr \
+        --bindir=/bin \
+        --disable-nls
+
+    make -j$(nproc)
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}

@@ -1,0 +1,23 @@
+name=grep
+version=3.11
+release=1
+arch=x86_64
+license="GPL-3.0-or-later"
+description="Search for PATTERNS in each FILE"
+source="https://ftp.gnu.org/gnu/grep/grep-3.11.tar.xz"
+sha256="1db2aedde89d0dea42b16d9528f894c8d15dae4e190b59aecc78f5a951276eab"
+depends="glibc"
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --prefix=/usr \
+        --bindir=/bin \
+        --disable-nls
+
+    make -j$(nproc)
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}

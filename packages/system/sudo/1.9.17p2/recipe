@@ -1,0 +1,30 @@
+name=sudo
+version=1.9.17p2
+release=1
+arch=x86_64
+license="ISC"
+description="Allow users to run programs with the security privileges of another user"
+source="https://www.sudo.ws/dist/sudo-1.9.17p2.tar.gz"
+sha256="4a38a1ab3adb1199257edc2a7c4a2bd714665eb605b04368843b06dada2cfcfb"
+depends="glibc"
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --prefix=/usr \
+        --libexecdir=/usr/lib \
+        --with-securepath="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin" \
+        --with-all-insults \
+        --with-env-editor \
+        --with-passprompt="[sudo] password for %p: " \
+        --without-openssl \
+        --disable-nls
+
+    make -j$(nproc)
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+    # Remove documentation to keep package small
+    rm -rf "${PKGDIR}/usr/share/man"
+}
