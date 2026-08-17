@@ -1,0 +1,60 @@
+name: Publish KratosOS package repository
+
+# Il file era vuoto: nessuna Action pubblicava mai repository/ da
+# qualche parte, quindi qualsiasi URL configurato nell'OS puntava nel
+# vuoto. Questo workflow rigenera index.json e pubblica repository/
+# su GitHub Pages ad ogni push su main.
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - "repository/**"
+      - "packages/**"
+      - "scripts/**"
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Rigenera index.json
+        run: python3 scripts/generate-index.sh
+
+      - name: Verifica che l'indice non sia vuoto
+        run: |
+          test -s repository/x86_64/stable/index.json
+          python3 -c "import json,sys; d=json.load(open('repository/x86_64/stable/index.json')); sys.exit(0 if d.get('packages') else 1)"
+
+      - name: Prepara artifact per Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: repository
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy su GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
