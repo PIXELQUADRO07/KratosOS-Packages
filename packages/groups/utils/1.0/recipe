@@ -1,0 +1,15 @@
+name=utils
+version=1.0
+release=1
+arch=x86_64
+license="MIT"
+description="KratosOS Utilities Metapackage"
+depends="hello,vim"
+
+build() {
+    :
+}
+
+package() {
+    :
+}

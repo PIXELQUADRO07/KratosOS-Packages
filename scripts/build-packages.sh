@@ -77,53 +77,60 @@ unset -f build package
 
 source "$RECIPE_FILE"
 
-if [ -z "$name" ] || [ -z "$version" ] || [ -z "$source" ] || [ -z "$sha256" ]; then
-    echo "[!] Error: Recipe must define name, version, source, and sha256."
+if [ -z "$name" ] || [ -z "$version" ]; then
+    echo "[!] Error: Recipe must define name and version."
     exit 1
 fi
 
-# 6. Download source tarball
-TARBALL_NAME="$(basename "$source")"
-ARCHIVE="$DOWNLOADS/$TARBALL_NAME"
+# 6. Download source tarball (skip for metapackages)
+if [ -n "$source" ]; then
+    TARBALL_NAME="$(basename "$source")"
+    ARCHIVE="$DOWNLOADS/$TARBALL_NAME"
 
-if [ ! -f "$ARCHIVE" ]; then
-    echo "[+] Downloading $name $version source from $source..."
-    curl -L --retry 3 -o "$ARCHIVE" "$source"
-else
-    echo "[~] Source tarball already downloaded: $TARBALL_NAME"
-fi
-
-# Verify SHA-256
-echo "[+] Verifying SHA-256 checksum..."
-ACTUAL_SHA256=$(sha256sum "$ARCHIVE" | awk '{print $1}')
-if [ "$ACTUAL_SHA256" != "$sha256" ]; then
-    echo "[!] SHA-256 checksum mismatch for $TARBALL_NAME"
-    echo "    Expected: $sha256"
-    echo "    Actual:   $ACTUAL_SHA256"
-    exit 1
-fi
-echo "[✓] SHA-256 verified successfully."
-
-# 7. Extract source
-SRC_DIR="$SOURCES_DIR/$name-$version"
-rm -rf "$SRC_DIR"
-mkdir -p "$SRC_DIR"
-
-echo "[+] Extracting source to $SRC_DIR..."
-# GNU tar can detect compression type automatically
-tar -xf "$ARCHIVE" -C "$SOURCES_DIR"
-
-# Autotools often extract into a folder matching tarball name. If it's different, adapt.
-# Usually hello-2.12 extracts into hello-2.12. Let's make sure it exists.
-if [ ! -d "$SRC_DIR" ]; then
-    # Fallback check if the archive extracted into a slightly different directory
-    EXTRACTED_DIR=$(find "$SOURCES_DIR" -maxdepth 1 -mindepth 1 -type d -name "$name-*" | head -n 1)
-    if [ -n "$EXTRACTED_DIR" ]; then
-        mv "$EXTRACTED_DIR" "$SRC_DIR"
+    if [ ! -f "$ARCHIVE" ]; then
+        echo "[+] Downloading $name $version source from $source..."
+        curl -L --retry 3 -o "$ARCHIVE" "$source"
     else
-        echo "[!] Error: Extracted directory not found at $SRC_DIR"
+        echo "[~] Source tarball already downloaded: $TARBALL_NAME"
+    fi
+
+    # Verify SHA-256
+    echo "[+] Verifying SHA-256 checksum..."
+    ACTUAL_SHA256=$(sha256sum "$ARCHIVE" | awk '{print $1}')
+    if [ "$ACTUAL_SHA256" != "$sha256" ]; then
+        echo "[!] SHA-256 checksum mismatch for $TARBALL_NAME"
+        echo "    Expected: $sha256"
+        echo "    Actual:   $ACTUAL_SHA256"
         exit 1
     fi
+    echo "[✓] SHA-256 verified successfully."
+
+    # 7. Extract source
+    SRC_DIR="$SOURCES_DIR/$name-$version"
+    rm -rf "$SRC_DIR"
+    mkdir -p "$SRC_DIR"
+
+    echo "[+] Extracting source to $SRC_DIR..."
+    # GNU tar can detect compression type automatically
+    tar -xf "$ARCHIVE" -C "$SOURCES_DIR"
+
+    # Autotools often extract into a folder matching tarball name. If it's different, adapt.
+    # Usually hello-2.12 extracts into hello-2.12. Let's make sure it exists.
+    if [ ! -d "$SRC_DIR" ]; then
+        # Fallback check if the archive extracted into a slightly different directory
+        EXTRACTED_DIR=$(find "$SOURCES_DIR" -maxdepth 1 -mindepth 1 -type d -name "$name-*" | head -n 1)
+        if [ -n "$EXTRACTED_DIR" ]; then
+            mv "$EXTRACTED_DIR" "$SRC_DIR"
+        else
+            echo "[!] Error: Extracted directory not found at $SRC_DIR"
+            exit 1
+        fi
+    fi
+else
+    echo "[~] Metapackage detected: No source to download."
+    SRC_DIR="/tmp/kpm-meta-$(id -u)"
+    rm -rf "$SRC_DIR"
+    mkdir -p "$SRC_DIR"
 fi
 
 # 8. Setup Build Staging Area

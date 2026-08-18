@@ -1,0 +1,15 @@
+name=productivity
+version=1.0
+release=1
+arch=x86_64
+license="MIT"
+description="KratosOS Productivity & Multimedia"
+depends="vlc,obsidian,gimp,krita,inkscape,signal,telegram,localsend,steam,wine"
+
+build() {
+    :
+}
+
+package() {
+    :
+}
