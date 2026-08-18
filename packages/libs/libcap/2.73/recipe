@@ -1,0 +1,17 @@
+name=libcap
+version=2.73
+release=1
+arch=x86_64
+license="GPL-2.0-only"
+description="POSIX 1003.1e capabilities"
+source="https://www.kernel.org/pub/linux/libs/security/linux-privs/libcap2/libcap-2.73.tar.xz"
+sha256="6405f6089cf4cdd8c271540cd990654d78dd0b1989b2d9bda20f933a75a795a5"
+depends="glibc"
+
+build() {
+    make CC="${TARGET}-gcc" prefix=/usr lib=lib GOLANG=no PAM_CAP=no -j$(nproc)
+}
+
+package() {
+    make install CC="${TARGET}-gcc" prefix=/usr lib=lib DESTDIR="${PKGDIR}" GOLANG=no PAM_CAP=no
+}

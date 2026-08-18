@@ -1,0 +1,23 @@
+name=libtirpc
+version=1.3.6
+release=1
+arch=x86_64
+license="BSD-3-Clause"
+description="Transport Independent RPC library"
+source="https://downloads.sourceforge.net/libtirpc/libtirpc-1.3.6.tar.bz2"
+sha256="bbd26a8f0df5690a62a47f6aa30f797f3ef8d02560d1bc449a83066b5a1d3508"
+depends="glibc"
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --prefix=/usr \
+        --sysconfdir=/etc \
+        --disable-static \
+        --disable-gssapi
+    make -j$(nproc)
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}

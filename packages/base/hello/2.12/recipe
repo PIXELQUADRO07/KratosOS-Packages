@@ -6,7 +6,7 @@ license="GPL-3.0-or-later"
 description="GNU hello world program"
 source="https://ftp.gnu.org/gnu/hello/hello-2.12.tar.gz"
 sha256="cf04af86dc085268c5f4470fbae49b18afbc221b78096aab842d934a76bad0ab"
-depends=""
+depends="glibc"
 
 build() {
     ./configure \

@@ -28,6 +28,19 @@
       "installed_size": 29567977
     },
     {
+      "name": "elfutils",
+      "version": "0.191",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Libraries and utilities for handling ELF objects",
+      "license": "GPL-3.0-or-later",
+      "sha256": "605f99d17a55fe793154a4becb138c6e25584c69437cfd3094e36f36e7331d3a",
+      "url": "packages/elfutils-0.191-1-x86_64.kpkg",
+      "depends": "glibc,zlib",
+      "size": 2299392,
+      "installed_size": 7686190
+    },
+    {
       "name": "findutils",
       "version": "4.10.0",
       "release": 1,
@@ -75,9 +88,74 @@
       "license": "GPL-3.0-or-later",
       "sha256": "d9c4ec543c00d3771d94aeec686756c2d9c0dde5b79b6ccc8fa947fff8f00312",
       "url": "packages/hello-2.12-1-x86_64.kpkg",
-      "depends": "",
+      "depends": "glibc",
       "size": 123904,
       "installed_size": 307278
+    },
+    {
+      "name": "libcap",
+      "version": "2.73",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "POSIX 1003.1e capabilities",
+      "license": "GPL-2.0-only",
+      "sha256": "31520e20363d5b8f658a9fb41aee6ae75ae617d1c8eb93100948be57cb2e306f",
+      "url": "packages/libcap-2.73-1-x86_64.kpkg",
+      "depends": "glibc",
+      "size": 123904,
+      "installed_size": 370297
+    },
+    {
+      "name": "libmnl",
+      "version": "1.0.5",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Minimalistic user-space library oriented to Netlink developers",
+      "license": "LGPL-2.1-or-later",
+      "sha256": "bbd69355475065017c74424867da7e8dae8ea09f5b37a2c566af46f2ee94de2c",
+      "url": "packages/libmnl-1.0.5-1-x86_64.kpkg",
+      "depends": "glibc",
+      "size": 32256,
+      "installed_size": 75315
+    },
+    {
+      "name": "libpsl",
+      "version": "0.21.5",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Public Suffix List library",
+      "license": "MIT",
+      "sha256": "3839a86939a958bfa87972dc9242f9c89924cf96c9a2aed69ef59740d7084420",
+      "url": "packages/libpsl-0.21.5-1-x86_64.kpkg",
+      "depends": "glibc,libunistring",
+      "size": 107520,
+      "installed_size": 190143
+    },
+    {
+      "name": "libunistring",
+      "version": "1.2",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Library for manipulating Unicode strings",
+      "license": "LGPL-3.0-or-later",
+      "sha256": "39705a2a63d2391eb5c9f51cad151edb8cec8b3e7df24ecc14ea845ac2ab2ba9",
+      "url": "packages/libunistring-1.2-1-x86_64.kpkg",
+      "depends": "glibc",
+      "size": 1352704,
+      "installed_size": 4474050
+    },
+    {
+      "name": "libxcrypt",
+      "version": "4.4.36",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Extended crypt library for descrypt, md5crypt, sha256crypt, and sha512crypt",
+      "license": "LGPL-2.1-or-later",
+      "sha256": "06e186dd28d095e740c05b9a78da289e2d7eaf88d4c6eaaac6f4513e2bca3806",
+      "url": "packages/libxcrypt-4.4.36-1-x86_64.kpkg",
+      "depends": "glibc",
+      "size": 108032,
+      "installed_size": 260152
     },
     {
       "name": "ncurses",
@@ -119,6 +197,19 @@
       "installed_size": 728291
     },
     {
+      "name": "shadow",
+      "version": "4.17.4",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Utilities to maintain user and group accounts",
+      "license": "BSD-3-Clause",
+      "sha256": "16cbe599e621d514c5fb4c46f0b70d14bbdd3fa48e9ccfcab2f1ffbadbf4221a",
+      "url": "packages/shadow-4.17.4-1-x86_64.kpkg",
+      "depends": "glibc,libxcrypt",
+      "size": 4208640,
+      "installed_size": 10354481
+    },
+    {
       "name": "tar",
       "version": "1.35",
       "release": 1,
@@ -130,6 +221,45 @@
       "depends": "glibc",
       "size": 1163776,
       "installed_size": 2768298
+    },
+    {
+      "name": "util-linux",
+      "version": "2.41",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Miscellaneous system utilities",
+      "license": "GPL-2.0-or-later",
+      "sha256": "3b5964c02b8ad25211a90bb96af2567f613c55a11700d68860fe08d325ffa319",
+      "url": "packages/util-linux-2.41-1-x86_64.kpkg",
+      "depends": "glibc,ncurses,zlib,zstd",
+      "size": 12777984,
+      "installed_size": 30214692
+    },
+    {
+      "name": "zlib",
+      "version": "1.3.1",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "A compression/decompression Library",
+      "license": "Zlib",
+      "sha256": "3d18d0df4e70c8969b18456545b921c2e329edea6c79969e8e3e7c7dc3b46435",
+      "url": "packages/zlib-1.3.1-1-x86_64.kpkg",
+      "depends": "glibc",
+      "size": 169984,
+      "installed_size": 406745
+    },
+    {
+      "name": "zstd",
+      "version": "1.5.6",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Fast real-time compression algorithm",
+      "license": "GPL-2.0-or-later OR BSD-3-Clause",
+      "sha256": "43338050b63146e90fcfa66bba2185e19d025b7dca8e5263b0c426fd8e856814",
+      "url": "packages/zstd-1.5.6-1-x86_64.kpkg",
+      "depends": "glibc",
+      "size": 1510400,
+      "installed_size": 3770988
     }
   ]
 }

@@ -1,0 +1,24 @@
+name=elfutils
+version=0.191
+release=1
+arch=x86_64
+license="GPL-3.0-or-later"
+description="Libraries and utilities for handling ELF objects"
+source="https://sourceware.org/elfutils/ftp/0.191/elfutils-0.191.tar.bz2"
+sha256="df76db71366d1d708365fc7a6c60ca48398f14367eb2b8954efc8897147ad871"
+depends="glibc,zlib"
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --prefix=/usr \
+        --disable-debuginfod \
+        --enable-libdebuginfod=dummy \
+        --enable-install-elfh \
+        CFLAGS="-O2 -Wno-error"
+    make -j$(nproc)
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}
