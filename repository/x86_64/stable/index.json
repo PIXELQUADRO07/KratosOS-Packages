@@ -2,6 +2,19 @@
   "version": 1,
   "packages": [
     {
+      "name": "all",
+      "version": "1.0",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "KratosOS Full Installation Metapackage",
+      "license": "MIT",
+      "sha256": "800edbc03d7ca4627e394da165bad097b781599e21fac64297ce437446c5f93e",
+      "url": "packages/all-1.0-1-x86_64.kpkg",
+      "depends": "core,networking,cybersecurity,development,productivity",
+      "size": 4608,
+      "installed_size": 0
+    },
+    {
       "name": "bash",
       "version": "5.3",
       "release": 1,
@@ -13,6 +26,19 @@
       "depends": "glibc,readline,ncurses",
       "size": 3288576,
       "installed_size": 9169971
+    },
+    {
+      "name": "core",
+      "version": "1.0",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "KratosOS Core System & Base Utilities",
+      "license": "MIT",
+      "sha256": "f57af2a5ffe64aedd32a9678a7e2f23d36a7851d6705468e415b63337a9438b8",
+      "url": "packages/core-1.0-1-x86_64.kpkg",
+      "depends": "gcc,binutils,glibc,bash,make,tar,gzip,findutils,coreutils,util-linux,shadow,sudo,apparmor,firejail,btop,lm-sensors,iproute2",
+      "size": 4608,
+      "installed_size": 0
     },
     {
       "name": "coreutils",
@@ -28,6 +54,32 @@
       "installed_size": 29567977
     },
     {
+      "name": "cybersecurity",
+      "version": "1.0",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "KratosOS Cybersecurity & Privacy Tools",
+      "license": "MIT",
+      "sha256": "daf3b01f944f635b9cf21d37ccb1d8b72a5e7452761ec121c7256305f08c055c",
+      "url": "packages/cybersecurity-1.0-1-x86_64.kpkg",
+      "depends": "nmap,wireshark,metasploit,autopsy,sleuthkit,tor-browser,clamav",
+      "size": 4608,
+      "installed_size": 0
+    },
+    {
+      "name": "development",
+      "version": "1.0",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "KratosOS Software Development Environment",
+      "license": "MIT",
+      "sha256": "e167ed936e201725674a23f32ebd9f71150fa06566fe910e5b9d0d09bf5e8839",
+      "url": "packages/development-1.0-1-x86_64.kpkg",
+      "depends": "vim,emacs,python,java,nodejs,go,rust,git,docker,podman,postgresql,mysql,mongodb",
+      "size": 4608,
+      "installed_size": 0
+    },
+    {
       "name": "elfutils",
       "version": "0.191",
       "release": 1,
@@ -39,6 +91,19 @@
       "depends": "glibc,zlib",
       "size": 2299392,
       "installed_size": 7686190
+    },
+    {
+      "name": "etc",
+      "version": "1.0",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "KratosOS Miscellaneous Metapackage",
+      "license": "MIT",
+      "sha256": "7eca863f341a744cd0e9b38d374b472529393544f3a4faf73e2b5d59062e629b",
+      "url": "packages/etc-1.0-1-x86_64.kpkg",
+      "depends": "hello",
+      "size": 4608,
+      "installed_size": 0
     },
     {
       "name": "findutils",
@@ -223,6 +288,32 @@
       "installed_size": 5618507
     },
     {
+      "name": "networking",
+      "version": "1.0",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "KratosOS Networking Tools Metapackage",
+      "license": "MIT",
+      "sha256": "8e404e0ae5757aecad833b65d74cfa6f963eeb04efc93ee11e3dcaedb3eeb5bb",
+      "url": "packages/networking-1.0-1-x86_64.kpkg",
+      "depends": "wget,iproute2",
+      "size": 4608,
+      "installed_size": 0
+    },
+    {
+      "name": "productivity",
+      "version": "1.0",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "KratosOS Productivity & Multimedia",
+      "license": "MIT",
+      "sha256": "9d66a04346386fa74a86a2f9367da3516e2ef91ab4021166b6c4550a7294210f",
+      "url": "packages/productivity-1.0-1-x86_64.kpkg",
+      "depends": "vlc,obsidian,gimp,krita,inkscape,signal,telegram,localsend,steam,wine",
+      "size": 4608,
+      "installed_size": 0
+    },
+    {
       "name": "readline",
       "version": "8.2",
       "release": 1,
@@ -288,6 +379,19 @@
       "installed_size": 2768298
     },
     {
+      "name": "top10",
+      "version": "1.0",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "KratosOS Top 10 Packages Metapackage",
+      "license": "MIT",
+      "sha256": "49916016d320e313213b52c15c14a372bdd1fead3787a0eb254225be64c98aaa",
+      "url": "packages/top10-1.0-1-x86_64.kpkg",
+      "depends": "bash,coreutils,vim,wget,grep,sed,tar,gzip,util-linux,iproute2",
+      "size": 4608,
+      "installed_size": 0
+    },
+    {
       "name": "util-linux",
       "version": "2.41",
       "release": 1,
@@ -299,6 +403,19 @@
       "depends": "glibc,ncurses,zlib,zstd",
       "size": 12777984,
       "installed_size": 30214692
+    },
+    {
+      "name": "utils",
+      "version": "1.0",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "KratosOS Utilities Metapackage",
+      "license": "MIT",
+      "sha256": "e29674c4e4e9929900623c36740538a84b4e6138d575f4192fc50e8eff31673b",
+      "url": "packages/utils-1.0-1-x86_64.kpkg",
+      "depends": "hello,vim",
+      "size": 4608,
+      "installed_size": 0
     },
     {
       "name": "vim",
