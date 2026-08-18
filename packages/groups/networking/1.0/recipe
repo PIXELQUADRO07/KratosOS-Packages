@@ -1,0 +1,15 @@
+name=networking
+version=1.0
+release=1
+arch=x86_64
+license="MIT"
+description="KratosOS Networking Tools Metapackage"
+depends="wget,iproute2"
+
+build() {
+    :
+}
+
+package() {
+    :
+}

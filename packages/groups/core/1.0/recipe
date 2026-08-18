@@ -1,0 +1,15 @@
+name=core
+version=1.0
+release=1
+arch=x86_64
+license="MIT"
+description="KratosOS Core System & Base Utilities"
+depends="gcc,binutils,glibc,bash,make,tar,gzip,findutils,coreutils,util-linux,shadow,sudo,apparmor,firejail,btop,lm-sensors,iproute2"
+
+build() {
+    :
+}
+
+package() {
+    :
+}

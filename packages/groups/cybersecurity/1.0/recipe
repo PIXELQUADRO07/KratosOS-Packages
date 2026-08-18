@@ -1,0 +1,15 @@
+name=cybersecurity
+version=1.0
+release=1
+arch=x86_64
+license="MIT"
+description="KratosOS Cybersecurity & Privacy Tools"
+depends="nmap,wireshark,metasploit,autopsy,sleuthkit,tor-browser,clamav"
+
+build() {
+    :
+}
+
+package() {
+    :
+}

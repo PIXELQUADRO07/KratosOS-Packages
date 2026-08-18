@@ -1,0 +1,15 @@
+name=development
+version=1.0
+release=1
+arch=x86_64
+license="MIT"
+description="KratosOS Software Development Environment"
+depends="vim,emacs,python,java,nodejs,go,rust,git,docker,podman,postgresql,mysql,mongodb"
+
+build() {
+    :
+}
+
+package() {
+    :
+}

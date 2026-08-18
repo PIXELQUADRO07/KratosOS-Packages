@@ -1,0 +1,15 @@
+name=top10
+version=1.0
+release=1
+arch=x86_64
+license="MIT"
+description="KratosOS Top 10 Packages Metapackage"
+depends="bash,coreutils,vim,wget,grep,sed,tar,gzip,util-linux,iproute2"
+
+build() {
+    :
+}
+
+package() {
+    :
+}
