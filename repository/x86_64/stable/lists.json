@@ -1,0 +1,119 @@
+{
+  "version": 1,
+  "generated": "2026-08-18T20:01:34Z",
+  "arch": "x86_64",
+  "lists": [
+    {
+      "name": "base",
+      "description": "Sistema base minimo \u2014 shell, coreutils e strumenti fondamentali",
+      "packages": [
+        "bash",
+        "coreutils",
+        "findutils",
+        "grep",
+        "sed",
+        "gzip",
+        "tar",
+        "shadow",
+        "util-linux"
+      ]
+    },
+    {
+      "name": "utils",
+      "description": "Utility di sistema per uso quotidiano",
+      "packages": [
+        "coreutils",
+        "findutils",
+        "grep",
+        "sed",
+        "gzip",
+        "tar",
+        "vim",
+        "sudo",
+        "util-linux"
+      ]
+    },
+    {
+      "name": "networking",
+      "description": "Strumenti di rete e networking",
+      "packages": [
+        "wget",
+        "iproute2",
+        "libpsl",
+        "libmnl",
+        "libtirpc"
+      ]
+    },
+    {
+      "name": "system",
+      "description": "Componenti di sistema \u2014 autenticazione, permessi, gestione utenti",
+      "packages": [
+        "shadow",
+        "sudo",
+        "util-linux",
+        "libcap",
+        "libxcrypt",
+        "elfutils"
+      ]
+    },
+    {
+      "name": "libs",
+      "description": "Librerie condivise e dipendenze runtime",
+      "packages": [
+        "zlib",
+        "zstd",
+        "libmd",
+        "libbsd",
+        "libtirpc",
+        "libunistring",
+        "libmnl",
+        "libcap",
+        "libxcrypt",
+        "libpsl",
+        "elfutils",
+        "readline",
+        "ncurses"
+      ]
+    },
+    {
+      "name": "editors",
+      "description": "Editor di testo e strumenti di editing",
+      "packages": [
+        "vim"
+      ]
+    },
+    {
+      "name": "all",
+      "description": "Tutti i pacchetti disponibili nel repository",
+      "packages": [
+        "bash",
+        "coreutils",
+        "elfutils",
+        "findutils",
+        "grep",
+        "gzip",
+        "hello",
+        "iproute2",
+        "libbsd",
+        "libcap",
+        "libmd",
+        "libmnl",
+        "libpsl",
+        "libtirpc",
+        "libunistring",
+        "libxcrypt",
+        "ncurses",
+        "readline",
+        "sed",
+        "shadow",
+        "sudo",
+        "tar",
+        "util-linux",
+        "vim",
+        "wget",
+        "zlib",
+        "zstd"
+      ]
+    }
+  ]
+}
