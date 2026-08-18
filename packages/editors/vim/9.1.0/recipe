@@ -9,11 +9,14 @@ sha256="ddb435f6e386c53799a3025bdc5a3533beac735a0ee596cb27ada97366a1c725"
 depends="glibc,ncurses"
 
 build() {
+    export CFLAGS="-std=gnu17"
+    export CXXFLAGS="-std=gnu++17"
     ./configure \
         --host="${TARGET}" \
         --prefix=/usr \
         --with-tlib=ncursesw \
         --enable-gui=no \
+        --without-x \
         --disable-nls \
         --with-compiledby="KratosOS Builder"
 

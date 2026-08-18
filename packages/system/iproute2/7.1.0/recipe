@@ -9,8 +9,8 @@ sha256="fd9fa1b95809417157ca83dd72957e3261bdbce896353cb936f80af0b33a4b5c"
 depends="glibc,libmnl"
 
 build() {
-    # iproute2 needs to know where the kernel headers are
-    # and it doesn't use a standard autoconf script
+    export CFLAGS="-std=gnu17"
+    export CXXFLAGS="-std=gnu++17"
     ./configure
 
     make -j$(nproc) \
@@ -20,8 +20,8 @@ build() {
         SBINDIR=/sbin \
         CONFDIR=/etc/iproute2 \
         DATADIR=/usr/share/iproute2 \
-        LDFLAGS="-L${SYSROOT}/usr/lib" \
-        CFLAGS="-I${SYSROOT}/usr/include"
+        EXTRA_CCOPTS="-I${SYSROOT}/usr/include" \
+        EXTRA_LDFLAGS="-L${SYSROOT}/usr/lib"
 }
 
 package() {
