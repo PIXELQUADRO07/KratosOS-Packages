@@ -1,0 +1,29 @@
+name=shadow
+version=4.17.4
+release=1
+arch=x86_64
+license="BSD-3-Clause"
+description="Utilities to maintain user and group accounts"
+source="https://github.com/shadow-maint/shadow/releases/download/4.17.4/shadow-4.17.4.tar.xz"
+sha256="554801054694ff7d8a7abdf0d6ece34e2f16e111673cc01b8c9ee1278451181e"
+depends="glibc,libxcrypt"
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --prefix=/usr \
+        --bindir=/usr/bin \
+        --sbindir=/usr/sbin \
+        --sysconfdir=/etc \
+        --with-group-name-max_length=32 \
+        --without-libpam \
+        --without-selinux \
+        --without-libbsd \
+        --disable-nls
+
+    make -j$(nproc)
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}

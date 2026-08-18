@@ -1,0 +1,21 @@
+name=libmnl
+version=1.0.5
+release=1
+arch=x86_64
+license="LGPL-2.1-or-later"
+description="Minimalistic user-space library oriented to Netlink developers"
+source="https://www.netfilter.org/pub/libmnl/libmnl-1.0.5.tar.bz2"
+sha256="274b9b919ef3152bfb3da3a13c950dd60d6e2bcd54230ffeca298d03b40d0525"
+depends="glibc"
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --prefix=/usr \
+        --disable-static
+    make -j$(nproc)
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}

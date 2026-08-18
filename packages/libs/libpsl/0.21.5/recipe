@@ -1,0 +1,24 @@
+name=libpsl
+version=0.21.5
+release=1
+arch=x86_64
+license="MIT"
+description="Public Suffix List library"
+source="https://github.com/rockdaboot/libpsl/releases/download/0.21.5/libpsl-0.21.5.tar.gz"
+sha256="1dcc9ceae8b128f3c0b3f654decd0e1e891afc6ff81098f227ef260449dae208"
+depends="glibc,libunistring"
+
+build() {
+    export PKG_CONFIG_LIBDIR="${SYSROOT}/usr/lib/pkgconfig"
+    ./configure \
+        --host="${TARGET}" \
+        --prefix=/usr \
+        --disable-static \
+        --disable-nls \
+        --with-libunistring-prefix="${SYSROOT}/usr"
+    make -j$(nproc)
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}

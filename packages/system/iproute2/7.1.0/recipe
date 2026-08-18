@@ -6,7 +6,7 @@ license="GPL-2.0"
 description="Networking and traffic control tools"
 source="https://www.kernel.org/pub/linux/utils/net/iproute2/iproute2-7.1.0.tar.xz"
 sha256="fd9fa1b95809417157ca83dd72957e3261bdbce896353cb936f80af0b33a4b5c"
-depends="glibc"
+depends="glibc,libmnl"
 
 build() {
     # iproute2 needs to know where the kernel headers are
@@ -14,12 +14,14 @@ build() {
     ./configure
 
     make -j$(nproc) \
-        CC="${CC}" \
-        AR="${AR}" \
+        CC="${TARGET}-gcc" \
+        AR="${TARGET}-ar" \
         PREFIX=/usr \
         SBINDIR=/sbin \
         CONFDIR=/etc/iproute2 \
-        DATADIR=/usr/share/iproute2
+        DATADIR=/usr/share/iproute2 \
+        LDFLAGS="-L${SYSROOT}/usr/lib" \
+        CFLAGS="-I${SYSROOT}/usr/include"
 }
 
 package() {

@@ -1,0 +1,41 @@
+name=util-linux
+version=2.41
+release=1
+arch=x86_64
+license="GPL-2.0-or-later"
+description="Miscellaneous system utilities"
+source="https://www.kernel.org/pub/linux/utils/util-linux/v2.41/util-linux-2.41.tar.xz"
+sha256="81ee93b3cfdfeb7d7c4090cedeba1d7bbce9141fd0b501b686b3fe475ddca4c6"
+depends="glibc,ncurses,zlib,zstd"
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --prefix=/usr \
+        --libdir=/usr/lib \
+        --bindir=/bin \
+        --sbindir=/sbin \
+        --disable-nls \
+        --disable-chlog \
+        --disable-login \
+        --disable-nologin \
+        --disable-su \
+        --disable-setpriv \
+        --disable-runuser \
+        --disable-pylibmount \
+        --disable-static \
+        --disable-lastlog2 \
+        --disable-liblastlog2 \
+        --disable-wall \
+        --disable-makeinstall-chown \
+        --disable-makeinstall-setuid \
+        --without-python \
+        --without-systemd \
+        --without-systemdsystemunitdir
+
+    make -j$(nproc)
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}

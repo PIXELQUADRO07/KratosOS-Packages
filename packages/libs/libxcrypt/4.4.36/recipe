@@ -1,0 +1,24 @@
+name=libxcrypt
+version=4.4.36
+release=1
+arch=x86_64
+license="LGPL-2.1-or-later"
+description="Extended crypt library for descrypt, md5crypt, sha256crypt, and sha512crypt"
+source="https://github.com/besser82/libxcrypt/releases/download/v4.4.36/libxcrypt-4.4.36.tar.xz"
+sha256="e5e1f4caee0a01de2aee26e3138807d6d3ca2b8e67287966d1fefd65e1fd8943"
+depends="glibc"
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --prefix=/usr \
+        --disable-static \
+        --enable-hashes=all \
+        --enable-obsolete-api=no \
+        CFLAGS="-O2 -Wno-error"
+    make -j$(nproc)
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}
