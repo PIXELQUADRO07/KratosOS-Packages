@@ -6,14 +6,26 @@ license="GPL-3.0-or-later"
 description="Network utility to retrieve content from web servers"
 source="https://ftp.gnu.org/gnu/wget/wget-1.24.5.tar.gz"
 sha256="fa2dc35bab5184ecbc46a9ef83def2aaaa3f4c9f3c97d4bd19dcb07d4da637de"
-depends="glibc,zlib,mbedtls"
+depends="glibc,zlib"
 
 build() {
+    export CFLAGS="-std=gnu17"
+    export CXXFLAGS="-std=gnu++17"
     ./configure \
         --host="${TARGET}" \
         --prefix=/usr \
-        --with-ssl=mbedtls \
-        --disable-nls
+        --with-ssl=no \
+        --disable-nls \
+        --without-libidn \
+        --disable-iri \
+        --without-libidn2 \
+        --without-libidn \
+        --disable-iri \
+        --without-libidn2 \
+        --disable-pcre \
+        --disable-pcre2 \
+        --disable-ntlm \
+        --without-metalink
     make -j$(nproc)
 }
 

@@ -9,6 +9,8 @@ sha256="4a38a1ab3adb1199257edc2a7c4a2bd714665eb605b04368843b06dada2cfcfb"
 depends="glibc"
 
 build() {
+    export CFLAGS="-std=gnu17"
+    export CXXFLAGS="-std=gnu++17"
     ./configure \
         --host="${TARGET}" \
         --prefix=/usr \
@@ -24,7 +26,7 @@ build() {
 }
 
 package() {
-    make DESTDIR="${PKGDIR}" install
+    make DESTDIR="${PKGDIR}" INSTALL_OWNER= install
     # Remove documentation to keep package small
     rm -rf "${PKGDIR}/usr/share/man"
 }

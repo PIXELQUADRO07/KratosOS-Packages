@@ -88,9 +88,35 @@
       "license": "GPL-3.0-or-later",
       "sha256": "d9c4ec543c00d3771d94aeec686756c2d9c0dde5b79b6ccc8fa947fff8f00312",
       "url": "packages/hello-2.12-1-x86_64.kpkg",
-      "depends": "glibc",
+      "depends": "",
       "size": 123904,
       "installed_size": 307278
+    },
+    {
+      "name": "iproute2",
+      "version": "7.1.0",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Networking and traffic control tools",
+      "license": "GPL-2.0",
+      "sha256": "d51de7b62aa73f7d344d25675d112f37a2be2e294065fc7adb65ae590eadf14e",
+      "url": "packages/iproute2-7.1.0-1-x86_64.kpkg",
+      "depends": "glibc,libmnl",
+      "size": 1844736,
+      "installed_size": 4894727
+    },
+    {
+      "name": "libbsd",
+      "version": "0.12.2",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Commonly used BSD functions for Linux systems",
+      "license": "BSD-3-Clause",
+      "sha256": "312379dafe9ee431b304f95e42202b96b397c659aa0e70b2d6a7914e2d756c18",
+      "url": "packages/libbsd-0.12.2-1-x86_64.kpkg",
+      "depends": "glibc,libmd",
+      "size": 143360,
+      "installed_size": 495453
     },
     {
       "name": "libcap",
@@ -104,6 +130,19 @@
       "depends": "glibc",
       "size": 123904,
       "installed_size": 370297
+    },
+    {
+      "name": "libmd",
+      "version": "1.1.0",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Message Digest functions from BSD systems",
+      "license": "BSD-3-Clause",
+      "sha256": "ef1ec2383130fc4d59cdce9719fd03e44d7e3459c02ae2fe0477a0c29a125754",
+      "url": "packages/libmd-1.1.0-1-x86_64.kpkg",
+      "depends": "glibc",
+      "size": 79360,
+      "installed_size": 229136
     },
     {
       "name": "libmnl",
@@ -125,11 +164,24 @@
       "arch": "x86_64",
       "description": "Public Suffix List library",
       "license": "MIT",
-      "sha256": "3839a86939a958bfa87972dc9242f9c89924cf96c9a2aed69ef59740d7084420",
+      "sha256": "1d691337837de3e9b966eac43fce08c8939edbea41d77134bab83e3386420eb0",
       "url": "packages/libpsl-0.21.5-1-x86_64.kpkg",
       "depends": "glibc,libunistring",
       "size": 107520,
       "installed_size": 190143
+    },
+    {
+      "name": "libtirpc",
+      "version": "1.3.6",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Transport Independent RPC library",
+      "license": "BSD-3-Clause",
+      "sha256": "7a6f06fc38cf172909fb4fe6659591b6cfbf3edde86d3000ce2576aef338fa4c",
+      "url": "packages/libtirpc-1.3.6-1-x86_64.kpkg",
+      "depends": "glibc",
+      "size": 157184,
+      "installed_size": 536621
     },
     {
       "name": "libunistring",
@@ -210,6 +262,19 @@
       "installed_size": 10354481
     },
     {
+      "name": "sudo",
+      "version": "1.9.17p2",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Allow users to run programs with the security privileges of another user",
+      "license": "ISC",
+      "sha256": "2932be4a165676d8419167f20e07efe3599cd765693e7633a09e6f16e596628b",
+      "url": "packages/sudo-1.9.17p2-1-x86_64.kpkg",
+      "depends": "glibc",
+      "size": 1952768,
+      "installed_size": 6203504
+    },
+    {
       "name": "tar",
       "version": "1.35",
       "release": 1,
@@ -234,6 +299,32 @@
       "depends": "glibc,ncurses,zlib,zstd",
       "size": 12777984,
       "installed_size": 30214692
+    },
+    {
+      "name": "vim",
+      "version": "9.1.0",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Vi Improved, a highly configurable text editor",
+      "license": "Vim",
+      "sha256": "fb3ed7f7bc413f69b2ac2df047496b41525433d2d624d1ad3f40ff0b9275c96f",
+      "url": "packages/vim-9.1.0-1-x86_64.kpkg",
+      "depends": "glibc,ncurses",
+      "size": 10206720,
+      "installed_size": 31927006
+    },
+    {
+      "name": "wget",
+      "version": "1.24.5",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Network utility to retrieve content from web servers",
+      "license": "GPL-3.0-or-later",
+      "sha256": "df89d110f5190640811b35be7310a39c63327bdce9be741961464b9466cd7ba3",
+      "url": "packages/wget-1.24.5-1-x86_64.kpkg",
+      "depends": "glibc,zlib",
+      "size": 302080,
+      "installed_size": 845096
     },
     {
       "name": "zlib",

@@ -6,9 +6,11 @@ license="BSD-3-Clause"
 description="Commonly used BSD functions for Linux systems"
 source="https://libbsd.freedesktop.org/releases/libbsd-0.12.2.tar.xz"
 sha256="b88cc9163d0c652aaf39a99991d974ddba1c3a9711db8f1b5838af2a14731014"
-depends="glibc"
+depends="glibc,libmd"
 
 build() {
+    export CFLAGS="-std=gnu17"
+    export CXXFLAGS="-std=gnu++17"
     ./configure \
         --host="${TARGET}" \
         --prefix=/usr \
