@@ -1,0 +1,23 @@
+name=libxcb
+version=1.17.0
+release=1
+arch=x86_64
+license="MIT"
+description="X11 C Bindings library"
+source="https://xcb.freedesktop.org/dist/libxcb-1.17.0.tar.xz"
+sha256="599ebf9996710fea71622e6e184f3a8ad5b43d0e5fa8c4e407123c88a59a6d55"
+depends="xcb-proto,libXau,libXdmcp"
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --prefix=/usr \
+        --disable-static \
+        --without-doxygen \
+        --enable-xinput
+    make
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}

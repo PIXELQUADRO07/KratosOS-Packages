@@ -106,6 +106,19 @@
       "installed_size": 0
     },
     {
+      "name": "expat",
+      "version": "2.6.2",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "XML parser library",
+      "license": "MIT",
+      "sha256": "2e581196be86e4aa913e400399bef4994ff65ecb4a8800f729af589bd6640337",
+      "url": "packages/expat-2.6.2-1-x86_64.kpkg",
+      "depends": "",
+      "size": 316928,
+      "installed_size": 785935
+    },
+    {
       "name": "findutils",
       "version": "4.10.0",
       "release": 1,
@@ -117,6 +130,32 @@
       "depends": "glibc",
       "size": 930304,
       "installed_size": 2299723
+    },
+    {
+      "name": "fontconfig",
+      "version": "2.15.0",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Library for configuring and customizing font access",
+      "license": "MIT",
+      "sha256": "d2c7a020727d1d6960d64bfa6e8f811b6d45fb1e1addb39187814777aaa5bb1f",
+      "url": "packages/fontconfig-2.15.0-1-x86_64.kpkg",
+      "depends": "freetype,expat,libxml2",
+      "size": 653312,
+      "installed_size": 1665829
+    },
+    {
+      "name": "freetype",
+      "version": "2.13.3",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "High-quality font engine",
+      "license": "FTL,GPL-2.0",
+      "sha256": "afe8b1048e7e977461e45cf40dafd8d12c30afc6e75028e01b449e0adc9e968d",
+      "url": "packages/freetype-2.13.3-1-x86_64.kpkg",
+      "depends": "libpng,zlib",
+      "size": 1846784,
+      "installed_size": 4300346
     },
     {
       "name": "gcc-libs",
@@ -197,6 +236,71 @@
       "installed_size": 4894727
     },
     {
+      "name": "libX11",
+      "version": "1.8.10",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Core X11 protocol client library",
+      "license": "MIT",
+      "sha256": "eb49dc0ccb616de0833fc6cb4deb14008c54c2dca2178277ef2ff03ae5831dab",
+      "url": "packages/libX11-1.8.10-1-x86_64.kpkg",
+      "depends": "xorgproto,libxcb,xtrans",
+      "size": 5817344,
+      "installed_size": 22621446
+    },
+    {
+      "name": "libXau",
+      "version": "1.0.11",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "X11 authorization library",
+      "license": "MIT",
+      "sha256": "f4c224602a74e9ff637382436f9b6bf73f6907ae73e2f440546a6293be93b795",
+      "url": "packages/libXau-1.0.11-1-x86_64.kpkg",
+      "depends": "xorgproto",
+      "size": 24576,
+      "installed_size": 51386
+    },
+    {
+      "name": "libXdmcp",
+      "version": "1.1.5",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "X11 Display Manager Control Protocol library",
+      "license": "MIT",
+      "sha256": "5c20dd8207d0c27702c3dc7aae17c2b0d53d7d5e9a4189307a857abe6d348874",
+      "url": "packages/libXdmcp-1.1.5-1-x86_64.kpkg",
+      "depends": "xorgproto",
+      "size": 48128,
+      "installed_size": 185629
+    },
+    {
+      "name": "libXext",
+      "version": "1.3.6",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "X11 miscellaneous extensions library",
+      "license": "MIT",
+      "sha256": "905e9782b956cc348ff53f65acec75e50397c163de657b4f8fdcbac0d44b8c0f",
+      "url": "packages/libXext-1.3.6-1-x86_64.kpkg",
+      "depends": "libX11",
+      "size": 299008,
+      "installed_size": 904129
+    },
+    {
+      "name": "libXrender",
+      "version": "0.9.11",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "X Rendering Extension client library",
+      "license": "MIT",
+      "sha256": "86b88fda870dc4c63a237de6a45d00247c19c6de0e1747b3ced326dfc389e477",
+      "url": "packages/libXrender-0.9.11-1-x86_64.kpkg",
+      "depends": "libX11",
+      "size": 177152,
+      "installed_size": 491461
+    },
+    {
       "name": "libbsd",
       "version": "0.12.2",
       "release": 1,
@@ -275,6 +379,19 @@
       "installed_size": 3294288
     },
     {
+      "name": "libpng",
+      "version": "1.6.44",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Portable Network Graphics library",
+      "license": "libpng-2.0",
+      "sha256": "e7ae352f9c536ed15f626fee3e0aeb2e892ed73ba4a75d526d9bffff8a50f55d",
+      "url": "packages/libpng-1.6.44-1-x86_64.kpkg",
+      "depends": "zlib",
+      "size": 609792,
+      "installed_size": 1469861
+    },
+    {
       "name": "libpsl",
       "version": "0.21.5",
       "release": 1,
@@ -314,6 +431,19 @@
       "installed_size": 4474050
     },
     {
+      "name": "libxcb",
+      "version": "1.17.0",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "X11 C Bindings library",
+      "license": "MIT",
+      "sha256": "c41baecea609bf32adbbcd5d1703d9c4983135cd716114270fd2914037a12abf",
+      "url": "packages/libxcb-1.17.0-1-x86_64.kpkg",
+      "depends": "xcb-proto,libXau,libXdmcp",
+      "size": 1610240,
+      "installed_size": 6906208
+    },
+    {
       "name": "libxcrypt",
       "version": "4.4.36",
       "release": 1,
@@ -325,6 +455,19 @@
       "depends": "glibc",
       "size": 108032,
       "installed_size": 260152
+    },
+    {
+      "name": "libxml2",
+      "version": "2.13.3",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "XML parsing library, version 2",
+      "license": "MIT",
+      "sha256": "c4d002c8468cf2cbd6f57a84f2f82a54e2841461b2a462aa2f98efda46df92ac",
+      "url": "packages/libxml2-2.13.3-1-x86_64.kpkg",
+      "depends": "zlib,xz",
+      "size": 2659328,
+      "installed_size": 8202542
     },
     {
       "name": "ncurses",
@@ -403,6 +546,19 @@
       "depends": "glibc",
       "size": 2453504,
       "installed_size": 7417647
+    },
+    {
+      "name": "pixman",
+      "version": "0.40.0",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Low-level pixel manipulation library",
+      "license": "MIT",
+      "sha256": "e32d0d20e33f97f572e5c58285c65b8e9e044f52f78d9eb0794195d444229e87",
+      "url": "packages/pixman-0.40.0-1-x86_64.kpkg",
+      "depends": "",
+      "size": 2199040,
+      "installed_size": 6067040
     },
     {
       "name": "productivity",
@@ -585,6 +741,45 @@
       "depends": "glibc,zlib",
       "size": 302080,
       "installed_size": 845096
+    },
+    {
+      "name": "xcb-proto",
+      "version": "1.17.0",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "XML-XCB protocol descriptions",
+      "license": "MIT",
+      "sha256": "fa87e6ce5122481b3af3abd92418e47eca1c1c9b01366f9fae1d5548f6842b9b",
+      "url": "packages/xcb-proto-1.17.0-1-x86_64.kpkg",
+      "depends": "",
+      "size": 223744,
+      "installed_size": 1075415
+    },
+    {
+      "name": "xorgproto",
+      "version": "2024.1",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Combined X.Org X11 protocol headers",
+      "license": "MIT",
+      "sha256": "63ae87f69dc787f70ebbce4ca15e729d390e2fe8d376433cf47dca85ef0d99de",
+      "url": "packages/xorgproto-2024.1-1-x86_64.kpkg",
+      "depends": "",
+      "size": 745984,
+      "installed_size": 4034936
+    },
+    {
+      "name": "xtrans",
+      "version": "1.5.0",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "X transport library",
+      "license": "MIT",
+      "sha256": "199064a13eb71eb21a88760db86d66516268960e99f7a15a19fba3ebbf3189ed",
+      "url": "packages/xtrans-1.5.0-1-x86_64.kpkg",
+      "depends": "",
+      "size": 52736,
+      "installed_size": 213604
     },
     {
       "name": "zlib",

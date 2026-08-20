@@ -1,0 +1,20 @@
+name=xorgproto
+version=2024.1
+release=1
+arch=x86_64
+license="MIT"
+description="Combined X.Org X11 protocol headers"
+source="https://xorg.freedesktop.org/archive/individual/proto/xorgproto-2024.1.tar.xz"
+sha256="372225fd40815b8423547f5d890c5debc72e88b91088fbfb13158c20495ccb59"
+depends=""
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --prefix=/usr
+    make
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}

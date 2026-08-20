@@ -1,0 +1,22 @@
+name=libX11
+version=1.8.10
+release=1
+arch=x86_64
+license="MIT"
+description="Core X11 protocol client library"
+source="https://xorg.freedesktop.org/archive/individual/lib/libX11-1.8.10.tar.xz"
+sha256="2b3b3dad9347db41dca56beb7db5878f283bde1142f04d9f8e478af435dfdc53"
+depends="xorgproto,libxcb,xtrans"
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --prefix=/usr \
+        --disable-static \
+        --without-fop
+    make
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}

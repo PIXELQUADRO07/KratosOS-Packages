@@ -1,0 +1,21 @@
+name=expat
+version=2.6.2
+release=1
+arch=x86_64
+license="MIT"
+description="XML parser library"
+source="https://github.com/libexpat/libexpat/releases/download/R_2_6_2/expat-2.6.2.tar.xz"
+sha256="ee14b4c5d8908b1bec37ad937607eab183d4d9806a08adee472c3c3121d27364"
+depends=""
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --prefix=/usr \
+        --disable-static
+    make
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}

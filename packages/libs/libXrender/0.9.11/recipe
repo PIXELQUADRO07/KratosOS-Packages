@@ -1,0 +1,21 @@
+name=libXrender
+version=0.9.11
+release=1
+arch=x86_64
+license="MIT"
+description="X Rendering Extension client library"
+source="https://xorg.freedesktop.org/archive/individual/lib/libXrender-0.9.11.tar.xz"
+sha256="bc53759a3a83d1ff702fb59641b3d2f7c56e05051fa0cfa93501166fa782dc24"
+depends="libX11"
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --prefix=/usr \
+        --disable-static
+    make
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}
