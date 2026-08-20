@@ -1,0 +1,20 @@
+name=xcb-proto
+version=1.17.0
+release=1
+arch=x86_64
+license="MIT"
+description="XML-XCB protocol descriptions"
+source="https://xcb.freedesktop.org/dist/xcb-proto-1.17.0.tar.xz"
+sha256="2c1bacd2110f4799f74de6ebb714b94cf6f80fb112316b1219480fd22562148c"
+depends=""
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --prefix=/usr
+    make
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}

@@ -1,0 +1,23 @@
+name=libxml2
+version=2.13.3
+release=1
+arch=x86_64
+license="MIT"
+description="XML parsing library, version 2"
+source="https://download.gnome.org/sources/libxml2/2.13/libxml2-2.13.3.tar.xz"
+sha256="0805d7c180cf09caad71666c7a458a74f041561a532902454da5047d83948138"
+depends="zlib,xz"
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --prefix=/usr \
+        --disable-static \
+        --with-python=no \
+        --with-icu=no
+    make
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}

@@ -1,0 +1,16 @@
+[binaries]
+c = 'x86_64-kratos-linux-gnu-gcc'
+cpp = 'x86_64-kratos-linux-gnu-g++'
+ar = 'x86_64-kratos-linux-gnu-ar'
+strip = 'x86_64-kratos-linux-gnu-strip'
+pkgconfig = 'pkg-config'
+
+[host_machine]
+system = 'linux'
+cpu_family = 'x86_64'
+cpu = 'x86_64'
+endian = 'little'
+
+[properties]
+sys_root = '/home/ghost/Github/Kratos-OS/build/sysroot'
+pkg_config_libdir = '/home/ghost/Github/Kratos-OS/build/sysroot/usr/lib/pkgconfig:/home/ghost/Github/Kratos-OS/build/sysroot/usr/share/pkgconfig'

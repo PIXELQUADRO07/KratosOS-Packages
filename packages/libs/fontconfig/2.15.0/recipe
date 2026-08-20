@@ -1,0 +1,24 @@
+name=fontconfig
+version=2.15.0
+release=1
+arch=x86_64
+license="MIT"
+description="Library for configuring and customizing font access"
+source="https://www.freedesktop.org/software/fontconfig/release/fontconfig-2.15.0.tar.xz"
+sha256="63a0658d0e06e0fa886106452b58ef04f21f58202ea02a94c39de0d3335d7c0e"
+depends="freetype,expat,libxml2"
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --prefix=/usr \
+        --disable-static \
+        --disable-docs \
+        --sysconfdir=/etc \
+        --localstatedir=/var
+    make
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}

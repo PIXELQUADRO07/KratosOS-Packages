@@ -1,0 +1,20 @@
+name=xtrans
+version=1.5.0
+release=1
+arch=x86_64
+license="MIT"
+description="X transport library"
+source="https://xorg.freedesktop.org/archive/individual/lib/xtrans-1.5.0.tar.xz"
+sha256="1ba4b703696bfddbf40bacf25bce4e3efb2a0088878f017a50e9884b0c8fb1bd"
+depends=""
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --prefix=/usr
+    make
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}

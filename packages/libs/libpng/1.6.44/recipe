@@ -1,0 +1,21 @@
+name=libpng
+version=1.6.44
+release=1
+arch=x86_64
+license="libpng-2.0"
+description="Portable Network Graphics library"
+source="https://download.sourceforge.net/libpng/libpng-1.6.44.tar.xz"
+sha256="60c4da1d5b7f0aa8d158da48e8f8afa9773c1c8baa5d21974df61f1886b8ce8e"
+depends="zlib"
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --prefix=/usr \
+        --disable-static
+    make
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}
