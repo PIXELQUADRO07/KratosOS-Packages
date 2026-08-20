@@ -1,0 +1,23 @@
+name=gcc-libs
+version=15.2.0
+release=1
+arch=x86_64
+license="GPL-3.0-with-GCC-exception"
+description="GCC runtime libraries"
+source=""
+depends="glibc"
+
+build() {
+    :
+}
+
+package() {
+    mkdir -p "${PKGDIR}/usr/lib"
+
+    # Copy shared libraries from the toolchain
+    cp -d "${KRATOS_TOOLS}/${TARGET}/lib64/libstdc++.so"* "${PKGDIR}/usr/lib/"
+    cp -d "${KRATOS_TOOLS}/${TARGET}/lib64/libgcc_s.so"* "${PKGDIR}/usr/lib/"
+
+    # Remove GDB python script if present to keep it clean
+    rm -f "${PKGDIR}/usr/lib/"*-gdb.py
+}

@@ -6,7 +6,7 @@ license="GPL-2.0-only"
 description="Network exploration tool and security / port scanner"
 source="https://nmap.org/dist/nmap-7.95.tar.bz2"
 sha256="e14ab530e47b5afd88f1c8a2bac7f89cd8fe6b478e22d255c5b9bddb7a1c5778"
-depends="glibc,libpcap,pcre2"
+depends="glibc,libpcap,pcre2,zlib,gcc-libs"
 
 build() {
     ./configure \
