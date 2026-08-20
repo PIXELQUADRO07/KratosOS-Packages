@@ -132,6 +132,19 @@
       "installed_size": 22119820
     },
     {
+      "name": "glib",
+      "version": "2.56.4",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Low-level core library that forms the basis for projects such as GTK+ and GNOME",
+      "license": "LGPL-2.1-or-later",
+      "sha256": "5307499c6ef613af79f4d256ff18bc933a073b978ccadb65c77f0d26d8e7e5be",
+      "url": "packages/glib-2.56.4-1-x86_64.kpkg",
+      "depends": "glibc,zlib,pcre,libffi,util-linux",
+      "size": 10947072,
+      "installed_size": 45041754
+    },
+    {
       "name": "grep",
       "version": "3.11",
       "release": 1,
@@ -208,6 +221,19 @@
       "depends": "glibc",
       "size": 123904,
       "installed_size": 370297
+    },
+    {
+      "name": "libffi",
+      "version": "3.4.6",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "A portable foreign function interface library",
+      "license": "MIT",
+      "sha256": "6e1f53f6e5ff2be84da466abcf3a34af455e042362f3ba2fbce6e7d5df26fd54",
+      "url": "packages/libffi-3.4.6-1-x86_64.kpkg",
+      "depends": "glibc",
+      "size": 49664,
+      "installed_size": 139367
     },
     {
       "name": "libmd",
@@ -340,6 +366,32 @@
       "installed_size": 28528461
     },
     {
+      "name": "openssl",
+      "version": "3.3.1",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Robust, commercial-grade, full-featured, and Open Source toolkit implementing the Transport Layer Security (TLS) and Secure Sockets Layer (SSL) protocols",
+      "license": "Apache-2.0",
+      "sha256": "17ac6c43a0556853529dd3a88f7e04d448f180c466470b1ad83eca697d0e9461",
+      "url": "packages/openssl-3.3.1-1-x86_64.kpkg",
+      "depends": "glibc",
+      "size": 7100928,
+      "installed_size": 23796812
+    },
+    {
+      "name": "pcre",
+      "version": "8.45",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Perl-compatible regular expression library",
+      "license": "BSD-3-Clause",
+      "sha256": "b4898af0ea7f3855baa8f5944a0193c13f235f5a9cde27348239eebe3d6a81c3",
+      "url": "packages/pcre-8.45-1-x86_64.kpkg",
+      "depends": "glibc",
+      "size": 2950656,
+      "installed_size": 7970108
+    },
+    {
       "name": "pcre2",
       "version": "10.43",
       "release": 1,
@@ -403,6 +455,32 @@
       "depends": "glibc,libxcrypt",
       "size": 4208640,
       "installed_size": 10354481
+    },
+    {
+      "name": "sleuthkit",
+      "version": "4.12.1",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "The Sleuth Kit (TSK) is a library and collection of command line tools that allow you to investigate disk images",
+      "license": "GPL-2.0",
+      "sha256": "01dca43f41680625d0abc6f68c3d001515ce5e59373f53fb392ebccdc717931a",
+      "url": "packages/sleuthkit-4.12.1-1-x86_64.kpkg",
+      "depends": "glibc,zlib,sqlite,gcc-libs",
+      "size": 61445120,
+      "installed_size": 160795673
+    },
+    {
+      "name": "sqlite",
+      "version": "3.46.1",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Self-contained, serverless, zero-configuration, transactional SQL database engine",
+      "license": "bless",
+      "sha256": "26fa12872d840ab4c59af27d27f398eedb6a8a83304c1aa1a1a952a32cf1f68b",
+      "url": "packages/sqlite-3.46.1-1-x86_64.kpkg",
+      "depends": "glibc",
+      "size": 7181312,
+      "installed_size": 15415196
     },
     {
       "name": "sudo",

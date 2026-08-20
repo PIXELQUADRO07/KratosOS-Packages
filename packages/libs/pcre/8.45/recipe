@@ -1,0 +1,27 @@
+name=pcre
+version=8.45
+release=1
+arch=x86_64
+license="BSD-3-Clause"
+description="Perl-compatible regular expression library"
+source="https://download.sourceforge.net/pcre/pcre-8.45.tar.bz2"
+sha256="4dae6fdcd2bb0bb6c37b5f97c33c2be954da743985369cddac3546e3218bffb8"
+depends="glibc"
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --prefix=/usr \
+        --enable-utf \
+        --enable-unicode-properties \
+        --enable-pcre16 \
+        --enable-pcre32 \
+        --enable-jit \
+        --disable-static
+
+    make
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}

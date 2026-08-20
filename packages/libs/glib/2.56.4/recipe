@@ -1,0 +1,45 @@
+name=glib
+version=2.56.4
+release=1
+arch=x86_64
+license="LGPL-2.1-or-later"
+description="Low-level core library that forms the basis for projects such as GTK+ and GNOME"
+source="https://download.gnome.org/sources/glib/2.56/glib-2.56.4.tar.xz"
+sha256="27f703d125efb07f8a743666b580df0b4095c59fc8750e8890132c91d437504c"
+depends="glibc,zlib,pcre,libffi,util-linux"
+
+build() {
+    # Fix 'bool' keyword conflict in goption.c
+    sed -i 's/gboolean bool;/gboolean bool_v;/g' glib/goption.c
+    sed -i 's/prev.bool/prev.bool_v/g' glib/goption.c
+
+    # Fix Python 3.12+ distutils removal
+    sed -i 's/import distutils.version/class LooseVersion:\n    def __init__(self, v):\n        self.v = v\n    def __lt__(self, other):\n        return self.v < other.v\n    def __le__(self, other):\n        return self.v <= other.v\n    def __gt__(self, other):\n        return self.v > other.v\n    def __ge__(self, other):\n        return self.v >= other.v\n    def __eq__(self, other):\n        return self.v == other.v\n    def __ne__(self, other):\n        return self.v != other.v/' gio/gdbus-2.0/codegen/utils.py
+    sed -i 's/distutils.version.LooseVersion/LooseVersion/g' gio/gdbus-2.0/codegen/utils.py
+
+    cat > glib.cache <<EOF
+glib_cv_stack_grows=no
+glib_cv_uscore=no
+ac_cv_func_posix_getpwuid_r=yes
+ac_cv_func_posix_getgrgid_r=yes
+EOF
+
+    ./configure \
+        --host="${TARGET}" \
+        --prefix=/usr \
+        --with-pcre=system \
+        --disable-static \
+        --disable-compile-warnings \
+        --cache-file=glib.cache
+
+    # Fix Python 3.12+ 'imp' removal in py-compile
+    sed -i 's/import sys, os, py_compile, imp/import sys, os, py_compile, importlib.util as imp/g' py-compile
+    sed -i 's/imp.cache_from_source/imp.cache_from_source/g' py-compile
+    sed -i 's/hasattr(imp, .get_tag.)/True/g' py-compile
+
+    make
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}
