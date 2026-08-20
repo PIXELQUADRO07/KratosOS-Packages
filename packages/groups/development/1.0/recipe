@@ -4,7 +4,10 @@ release=1
 arch=x86_64
 license="MIT"
 description="KratosOS Software Development Environment"
-depends="vim,emacs,python,java,nodejs,go,rust,git,docker,podman,postgresql,mysql,mongodb"
+depends="vim"
+# NOTA: emacs,python,java,nodejs,go,rust,git,docker,podman,postgresql,mysql,
+# mongodb non hanno ancora una ricetta/.kpkg nel repo. Riaggiungili qui
+# solo dopo averli effettivamente pacchettizzati.
 
 build() {
     :

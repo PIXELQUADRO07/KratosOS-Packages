@@ -4,7 +4,11 @@ release=1
 arch=x86_64
 license="MIT"
 description="KratosOS Core System & Base Utilities"
-depends="gcc,binutils,glibc,bash,make,tar,gzip,findutils,coreutils,util-linux,shadow,sudo,apparmor,firejail,btop,lm-sensors,iproute2"
+depends="glibc,bash,tar,gzip,findutils,coreutils,util-linux,shadow,sudo,iproute2"
+# NOTA: gcc, binutils, make, apparmor, firejail, btop, lm-sensors non sono
+# ancora pacchettizzati nel repo — vanno riaggiunti qui quando avranno una
+# ricetta e un .kpkg pubblicato, altrimenti 'kratos install core' torna a
+# rompersi con lo stesso errore "package not found in repository index".
 
 build() {
     :

@@ -4,7 +4,10 @@ release=1
 arch=x86_64
 license="MIT"
 description="KratosOS Productivity & Multimedia"
-depends="vlc,obsidian,gimp,krita,inkscape,signal,telegram,localsend,steam,wine"
+depends=""
+# NOTA: vlc,obsidian,gimp,krita,inkscape,signal,telegram,localsend,steam,wine
+# non hanno ancora una ricetta/.kpkg nel repo. Riaggiungili qui solo dopo
+# averli effettivamente pacchettizzati.
 
 build() {
     :
