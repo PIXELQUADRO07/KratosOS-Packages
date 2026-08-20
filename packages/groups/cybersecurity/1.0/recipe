@@ -4,11 +4,7 @@ release=1
 arch=x86_64
 license="MIT"
 description="KratosOS Cybersecurity & Privacy Tools"
-depends=""
-# NOTA: nmap,wireshark,metasploit,autopsy,sleuthkit,tor-browser,clamav non
-# hanno ancora una ricetta/.kpkg nel repo. Aggiungili qui uno per volta man
-# mano che li pacchettizzi, non prima — altrimenti 'kratos install
-# cybersecurity' torna a fallire su una dipendenza mancante.
+depends="nmap"
 
 build() {
     :

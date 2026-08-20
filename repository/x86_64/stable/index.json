@@ -60,9 +60,9 @@
       "arch": "x86_64",
       "description": "KratosOS Cybersecurity & Privacy Tools",
       "license": "MIT",
-      "sha256": "6cd4372b80c62fcbd4b7913bab0117b37d57e7bd2b7c5c654b7014f1fb76ce0c",
+      "sha256": "28f5cb3563983011fcffc180c4c4fd9c49336f316419ac03eca0e8c6e1adcccc",
       "url": "packages/cybersecurity-1.0-1-x86_64.kpkg",
-      "depends": "",
+      "depends": "nmap",
       "size": 4608,
       "installed_size": 0
     },
@@ -223,6 +223,19 @@
       "installed_size": 75315
     },
     {
+      "name": "libpcap",
+      "version": "1.10.4",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "System-independent interface for user-level packet capture",
+      "license": "BSD-3-Clause",
+      "sha256": "71fd1d1e58a3345718eaf07af31ae49b28365df8c885122da59f558e177f0d7f",
+      "url": "packages/libpcap-1.10.4-1-x86_64.kpkg",
+      "depends": "glibc",
+      "size": 1199104,
+      "installed_size": 3294288
+    },
+    {
       "name": "libpsl",
       "version": "0.21.5",
       "release": 1,
@@ -299,6 +312,32 @@
       "depends": "wget,iproute2",
       "size": 4608,
       "installed_size": 0
+    },
+    {
+      "name": "nmap",
+      "version": "7.95",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Network exploration tool and security / port scanner",
+      "license": "GPL-2.0-only",
+      "sha256": "f10dc191af46e65c74a1f2ac8f5dac48dd5a5d1c796ba464aa07b6b2bc42e478",
+      "url": "packages/nmap-7.95-1-x86_64.kpkg",
+      "depends": "glibc,libpcap,pcre2",
+      "size": 7536128,
+      "installed_size": 28528461
+    },
+    {
+      "name": "pcre2",
+      "version": "10.43",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Perl-compatible regular expression library",
+      "license": "BSD-3-Clause",
+      "sha256": "e4943750479eff883f7a3e129d3c076cb56496157cfd408813493d37d3a2fded",
+      "url": "packages/pcre2-10.43-1-x86_64.kpkg",
+      "depends": "glibc",
+      "size": 2453504,
+      "installed_size": 7417647
     },
     {
       "name": "productivity",
