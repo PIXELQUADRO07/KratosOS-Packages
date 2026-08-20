@@ -1,0 +1,30 @@
+name=libffi
+version=3.4.6
+release=1
+arch=x86_64
+license="MIT"
+description="A portable foreign function interface library"
+source="https://github.com/libffi/libffi/releases/download/v3.4.6/libffi-3.4.6.tar.gz"
+sha256="b0dea9df23c863a7a50e825440f3ebffabd65df1497108e5d437747843895a4e"
+depends="glibc"
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --prefix=/usr \
+        --disable-static \
+        --with-gcc-arch=x86-64
+
+    make
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+
+    # Move lib64 to lib if necessary
+    if [ -d "${PKGDIR}/usr/lib64" ]; then
+        mkdir -p "${PKGDIR}/usr/lib"
+        mv "${PKGDIR}/usr/lib64/"* "${PKGDIR}/usr/lib/"
+        rm -rf "${PKGDIR}/usr/lib64"
+    fi
+}
