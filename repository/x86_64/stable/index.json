@@ -431,6 +431,19 @@
       "installed_size": 2768298
     },
     {
+      "name": "tcpdump",
+      "version": "4.99.5",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Command-line packet analyzer",
+      "license": "BSD-3-Clause",
+      "sha256": "757f988549dce935ca8c2a33063792cee655661e8a61d645d57edfd6f5289822",
+      "url": "packages/tcpdump-4.99.5-1-x86_64.kpkg",
+      "depends": "glibc,libpcap",
+      "size": 4694016,
+      "installed_size": 11312802
+    },
+    {
       "name": "top10",
       "version": "1.0",
       "release": 1,

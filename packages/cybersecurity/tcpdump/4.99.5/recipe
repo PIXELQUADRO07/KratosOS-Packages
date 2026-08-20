@@ -1,0 +1,22 @@
+name=tcpdump
+version=4.99.5
+release=1
+arch=x86_64
+license="BSD-3-Clause"
+description="Command-line packet analyzer"
+source="https://www.tcpdump.org/release/tcpdump-4.99.5.tar.gz"
+sha256="8c75856e00addeeadf70dad67c9ff3dd368536b2b8563abf6854d7c764cd3adb"
+depends="glibc,libpcap"
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --prefix=/usr \
+        --with-pcap=linux
+
+    make
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}
