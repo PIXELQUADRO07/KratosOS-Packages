@@ -119,6 +119,19 @@
       "installed_size": 2299723
     },
     {
+      "name": "gcc-libs",
+      "version": "15.2.0",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "GCC runtime libraries",
+      "license": "GPL-3.0-with-GCC-exception",
+      "sha256": "f355c60e0e988e2c33e0c83637ed3432f6226cfbc8003a50113719ca0a5a01c0",
+      "url": "packages/gcc-libs-15.2.0-1-x86_64.kpkg",
+      "depends": "glibc",
+      "size": 7891456,
+      "installed_size": 22119820
+    },
+    {
       "name": "grep",
       "version": "3.11",
       "release": 1,
@@ -320,9 +333,9 @@
       "arch": "x86_64",
       "description": "Network exploration tool and security / port scanner",
       "license": "GPL-2.0-only",
-      "sha256": "f10dc191af46e65c74a1f2ac8f5dac48dd5a5d1c796ba464aa07b6b2bc42e478",
+      "sha256": "d2f3d8e08952df8354e603a0e18215825c9f2ce625f7dc6c8832ac4d6ae50d1b",
       "url": "packages/nmap-7.95-1-x86_64.kpkg",
-      "depends": "glibc,libpcap,pcre2",
+      "depends": "glibc,libpcap,pcre2,zlib,gcc-libs",
       "size": 7536128,
       "installed_size": 28528461
     },
