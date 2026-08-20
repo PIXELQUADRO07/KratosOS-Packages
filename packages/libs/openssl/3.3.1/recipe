@@ -1,0 +1,36 @@
+name=openssl
+version=3.3.1
+release=1
+arch=x86_64
+license="Apache-2.0"
+description="Robust, commercial-grade, full-featured, and Open Source toolkit implementing the Transport Layer Security (TLS) and Secure Sockets Layer (SSL) protocols"
+source="https://github.com/openssl/openssl/releases/download/openssl-3.3.1/openssl-3.3.1.tar.gz"
+sha256="777cd596284c883375a2a7a11bf5d2786fc5413255efab20c50d6ffe6d020b7e"
+depends="glibc"
+
+build() {
+    # OpenSSL's ./Configure script doesn't use the standard --host
+    # We use linux-x86_64 as a base and then override CC etc.
+    ./Configure \
+        linux-x86_64 \
+        --prefix=/usr \
+        --openssldir=/etc/ssl \
+        --sysroot="${SYSROOT}" \
+        shared \
+        zlib \
+        --with-zlib-include="${SYSROOT}/usr/include" \
+        --with-zlib-lib="${SYSROOT}/usr/lib"
+
+    make
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install_sw
+
+    # Move lib64 to lib if necessary
+    if [ -d "${PKGDIR}/usr/lib64" ]; then
+        mkdir -p "${PKGDIR}/usr/lib"
+        mv "${PKGDIR}/usr/lib64/"* "${PKGDIR}/usr/lib/"
+        rm -rf "${PKGDIR}/usr/lib64"
+    fi
+}

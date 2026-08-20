@@ -1,0 +1,30 @@
+name=sleuthkit
+version=4.12.1
+release=1
+arch=x86_64
+license="GPL-2.0"
+description="The Sleuth Kit (TSK) is a library and collection of command line tools that allow you to investigate disk images"
+source="https://github.com/sleuthkit/sleuthkit/releases/download/sleuthkit-4.12.1/sleuthkit-4.12.1.tar.gz"
+sha256="6b2de0baabc6a38429a33993114ca3820329b477d5038cbf45fcf69fca8addfd"
+depends="glibc,zlib,sqlite,gcc-libs"
+
+build() {
+    # Fix 'bool' redefinition error
+    sed -i 's/typedef unsigned        bool;/\/\/typedef unsigned bool;/' tsk/base/crc.h
+
+    ./configure \
+        --host="${TARGET}" \
+        --prefix=/usr \
+        --without-afflib \
+        --without-libewf \
+        --without-libvhdi \
+        --without-libvmdk \
+        --with-zlib="${SYSROOT}/usr" \
+        --with-sqlite3="${SYSROOT}/usr"
+
+    make
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}

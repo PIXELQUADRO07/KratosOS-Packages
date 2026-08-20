@@ -108,18 +108,15 @@ if [ -n "$source" ]; then
     # 7. Extract source
     SRC_DIR="$SOURCES_DIR/$name-$version"
     rm -rf "$SRC_DIR"
-    mkdir -p "$SRC_DIR"
 
-    echo "[+] Extracting source to $SRC_DIR..."
-    # GNU tar can detect compression type automatically
+    echo "[+] Extracting source to $SOURCES_DIR..."
     tar -xf "$ARCHIVE" -C "$SOURCES_DIR"
 
-    # Autotools often extract into a folder matching tarball name. If it's different, adapt.
-    # Usually hello-2.12 extracts into hello-2.12. Let's make sure it exists.
     if [ ! -d "$SRC_DIR" ]; then
         # Fallback check if the archive extracted into a slightly different directory
         EXTRACTED_DIR=$(find "$SOURCES_DIR" -maxdepth 1 -mindepth 1 -type d -name "$name-*" | head -n 1)
         if [ -n "$EXTRACTED_DIR" ]; then
+            echo "[~] Renaming extracted directory $EXTRACTED_DIR to $SRC_DIR"
             mv "$EXTRACTED_DIR" "$SRC_DIR"
         else
             echo "[!] Error: Extracted directory not found at $SRC_DIR"
