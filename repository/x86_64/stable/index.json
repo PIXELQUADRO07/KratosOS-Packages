@@ -15,6 +15,19 @@
       "installed_size": 0
     },
     {
+      "name": "atk",
+      "version": "2.28.1",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Accessibility Toolkit",
+      "license": "LGPL-2.1-or-later",
+      "sha256": "83064e322aba28badf78488fa40005978a06d9c074616abc1a883651fa1afd71",
+      "url": "packages/atk-2.28.1-1-x86_64.kpkg",
+      "depends": "glibc,glib",
+      "size": 644608,
+      "installed_size": 2962091
+    },
+    {
       "name": "bash",
       "version": "5.3",
       "release": 1,
@@ -26,6 +39,19 @@
       "depends": "glibc,readline,ncurses",
       "size": 3288576,
       "installed_size": 9169971
+    },
+    {
+      "name": "cairo",
+      "version": "1.16.0",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "2D graphics library with support for multiple output devices",
+      "license": "LGPL-2.1-or-later",
+      "sha256": "932e1d4c4a998c186c9b6c537c469bb226520015de87b75f1dd4360cec8667e6",
+      "url": "packages/cairo-1.16.0-1-x86_64.kpkg",
+      "depends": "glibc,pixman,freetype,fontconfig,libpng,libX11,libXext,libXrender",
+      "size": 3343360,
+      "installed_size": 7626856
     },
     {
       "name": "core",
@@ -158,6 +184,19 @@
       "installed_size": 4300346
     },
     {
+      "name": "fribidi",
+      "version": "1.0.5",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "GNU FriBidi implementation of the Unicode Bidirectional Algorithm",
+      "license": "LGPL-2.1-or-later",
+      "sha256": "543f86e0f9b01e6260b0618e6f6cc3835ca305cab546d9287f74df1620d95ef3",
+      "url": "packages/fribidi-1.0.5-1-x86_64.kpkg",
+      "depends": "glibc",
+      "size": 111104,
+      "installed_size": 397278
+    },
+    {
       "name": "gcc-libs",
       "version": "15.2.0",
       "release": 1,
@@ -169,6 +208,19 @@
       "depends": "glibc",
       "size": 7891456,
       "installed_size": 22119820
+    },
+    {
+      "name": "gdk-pixbuf",
+      "version": "2.36.12",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Image loading library used by GTK+",
+      "license": "LGPL-2.1-or-later",
+      "sha256": "7921a9d66c3f96951c71a6c77ac2978a4ef74c244a8e89f474649894f81bf5e3",
+      "url": "packages/gdk-pixbuf-2.36.12-1-x86_64.kpkg",
+      "depends": "glibc,glib,libpng,libjpeg-turbo,tiff,libX11",
+      "size": 643072,
+      "installed_size": 1572568
     },
     {
       "name": "glib",
@@ -197,6 +249,19 @@
       "installed_size": 915463
     },
     {
+      "name": "gtk+",
+      "version": "3.24.30",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Multi-platform toolkit for creating graphical user interfaces",
+      "license": "LGPL-2.1-or-later",
+      "sha256": "a6c30199ff1807c07ff1b18709670279498d7c5b9c8a46b4a5305c31f8644d18",
+      "url": "packages/gtk+-3.24.30-1-x86_64.kpkg",
+      "depends": "glibc,glib,atk,gdk-pixbuf,pango,cairo,libX11,libXext,libXcursor,libXfixes,libXi,libXrandr,libXcomposite,libXdamage",
+      "size": 4608,
+      "installed_size": 0
+    },
+    {
       "name": "gzip",
       "version": "1.14",
       "release": 1,
@@ -208,6 +273,19 @@
       "depends": "glibc",
       "size": 215040,
       "installed_size": 491121
+    },
+    {
+      "name": "harfbuzz",
+      "version": "2.7.4",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Text shaping library",
+      "license": "MIT",
+      "sha256": "3310b2ee3b95d244ec542addd5e77735048c43c78c6a299c6dcb6476f9d04dae",
+      "url": "packages/harfbuzz-2.7.4-1-x86_64.kpkg",
+      "depends": "glibc,freetype,glib",
+      "size": 15075328,
+      "installed_size": 45008939
     },
     {
       "name": "hello",
@@ -262,6 +340,45 @@
       "installed_size": 51386
     },
     {
+      "name": "libXcomposite",
+      "version": "0.4.6",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "X11 Composite extension library",
+      "license": "MIT",
+      "sha256": "53bebebb28ede09260a02451ed0ff5b6f02d848b64bcf3dc3593a62cec1d1b09",
+      "url": "packages/libXcomposite-0.4.6-1-x86_64.kpkg",
+      "depends": "glibc,libX11,libXext,libXfixes,xorgproto",
+      "size": 34816,
+      "installed_size": 75803
+    },
+    {
+      "name": "libXcursor",
+      "version": "1.2.2",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "X11 cursor management library",
+      "license": "MIT",
+      "sha256": "4fa794107fcde68a0321fc1e37610e429e2cd4e52fc2e0c72d6b65abf114ec15",
+      "url": "packages/libXcursor-1.2.2-1-x86_64.kpkg",
+      "depends": "glibc,libX11,libXrender,libXfixes",
+      "size": 117760,
+      "installed_size": 257710
+    },
+    {
+      "name": "libXdamage",
+      "version": "1.1.6",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "X11 Damage extension library",
+      "license": "MIT",
+      "sha256": "fd3f1e43d1ee2d65d283f3bfeb9804a5ce37aea6a3c4c5dfca14e4cc4d06bc42",
+      "url": "packages/libXdamage-1.1.6-1-x86_64.kpkg",
+      "depends": "glibc,libX11,libXfixes,xorgproto",
+      "size": 30720,
+      "installed_size": 61160
+    },
+    {
       "name": "libXdmcp",
       "version": "1.1.5",
       "release": 1,
@@ -286,6 +403,58 @@
       "depends": "libX11",
       "size": 299008,
       "installed_size": 904129
+    },
+    {
+      "name": "libXfixes",
+      "version": "6.0.1",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "X11 Fixes extension library",
+      "license": "MIT",
+      "sha256": "05538078f289c9bfcceadc43587cb629a25bc6e2e7a88bb1e25175f5db898f4b",
+      "url": "packages/libXfixes-6.0.1-1-x86_64.kpkg",
+      "depends": "glibc,libX11,xorgproto",
+      "size": 83456,
+      "installed_size": 228939
+    },
+    {
+      "name": "libXi",
+      "version": "1.8.1",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "X11 Input extension library",
+      "license": "MIT",
+      "sha256": "108d0e9ae8b1caf9b6074c6e071e344142a5ce5a19ff37eec949da65b9570b80",
+      "url": "packages/libXi-1.8.1-1-x86_64.kpkg",
+      "depends": "glibc,libX11,libXext,xorgproto",
+      "size": 599552,
+      "installed_size": 2149985
+    },
+    {
+      "name": "libXinerama",
+      "version": "1.1.5",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "X11 Xinerama extension library",
+      "license": "MIT",
+      "sha256": "6ee43e96300abe8ef20fb8d98ea01661ae79b3d30355998c565cea127d74123f",
+      "url": "packages/libXinerama-1.1.5-1-x86_64.kpkg",
+      "depends": "glibc,libX11,libXext,xorgproto",
+      "size": 31744,
+      "installed_size": 68430
+    },
+    {
+      "name": "libXrandr",
+      "version": "1.5.4",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "X11 RandR extension library",
+      "license": "MIT",
+      "sha256": "d52b80b899e33bf8fb9ce802596ed90fb8468acd705d9730c5e4eb51d07e6f51",
+      "url": "packages/libXrandr-1.5.4-1-x86_64.kpkg",
+      "depends": "glibc,libX11,libXext,libXrender,xorgproto",
+      "size": 152064,
+      "installed_size": 421704
     },
     {
       "name": "libXrender",
@@ -338,6 +507,19 @@
       "depends": "glibc",
       "size": 49664,
       "installed_size": 139367
+    },
+    {
+      "name": "libjpeg-turbo",
+      "version": "1.5.3",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "JPEG image codec that uses SIMD instructions",
+      "license": "BSD-3-Clause",
+      "sha256": "33df8d47beefa98d63abe732f7db8ea3bbba3d5196a57c06dafff550991eca36",
+      "url": "packages/libjpeg-turbo-1.5.3-1-x86_64.kpkg",
+      "depends": "glibc",
+      "size": 586240,
+      "installed_size": 1675968
     },
     {
       "name": "libmd",
@@ -522,6 +704,19 @@
       "installed_size": 23796812
     },
     {
+      "name": "pango",
+      "version": "1.42.4",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Library for laying out and rendering of text",
+      "license": "LGPL-2.1-or-later",
+      "sha256": "9a9462245767f14bfd03cc5ea80f3ea8594ae0ec8155da57da6f8fb7590ab231",
+      "url": "packages/pango-1.42.4-1-x86_64.kpkg",
+      "depends": "glibc,glib,fribidi,harfbuzz,cairo,fontconfig,freetype",
+      "size": 1127936,
+      "installed_size": 4326973
+    },
+    {
       "name": "pcre",
       "version": "8.45",
       "release": 1,
@@ -676,6 +871,19 @@
       "depends": "glibc,libpcap",
       "size": 4694016,
       "installed_size": 11312802
+    },
+    {
+      "name": "tiff",
+      "version": "4.6.0",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Library for reading and writing TIFF files",
+      "license": "libtiff",
+      "sha256": "17d6665b8e4ffa14c8efb3c47814287c67903261ba55b027099135294a76a9e8",
+      "url": "packages/tiff-4.6.0-1-x86_64.kpkg",
+      "depends": "glibc,libjpeg-turbo,zlib",
+      "size": 1925632,
+      "installed_size": 6962456
     },
     {
       "name": "top10",
