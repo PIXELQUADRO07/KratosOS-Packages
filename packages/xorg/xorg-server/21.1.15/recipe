@@ -5,7 +5,7 @@ arch=x86_64
 license="MIT"
 description="X.Org X server"
 source="https://xorg.freedesktop.org/releases/individual/xserver/xorg-server-21.1.15.tar.xz"
-sha256="PLACEHOLDER_sha256_xorg-server_21.1.15"
+sha256="841c82901282902725762df03adbbcd68153d4cdfb0d61df0cfd73ad677ae089"
 depends="libX11,libXext,libXfixes,libXfont2,libXrender,libpciaccess,libdrm,mesa,pixman,fontconfig,freetype,openssl,libxcb,libxkbcommon,xkeyboard-config"
 
 build() {
