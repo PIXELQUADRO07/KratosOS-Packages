@@ -1,0 +1,25 @@
+name=libnotify
+version=0.8.3
+release=1
+arch=x86_64
+license="LGPL-2.1-or-later"
+description="Desktop notification library"
+source="https://download.gnome.org/sources/libnotify/0.8/libnotify-0.8.3.tar.xz"
+sha256="PLACEHOLDER_sha256_libnotify_0.8.3"
+depends="glib,gtk+3,dbus"
+
+build() {
+    mkdir -p build
+    meson setup build \
+        --cross-file="${SYSROOT}/../scripts/kratos-cross-file.txt" \
+        --prefix=/usr \
+        --libdir=lib \
+        -Dman=false \
+        -Dgtk_doc=false \
+        -Dintrospection=disabled
+    ninja -C build
+}
+
+package() {
+    DESTDIR="${PKGDIR}" ninja -C build install
+}

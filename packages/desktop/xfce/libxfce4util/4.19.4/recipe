@@ -1,0 +1,25 @@
+name=libxfce4util
+version=4.19.4
+release=1
+arch=x86_64
+license="LGPL-2.0-or-later"
+description="Basic utility library for Xfce"
+source="https://archive.xfce.org/src/xfce/libxfce4util/4.19/libxfce4util-4.19.4.tar.bz2"
+sha256="PLACEHOLDER_sha256_libxfce4util_4.19.4"
+depends="glib"
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --build=x86_64-pc-linux-gnu \
+        --prefix=/usr \
+        --sysconfdir=/etc \
+        --disable-static \
+        --disable-introspection \
+        --disable-vala
+    make
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}

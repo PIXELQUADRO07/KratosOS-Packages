@@ -1,0 +1,24 @@
+name=libevdev
+version=1.13.3
+release=1
+arch=x86_64
+license="MIT"
+description="Wrapper library for Linux evdev input interface"
+source="https://www.freedesktop.org/software/libevdev/libevdev-1.13.3.tar.xz"
+sha256="PLACEHOLDER_sha256_libevdev_1.13.3"
+depends=""
+
+build() {
+    mkdir -p build
+    meson setup build \
+        --cross-file="${SYSROOT}/../scripts/kratos-cross-file.txt" \
+        --prefix=/usr \
+        --libdir=lib \
+        -Dtests=disabled \
+        -Ddocumentation=disabled
+    ninja -C build
+}
+
+package() {
+    DESTDIR="${PKGDIR}" ninja -C build install
+}

@@ -1,0 +1,21 @@
+name=xf86-video-fbdev
+version=0.5.0
+release=1
+arch=x86_64
+license="MIT"
+description="X.org framebuffer video driver"
+source="https://xorg.freedesktop.org/releases/individual/driver/xf86-video-fbdev-0.5.0.tar.bz2"
+sha256="PLACEHOLDER_sha256_xf86-video-fbdev_0.5.0"
+depends="xorg-server"
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --build=x86_64-pc-linux-gnu \
+        --prefix=/usr
+    make
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}

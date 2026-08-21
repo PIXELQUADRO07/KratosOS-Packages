@@ -1,0 +1,23 @@
+name=xkeyboard-config
+version=2.43
+release=1
+arch=x86_64
+license="MIT"
+description="X keyboard layout descriptions"
+source="https://xorg.freedesktop.org/releases/individual/data/xkeyboard-config/xkeyboard-config-2.43.tar.xz"
+sha256="PLACEHOLDER_sha256_xkeyboard-config_2.43"
+depends="xorgproto"
+
+build() {
+    mkdir -p build
+    meson setup build \
+        --cross-file="${SYSROOT}/../scripts/kratos-cross-file.txt" \
+        --prefix=/usr \
+        -Dxkb-base=/usr/share/X11/xkb \
+        -Dcompat-rules=true
+    ninja -C build
+}
+
+package() {
+    DESTDIR="${PKGDIR}" ninja -C build install
+}

@@ -1,0 +1,26 @@
+name=libepoxy
+version=1.5.10
+release=1
+arch=x86_64
+license="MIT"
+description="Library for handling OpenGL function pointer management"
+source="https://github.com/anholt/libepoxy/releases/download/1.5.10/libepoxy-1.5.10.tar.xz"
+sha256="PLACEHOLDER_sha256_libepoxy_1.5.10"
+depends="mesa,libX11"
+
+build() {
+    mkdir -p build
+    meson setup build \
+        --cross-file="${SYSROOT}/../scripts/kratos-cross-file.txt" \
+        --prefix=/usr \
+        --libdir=lib \
+        -Dx11=true \
+        -Degl=yes \
+        -Dglx=yes \
+        -Ddocs=false
+    ninja -C build
+}
+
+package() {
+    DESTDIR="${PKGDIR}" ninja -C build install
+}

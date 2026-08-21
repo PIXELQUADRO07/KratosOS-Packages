@@ -1,0 +1,22 @@
+name=libXmu
+version=1.2.1
+release=1
+arch=x86_64
+license="MIT"
+description="X Miscellaneous Utility library"
+source="https://xorg.freedesktop.org/releases/individual/lib/libXmu-1.2.1.tar.xz"
+sha256="PLACEHOLDER_sha256_libXmu_1.2.1"
+depends="libXt,libXext,libX11,xorgproto"
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --build=x86_64-pc-linux-gnu \
+        --prefix=/usr \
+        --disable-static
+    make
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}

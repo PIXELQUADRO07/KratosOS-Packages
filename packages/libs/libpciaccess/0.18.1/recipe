@@ -1,0 +1,22 @@
+name=libpciaccess
+version=0.18.1
+release=1
+arch=x86_64
+license="MIT"
+description="Generic PCI access library"
+source="https://xorg.freedesktop.org/releases/individual/lib/libpciaccess-0.18.1.tar.xz"
+sha256="PLACEHOLDER_sha256_libpciaccess_0.18.1"
+depends="zlib"
+
+build() {
+    mkdir -p build
+    meson setup build \
+        --cross-file="${SYSROOT}/../scripts/kratos-cross-file.txt" \
+        --prefix=/usr \
+        --libdir=lib
+    ninja -C build
+}
+
+package() {
+    DESTDIR="${PKGDIR}" ninja -C build install
+}

@@ -1,0 +1,27 @@
+name=libinput
+version=1.27.1
+release=1
+arch=x86_64
+license="MIT"
+description="Input device management and event handling library"
+source="https://gitlab.freedesktop.org/libinput/libinput/-/archive/1.27.1/libinput-1.27.1.tar.gz"
+sha256="PLACEHOLDER_sha256_libinput_1.27.1"
+depends="libevdev,mtdev,libwacom"
+
+build() {
+    mkdir -p build
+    meson setup build \
+        --cross-file="${SYSROOT}/../scripts/kratos-cross-file.txt" \
+        --prefix=/usr \
+        --libdir=lib \
+        -Ddocumentation=false \
+        -Ddebug-gui=false \
+        -Dtests=false \
+        -Dlibwacom=false \
+        -Dudev-dir=/usr/lib/udev
+    ninja -C build
+}
+
+package() {
+    DESTDIR="${PKGDIR}" ninja -C build install
+}

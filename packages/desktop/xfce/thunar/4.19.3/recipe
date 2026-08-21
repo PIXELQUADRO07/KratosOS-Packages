@@ -1,0 +1,25 @@
+name=thunar
+version=4.19.3
+release=1
+arch=x86_64
+license="GPL-2.0-or-later"
+description="Modern, fast and easy-to-use file manager for Xfce"
+source="https://archive.xfce.org/src/xfce/thunar/4.19/thunar-4.19.3.tar.bz2"
+sha256="PLACEHOLDER_sha256_thunar_4.19.3"
+depends="libxfce4util,libxfce4ui,xfconf,exo,glib,gtk+3,libnotify"
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --build=x86_64-pc-linux-gnu \
+        --prefix=/usr \
+        --sysconfdir=/etc \
+        --disable-static \
+        --disable-introspection \
+        --disable-pcre2
+    make
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}

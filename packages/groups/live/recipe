@@ -1,0 +1,17 @@
+name=live
+version=1.0.0
+release=1
+arch=x86_64
+license="GPL-3.0"
+description="Live ISO environment with XFCE and Calamares Installer"
+source=""
+sha256=""
+depends="desktop,calamares"
+
+build() {
+    :
+}
+
+package() {
+    :
+}

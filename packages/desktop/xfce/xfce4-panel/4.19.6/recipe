@@ -1,0 +1,25 @@
+name=xfce4-panel
+version=4.19.6
+release=1
+arch=x86_64
+license="GPL-2.0-or-later"
+description="Panel for the Xfce desktop environment"
+source="https://archive.xfce.org/src/xfce/xfce4-panel/4.19/xfce4-panel-4.19.6.tar.bz2"
+sha256="PLACEHOLDER_sha256_xfce4-panel_4.19.6"
+depends="libxfce4util,libxfce4ui,xfconf,garcon,exo,libwnck3,gtk+3"
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --build=x86_64-pc-linux-gnu \
+        --prefix=/usr \
+        --sysconfdir=/etc \
+        --disable-static \
+        --disable-introspection \
+        --disable-vala
+    make
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}

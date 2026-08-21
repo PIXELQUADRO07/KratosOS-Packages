@@ -1,0 +1,24 @@
+name=xfce4-session
+version=4.19.3
+release=1
+arch=x86_64
+license="GPL-2.0-or-later"
+description="Session manager for the Xfce desktop environment"
+source="https://archive.xfce.org/src/xfce/xfce4-session/4.19/xfce4-session-4.19.3.tar.bz2"
+sha256="PLACEHOLDER_sha256_xfce4-session_4.19.3"
+depends="libxfce4util,libxfce4ui,xfconf,libSM,libICE,libwnck3,polkit"
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --build=x86_64-pc-linux-gnu \
+        --prefix=/usr \
+        --sysconfdir=/etc \
+        --disable-static \
+        --disable-systemd
+    make
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}

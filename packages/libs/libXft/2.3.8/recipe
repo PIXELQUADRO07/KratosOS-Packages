@@ -1,0 +1,22 @@
+name=libXft
+version=2.3.8
+release=1
+arch=x86_64
+license="MIT"
+description="FreeType-based font drawing library for X"
+source="https://xorg.freedesktop.org/releases/individual/lib/libXft-2.3.8.tar.xz"
+sha256="PLACEHOLDER_sha256_libXft_2.3.8"
+depends="libX11,libXrender,freetype,fontconfig"
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --build=x86_64-pc-linux-gnu \
+        --prefix=/usr \
+        --disable-static
+    make
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}

@@ -1,0 +1,19 @@
+name=shared-mime-info
+version=1.10
+release=1
+arch=x86_64
+license="GPL-2.0-or-later"
+description="Freedesktop.org shared MIME database spec"
+source="https://freedesktop.org/software/shared-mime-info/shared-mime-info-1.10.tar.xz"
+sha256="c6591bac4a61358056444f06aa3f8883fc915c6130a09a98076d33306857946d"
+depends="glibc,glib,libxml2"
+
+build() {
+    export PATH="${SYSROOT}/usr/bin:${PATH}"
+    ./configure --host="${TARGET}" --build=x86_64-pc-linux-gnu --prefix=/usr --disable-update-mimedb
+    make
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}

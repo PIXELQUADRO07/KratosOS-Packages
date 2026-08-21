@@ -1,0 +1,23 @@
+name=libXfont2
+version=2.0.7
+release=1
+arch=x86_64
+license="MIT"
+description="X font handling library (version 2)"
+source="https://xorg.freedesktop.org/releases/individual/lib/libXfont2-2.0.7.tar.xz"
+sha256="PLACEHOLDER_sha256_libXfont2_2.0.7"
+depends="freetype,libfontenc,xtrans"
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --build=x86_64-pc-linux-gnu \
+        --prefix=/usr \
+        --disable-static \
+        --disable-devel-docs
+    make
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}

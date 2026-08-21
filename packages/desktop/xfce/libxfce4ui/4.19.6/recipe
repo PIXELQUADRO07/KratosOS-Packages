@@ -1,0 +1,28 @@
+name=libxfce4ui
+version=4.19.6
+release=1
+arch=x86_64
+license="LGPL-2.0-or-later"
+description="Widget library for Xfce"
+source="https://archive.xfce.org/src/xfce/libxfce4ui/4.19/libxfce4ui-4.19.6.tar.bz2"
+sha256="PLACEHOLDER_sha256_libxfce4ui_4.19.6"
+depends="libxfce4util,xfconf,gtk+3,libX11,libSM,libICE,startup-notification"
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --build=x86_64-pc-linux-gnu \
+        --prefix=/usr \
+        --sysconfdir=/etc \
+        --disable-static \
+        --disable-introspection \
+        --disable-vala \
+        --disable-gladeui2 \
+        --enable-x11 \
+        --disable-wayland
+    make
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}

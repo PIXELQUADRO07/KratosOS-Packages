@@ -1,0 +1,23 @@
+name=libICE
+version=1.1.1
+release=1
+arch=x86_64
+license="MIT"
+description="Inter-Client Exchange library (X11)"
+source="https://xorg.freedesktop.org/releases/individual/lib/libICE-1.1.1.tar.xz"
+sha256="PLACEHOLDER_sha256_libICE_1.1.1"
+depends="xorgproto,libxcrypt"
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --build=x86_64-pc-linux-gnu \
+        --prefix=/usr \
+        --sysconfdir=/etc \
+        --disable-static
+    make
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}

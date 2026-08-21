@@ -1,0 +1,24 @@
+name=kpmcore
+version=24.12.3
+release=1
+arch=x86_64
+license="GPL-3.0-or-later"
+description="KDE Partition Manager core library"
+source="https://download.kde.org/stable/release-service/24.12.3/src/kpmcore-24.12.3.tar.xz"
+sha256="PLACEHOLDER_sha256_kpmcore_24.12.3"
+depends="util-linux,e2fsprogs,dosfstools,parted"
+
+build() {
+    mkdir -p build
+    cd build
+    cmake .. \
+        -DCMAKE_INSTALL_PREFIX=/usr \
+        -DCMAKE_BUILD_TYPE=Release \
+        -DBUILD_TESTING=OFF
+    make -j$(nproc)
+}
+
+package() {
+    cd build
+    make DESTDIR="${PKGDIR}" install
+}

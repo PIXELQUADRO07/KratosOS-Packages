@@ -1,0 +1,18 @@
+name=libXi
+version=1.8.1
+release=1
+arch=x86_64
+license="MIT"
+description="X11 Input extension library"
+source="https://www.x.org/pub/individual/lib/libXi-1.8.1.tar.xz"
+sha256="89bfc0e814f288f784202e6e5f9b362b788ccecdeb078670145eacd8749656a7"
+depends="glibc,libX11,libXext,xorgproto"
+
+build() {
+    ./configure --host="${TARGET}" --prefix=/usr --disable-static
+    make
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}

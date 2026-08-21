@@ -1,0 +1,24 @@
+name=garcon
+version=4.19.2
+release=1
+arch=x86_64
+license="LGPL-2.0-or-later"
+description="Freedesktop.org compliant menu implementation for Xfce"
+source="https://archive.xfce.org/src/xfce/garcon/4.19/garcon-4.19.2.tar.bz2"
+sha256="PLACEHOLDER_sha256_garcon_4.19.2"
+depends="libxfce4util,libxfce4ui,glib,gtk+3"
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --build=x86_64-pc-linux-gnu \
+        --prefix=/usr \
+        --sysconfdir=/etc \
+        --disable-static \
+        --disable-introspection
+    make
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}
