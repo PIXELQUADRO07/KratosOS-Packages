@@ -1,0 +1,25 @@
+name=xfdesktop4
+version=4.19.5
+release=1
+arch=x86_64
+license="GPL-2.0-or-later"
+description="Desktop manager for the Xfce desktop environment"
+source="https://archive.xfce.org/src/xfce/xfdesktop/4.19/xfdesktop-4.19.5.tar.bz2"
+sha256="PLACEHOLDER_sha256_xfdesktop4_4.19.5"
+depends="libxfce4util,libxfce4ui,xfconf,garcon,exo,libwnck3,libnotify,thunar"
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --build=x86_64-pc-linux-gnu \
+        --prefix=/usr \
+        --sysconfdir=/etc \
+        --disable-static \
+        --enable-file-icons \
+        --enable-desktop-menu
+    make
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}

@@ -1,0 +1,22 @@
+name=libfontenc
+version=1.1.8
+release=1
+arch=x86_64
+license="MIT"
+description="X font encoding library"
+source="https://xorg.freedesktop.org/releases/individual/lib/libfontenc-1.1.8.tar.xz"
+sha256="PLACEHOLDER_sha256_libfontenc_1.1.8"
+depends="zlib,xorgproto"
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --build=x86_64-pc-linux-gnu \
+        --prefix=/usr \
+        --disable-static
+    make
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}

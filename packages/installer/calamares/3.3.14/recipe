@@ -1,0 +1,28 @@
+name=calamares
+version=3.3.14
+release=1
+arch=x86_64
+license="GPL-3.0-or-later"
+description="Distribution-independent installer framework"
+source="https://github.com/calamares/calamares/releases/download/v3.3.14/calamares-3.3.14.tar.gz"
+sha256="PLACEHOLDER_sha256_calamares_3.3.14"
+depends="yaml-cpp,boost,kpmcore,polkit,libpwquality,parted"
+
+build() {
+    mkdir -p build
+    cd build
+    cmake .. \
+        -DCMAKE_INSTALL_PREFIX=/usr \
+        -DCMAKE_BUILD_TYPE=Release \
+        -DCMAKE_INSTALL_SYSCONFDIR=/etc \
+        -DWITH_QT6=OFF \
+        -DWITH_QT5=ON \
+        -DBUILD_TESTING=OFF \
+        -DWEBVIEW_FORCE_WEBKIT=OFF
+    make -j$(nproc)
+}
+
+package() {
+    cd build
+    make DESTDIR="${PKGDIR}" install
+}

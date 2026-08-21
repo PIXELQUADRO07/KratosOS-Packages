@@ -1,0 +1,26 @@
+name=yaml-cpp
+version=0.8.0
+release=1
+arch=x86_64
+license="MIT"
+description="YAML parser and emitter in C++"
+source="https://github.com/jbeder/yaml-cpp/archive/refs/tags/0.8.0.tar.gz"
+sha256="PLACEHOLDER_sha256_yaml_cpp_0.8.0"
+depends=""
+
+build() {
+    mkdir -p build
+    cd build
+    cmake .. \
+        -DCMAKE_INSTALL_PREFIX=/usr \
+        -DCMAKE_BUILD_TYPE=Release \
+        -DYAML_BUILD_SHARED_LIBS=ON \
+        -DYAML_CPP_BUILD_TESTS=OFF \
+        -DYAML_CPP_BUILD_TOOLS=OFF
+    make -j$(nproc)
+}
+
+package() {
+    cd build
+    make DESTDIR="${PKGDIR}" install
+}

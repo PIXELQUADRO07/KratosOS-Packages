@@ -1,0 +1,40 @@
+name=xorg-server
+version=21.1.15
+release=1
+arch=x86_64
+license="MIT"
+description="X.Org X server"
+source="https://xorg.freedesktop.org/releases/individual/xserver/xorg-server-21.1.15.tar.xz"
+sha256="PLACEHOLDER_sha256_xorg-server_21.1.15"
+depends="libX11,libXext,libXfixes,libXfont2,libXrender,libpciaccess,libdrm,mesa,pixman,fontconfig,freetype,openssl,libxcb,libxkbcommon,xkeyboard-config"
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --build=x86_64-pc-linux-gnu \
+        --prefix=/usr \
+        --sysconfdir=/etc \
+        --localstatedir=/var \
+        --runstatedir=/run \
+        --enable-xorg \
+        --enable-xvfb \
+        --enable-xnest \
+        --disable-xwin \
+        --enable-glamor \
+        --enable-glx \
+        --disable-dri \
+        --enable-dri2 \
+        --enable-dri3 \
+        --enable-present \
+        --enable-composite \
+        --enable-xf86vidmode \
+        --with-xkb-path=/usr/share/X11/xkb \
+        --with-xkb-output=/var/lib/xkb \
+        --with-fontrootdir=/usr/share/fonts
+    make
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+    install -dm755 "${PKGDIR}/var/lib/xkb"
+}

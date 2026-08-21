@@ -1,0 +1,22 @@
+name=mtdev
+version=1.1.7
+release=1
+arch=x86_64
+license="MIT"
+description="Multitouch Protocol Translation Library"
+source="https://bitmath.org/code/mtdev/mtdev-1.1.7.tar.bz2"
+sha256="PLACEHOLDER_sha256_mtdev_1.1.7"
+depends=""
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --build=x86_64-pc-linux-gnu \
+        --prefix=/usr \
+        --disable-static
+    make
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}

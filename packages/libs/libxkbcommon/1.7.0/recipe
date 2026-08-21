@@ -1,0 +1,26 @@
+name=libxkbcommon
+version=1.7.0
+release=1
+arch=x86_64
+license="MIT"
+description="Keyboard handling library (XKB)"
+source="https://xkbcommon.org/download/libxkbcommon-1.7.0.tar.xz"
+sha256="PLACEHOLDER_sha256_libxkbcommon_1.7.0"
+depends="libxcb,xkeyboard-config"
+
+build() {
+    mkdir -p build
+    meson setup build \
+        --cross-file="${SYSROOT}/../scripts/kratos-cross-file.txt" \
+        --prefix=/usr \
+        --libdir=lib \
+        -Denable-docs=false \
+        -Denable-x11=true \
+        -Denable-wayland=false \
+        -Dxkb-config-root=/usr/share/X11/xkb
+    ninja -C build
+}
+
+package() {
+    DESTDIR="${PKGDIR}" ninja -C build install
+}

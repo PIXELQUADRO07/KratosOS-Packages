@@ -1,0 +1,19 @@
+name=pango
+version=1.42.4
+release=1
+arch=x86_64
+license="LGPL-2.1-or-later"
+description="Library for laying out and rendering of text"
+source="https://download.gnome.org/sources/pango/1.42/pango-1.42.4.tar.xz"
+sha256="1d2b74cd63e8bd41961f2f8d952355aa0f9be6002b52c8aa7699d9f5da597c9d"
+depends="glibc,glib,fribidi,harfbuzz,cairo,fontconfig,freetype"
+
+build() {
+    export PATH="${SYSROOT}/usr/bin:${PATH}"
+    ./configure --host="${TARGET}" --build=x86_64-pc-linux-gnu --prefix=/usr --disable-static --disable-introspection
+    make
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}

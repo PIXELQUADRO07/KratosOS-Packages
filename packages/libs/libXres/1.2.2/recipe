@@ -1,0 +1,22 @@
+name=libXres
+version=1.2.2
+release=1
+arch=x86_64
+license="MIT"
+description="X11 Resource extension library"
+source="https://xorg.freedesktop.org/releases/individual/lib/libXres-1.2.2.tar.xz"
+sha256="PLACEHOLDER_sha256_libXres_1.2.2"
+depends="libX11,libXext,xorgproto"
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --build=x86_64-pc-linux-gnu \
+        --prefix=/usr \
+        --disable-static
+    make
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}

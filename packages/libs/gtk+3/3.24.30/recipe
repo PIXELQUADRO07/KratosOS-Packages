@@ -1,0 +1,29 @@
+name=gtk+
+version=3.24.30
+release=1
+arch=x86_64
+license="LGPL-2.1-or-later"
+description="Multi-platform toolkit for creating graphical user interfaces"
+source="https://download.gnome.org/sources/gtk+/3.24/gtk+-3.24.30.tar.xz"
+sha256="ba7510745e10c00661f7dbdc4bc7f1012287e2a450ed9676be869505f6e6761c"
+depends="glibc,glib,atk,gdk-pixbuf,pango,cairo,libX11,libXext,libXcursor,libXfixes,libXi,libXrandr,libXcomposite,libXdamage"
+
+build() {
+    export PATH="${SYSROOT}/usr/bin:${PATH}"
+    ./configure \
+        --host="${TARGET}" \
+        --build=x86_64-pc-linux-gnu \
+        --prefix=/usr \
+        --sysconfdir=/etc \
+        --localstatedir=/var \
+        --enable-x11-backend \
+        --disable-wayland-backend \
+        --disable-introspection \
+        --disable-papi \
+        --disable-cloudprint
+    make
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}

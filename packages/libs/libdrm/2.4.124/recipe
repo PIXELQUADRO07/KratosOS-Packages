@@ -1,0 +1,30 @@
+name=libdrm
+version=2.4.124
+release=1
+arch=x86_64
+license="MIT"
+description="Direct Rendering Manager runtime library"
+source="https://dri.freedesktop.org/libdrm/libdrm-2.4.124.tar.xz"
+sha256="PLACEHOLDER_sha256_libdrm_2.4.124"
+depends="libpciaccess"
+
+build() {
+    mkdir -p build
+    meson setup build \
+        --cross-file="${SYSROOT}/../scripts/kratos-cross-file.txt" \
+        --prefix=/usr \
+        --libdir=lib \
+        -Dudev=false \
+        -Dtests=false \
+        -Dinstall-test-programs=false \
+        -Damdgpu=enabled \
+        -Dradeon=enabled \
+        -Dintel=enabled \
+        -Dvmwgfx=enabled \
+        -Dnouveau=enabled
+    ninja -C build
+}
+
+package() {
+    DESTDIR="${PKGDIR}" ninja -C build install
+}

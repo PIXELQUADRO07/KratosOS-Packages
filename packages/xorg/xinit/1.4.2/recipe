@@ -1,0 +1,23 @@
+name=xinit
+version=1.4.2
+release=1
+arch=x86_64
+license="MIT"
+description="X.Org init script and xinit utility"
+source="https://xorg.freedesktop.org/releases/individual/app/xinit-1.4.2.tar.xz"
+sha256="PLACEHOLDER_sha256_xinit_1.4.2"
+depends="xorg-server,libX11"
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --build=x86_64-pc-linux-gnu \
+        --prefix=/usr \
+        --with-xinitdir=/etc/X11/xinit \
+        --with-xserverpath=/usr/bin/Xorg
+    make
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}

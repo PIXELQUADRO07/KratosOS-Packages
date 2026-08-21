@@ -1,0 +1,19 @@
+name=atk
+version=2.28.1
+release=1
+arch=x86_64
+license="LGPL-2.1-or-later"
+description="Accessibility Toolkit"
+source="https://download.gnome.org/sources/atk/2.28/atk-2.28.1.tar.xz"
+sha256="cd3a1ea6ecc268a2497f0cd018e970860de24a6d42086919d6bf6c8e8d53f4fc"
+depends="glibc,glib"
+
+build() {
+    export PATH="${SYSROOT}/usr/bin:${PATH}"
+    ./configure --host="${TARGET}" --build=x86_64-pc-linux-gnu --prefix=/usr --disable-static --disable-introspection
+    make
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}

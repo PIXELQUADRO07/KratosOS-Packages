@@ -1,0 +1,23 @@
+name=tiff
+version=4.6.0
+release=1
+arch=x86_64
+license="libtiff"
+description="Library for reading and writing TIFF files"
+source="https://download.osgeo.org/libtiff/tiff-4.6.0.tar.gz"
+sha256="88b3979e6d5c7e32b50d7ec72fb15af724f6ab2cbf7e10880c360a77e4b5d99a"
+depends="glibc,libjpeg-turbo,zlib"
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --prefix=/usr \
+        --disable-static \
+        --with-jpeg-lib-dir="${SYSROOT}/usr/lib" \
+        --with-jpeg-include-dir="${SYSROOT}/usr/include"
+    make
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}

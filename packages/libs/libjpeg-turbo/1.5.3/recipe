@@ -1,0 +1,23 @@
+name=libjpeg-turbo
+version=1.5.3
+release=1
+arch=x86_64
+license="BSD-3-Clause"
+description="JPEG image codec that uses SIMD instructions"
+source="https://downloads.sourceforge.net/libjpeg-turbo/libjpeg-turbo-1.5.3.tar.gz"
+sha256="b24890e2bb46e12e72a79f7e965f409f4e16466d00e1dd15d93d73ee6b592523"
+depends="glibc"
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --prefix=/usr \
+        --disable-static \
+        --with-jpeg8 \
+        --without-simd
+    make
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}

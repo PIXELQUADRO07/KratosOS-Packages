@@ -1,0 +1,27 @@
+name=xfwm4
+version=4.19.1
+release=1
+arch=x86_64
+license="GPL-2.0-or-later"
+description="Window manager for the Xfce desktop environment"
+source="https://archive.xfce.org/src/xfce/xfwm4/4.19/xfwm4-4.19.1.tar.bz2"
+sha256="PLACEHOLDER_sha256_xfwm4_4.19.1"
+depends="libxfce4util,libxfce4ui,xfconf,libwnck3,libepoxy,libXrender,libXrandr,libXcomposite,libXdamage,libXfixes"
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --build=x86_64-pc-linux-gnu \
+        --prefix=/usr \
+        --sysconfdir=/etc \
+        --disable-static \
+        --enable-compositor \
+        --enable-xsync \
+        --enable-render \
+        --enable-randr
+    make
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}

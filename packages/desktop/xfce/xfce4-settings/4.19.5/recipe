@@ -1,0 +1,26 @@
+name=xfce4-settings
+version=4.19.5
+release=1
+arch=x86_64
+license="GPL-2.0-or-later"
+description="Settings manager for Xfce"
+source="https://archive.xfce.org/src/xfce/xfce4-settings/4.19/xfce4-settings-4.19.5.tar.bz2"
+sha256="PLACEHOLDER_sha256_xfce4-settings_4.19.5"
+depends="libxfce4util,libxfce4ui,xfconf,garcon,exo,libnotify,libX11,libXrandr,libXcursor,libXi"
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --build=x86_64-pc-linux-gnu \
+        --prefix=/usr \
+        --sysconfdir=/etc \
+        --disable-static \
+        --enable-sound-settings=no \
+        --enable-xcursor \
+        --enable-xrandr
+    make
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}

@@ -1,0 +1,18 @@
+name=libXcursor
+version=1.2.2
+release=1
+arch=x86_64
+license="MIT"
+description="X11 cursor management library"
+source="https://www.x.org/pub/individual/lib/libXcursor-1.2.2.tar.xz"
+sha256="53d071bd2cc56e517a30998d5e685c8a74556ddada43c6985d14da9a023a88ee"
+depends="glibc,libX11,libXrender,libXfixes"
+
+build() {
+    ./configure --host="${TARGET}" --prefix=/usr --disable-static
+    make
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}

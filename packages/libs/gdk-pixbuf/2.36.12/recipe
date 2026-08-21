@@ -1,0 +1,20 @@
+name=gdk-pixbuf
+version=2.36.12
+release=1
+arch=x86_64
+license="LGPL-2.1-or-later"
+description="Image loading library used by GTK+"
+source="https://download.gnome.org/sources/gdk-pixbuf/2.36/gdk-pixbuf-2.36.12.tar.xz"
+sha256="fff85cf48223ab60e3c3c8318e2087131b590fd6f1737e42cb3759a3b427a334"
+depends="glibc,glib,libpng,libjpeg-turbo,tiff,libX11"
+
+build() {
+    export PATH="${SYSROOT}/usr/bin:${PATH}"
+    ./configure --host="${TARGET}" --build=x86_64-pc-linux-gnu --prefix=/usr --disable-static --disable-introspection --without-libjasper --with-x11 --disable-thumbnailer \
+        SHARED_MIME_INFO_CFLAGS=" " SHARED_MIME_INFO_LIBS=" "
+    make -C gdk-pixbuf
+}
+
+package() {
+    make -C gdk-pixbuf DESTDIR="${PKGDIR}" install
+}

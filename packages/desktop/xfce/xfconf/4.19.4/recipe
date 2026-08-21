@@ -1,0 +1,25 @@
+name=xfconf
+version=4.19.4
+release=1
+arch=x86_64
+license="GPL-2.0-or-later"
+description="Configuration storage system for Xfce"
+source="https://archive.xfce.org/src/xfce/xfconf/4.19/xfconf-4.19.4.tar.bz2"
+sha256="PLACEHOLDER_sha256_xfconf_4.19.4"
+depends="libxfce4util,dbus,glib"
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --build=x86_64-pc-linux-gnu \
+        --prefix=/usr \
+        --sysconfdir=/etc \
+        --disable-static \
+        --disable-introspection \
+        --disable-vala
+    make
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}

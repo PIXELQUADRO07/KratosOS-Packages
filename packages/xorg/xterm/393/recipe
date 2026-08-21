@@ -1,0 +1,25 @@
+name=xterm
+version=393
+release=1
+arch=x86_64
+license="MIT"
+description="X terminal emulator"
+source="https://invisible-mirror.net/archives/xterm/xterm-393.tgz"
+sha256="PLACEHOLDER_sha256_xterm_393"
+depends="libXft,libXt,libXmu,ncurses"
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --build=x86_64-pc-linux-gnu \
+        --prefix=/usr \
+        --sysconfdir=/etc \
+        --enable-256-color \
+        --enable-wide-chars \
+        --with-app-defaults=/etc/X11/app-defaults
+    make
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}

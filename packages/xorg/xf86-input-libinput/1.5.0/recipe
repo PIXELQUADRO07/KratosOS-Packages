@@ -1,0 +1,21 @@
+name=xf86-input-libinput
+version=1.5.0
+release=1
+arch=x86_64
+license="MIT"
+description="X.org libinput input driver (mouse, keyboard, touchpad)"
+source="https://xorg.freedesktop.org/releases/individual/driver/xf86-input-libinput-1.5.0.tar.xz"
+sha256="PLACEHOLDER_sha256_xf86-input-libinput_1.5.0"
+depends="xorg-server,libinput"
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --build=x86_64-pc-linux-gnu \
+        --prefix=/usr
+    make
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}

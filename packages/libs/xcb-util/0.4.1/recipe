@@ -1,0 +1,22 @@
+name=xcb-util
+version=0.4.1
+release=1
+arch=x86_64
+license="MIT"
+description="XCB utility libraries"
+source="https://xcb.freedesktop.org/dist/xcb-util-0.4.1.tar.xz"
+sha256="PLACEHOLDER_sha256_xcb_util_0.4.1"
+depends="libxcb"
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --build=x86_64-pc-linux-gnu \
+        --prefix=/usr \
+        --disable-static
+    make
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}
