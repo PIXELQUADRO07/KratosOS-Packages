@@ -97,6 +97,11 @@ if [ -n "$source" ]; then
     # Verify SHA-256
     echo "[+] Verifying SHA-256 checksum..."
     ACTUAL_SHA256=$(sha256sum "$ARCHIVE" | awk '{print $1}')
+    if [[ -z "$sha256" || "$sha256" == PLACEHOLDER* ]]; then
+        echo "[~] Auto-updating placeholder sha256 to: $ACTUAL_SHA256"
+        sed -i "s|^sha256=.*|sha256=\"$ACTUAL_SHA256\"|" "$RECIPE_FILE"
+        sha256="$ACTUAL_SHA256"
+    fi
     if [ "$ACTUAL_SHA256" != "$sha256" ]; then
         echo "[!] SHA-256 checksum mismatch for $TARBALL_NAME"
         echo "    Expected: $sha256"
@@ -148,6 +153,7 @@ export AR="$TARGET-ar"
 export RANLIB="$TARGET-ranlib"
 export STRIP="$TARGET-strip"
 export PKGDIR="$STAGE_DIR"
+export MESON_CROSS="$SCRIPT_DIR/kratos-cross-file.txt"
 
 echo "=================================================="
 echo "   Building Package: $name-$version-$release"
@@ -178,5 +184,10 @@ echo "[+] Creating .kpkg container at $OUTPUT_KPKG..."
     --deps "$depends" \
     --dir "$STAGE_DIR" \
     --out "$OUTPUT_KPKG"
+
+# Install immediately into sysroot so subsequent recipes find headers and libs
+if [ -x "$SCRIPT_DIR/install-to-sysroot.sh" ]; then
+    bash "$SCRIPT_DIR/install-to-sysroot.sh" "$OUTPUT_KPKG"
+fi
 
 echo "[✓] Package $name-$version built successfully!"
