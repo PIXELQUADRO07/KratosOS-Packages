@@ -132,6 +132,19 @@
       "installed_size": 2310070
     },
     {
+      "name": "dejavu-fonts",
+      "version": "2.37",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "DejaVu TrueType fonts for X11, Fontconfig and XFCE",
+      "license": "Bitstream Vera, Public Domain",
+      "sha256": "ac631f949be7c15c5f2eacda231e3cd6e685274afbf49b8a6adb9f7c3eed7ca1",
+      "url": "packages/dejavu-fonts-2.37-1-x86_64.kpkg",
+      "depends": "fontconfig,freetype",
+      "size": 10847232,
+      "installed_size": 20417216
+    },
+    {
       "name": "development",
       "version": "1.0",
       "release": 1,
