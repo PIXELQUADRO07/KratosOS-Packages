@@ -1,0 +1,20 @@
+name=dejavu-fonts
+version=2.37
+release=1
+arch=x86_64
+license="Bitstream Vera, Public Domain"
+description="DejaVu TrueType fonts for X11, Fontconfig and XFCE"
+source="https://github.com/dejavu-fonts/dejavu-fonts/releases/download/version_2_37/dejavu-fonts-ttf-2.37.tar.bz2"
+sha256="fa9ca4d13871dd122f61258a80d01751d603b4d3ee14095d65453b4e846e17d7"
+depends="fontconfig,freetype"
+
+build() {
+    :
+}
+
+package() {
+    install -dm755 "${PKGDIR}/usr/share/fonts/dejavu"
+    install -dm755 "${PKGDIR}/usr/share/fonts/TTF"
+    install -m644 ttf/*.ttf "${PKGDIR}/usr/share/fonts/dejavu/"
+    install -m644 ttf/*.ttf "${PKGDIR}/usr/share/fonts/TTF/"
+}
