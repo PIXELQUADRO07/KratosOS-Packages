@@ -1,0 +1,21 @@
+name=xkbcomp
+version=1.8.10
+release=1
+arch=x86_64
+license="MIT"
+description="XKB keymap compiler — required by Xorg to compile keyboard layouts at startup"
+source="https://xorg.freedesktop.org/releases/individual/app/xkbcomp-1.8.10.tar.xz"
+sha256="PLACEHOLDER"
+depends="libxkbfile,libX11"
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --build=x86_64-pc-linux-gnu \
+        --prefix=/usr
+    make
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}
