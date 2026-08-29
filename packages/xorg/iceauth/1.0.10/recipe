@@ -1,0 +1,21 @@
+name=iceauth
+version=1.0.10
+release=1
+arch=x86_64
+license="MIT"
+description="ICE authority file utility"
+source="https://www.x.org/pub/individual/app/iceauth-1.0.10.tar.xz"
+sha256="3deefb7da26af9dc799b5628d929d91c9af68c78575639944db3b955f29aa029"
+depends="libICE"
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --build=x86_64-pc-linux-gnu \
+        --prefix=/usr
+    make
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}

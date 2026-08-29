@@ -1,0 +1,23 @@
+name=libXxf86vm
+version=1.1.5
+release=1
+arch=x86_64
+license="MIT"
+description="X.Org XFree86-VidModeExtension library"
+source="https://xorg.freedesktop.org/releases/individual/lib/libXxf86vm-1.1.5.tar.xz"
+sha256="247fef48b3e0e7e67129e41f1e789e8d006ba47dba1c0cdce684b9b703f888e7"
+depends="libX11,libXext,xorgproto"
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --build=x86_64-pc-linux-gnu \
+        --prefix=/usr \
+        --disable-malloc0returnsnull \
+        --disable-static
+    make
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}

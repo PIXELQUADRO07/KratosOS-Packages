@@ -5,7 +5,7 @@ arch=x86_64
 license="LGPL-2.0-or-later"
 description="Widget library for Xfce"
 source="https://archive.xfce.org/src/xfce/libxfce4ui/4.19/libxfce4ui-4.19.6.tar.bz2"
-sha256="PLACEHOLDER_sha256_libxfce4ui_4.19.6"
+sha256="effe2c29408161beff4ae879f4591e7209c2bf5517c46545a1701337950afc7c"
 depends="libxfce4util,xfconf,gtk+3,libX11,libSM,libICE,startup-notification"
 
 build() {
@@ -24,5 +24,6 @@ build() {
 }
 
 package() {
+    mkdir -p "${PKGDIR}/usr/lib/pkgconfig"
     make DESTDIR="${PKGDIR}" install
 }

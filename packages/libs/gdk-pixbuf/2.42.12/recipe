@@ -1,0 +1,27 @@
+name=gdk-pixbuf
+version=2.42.12
+release=1
+arch=x86_64
+license="LGPL-2.0-or-later"
+description="Image loading library"
+source="https://download.gnome.org/sources/gdk-pixbuf/2.42/gdk-pixbuf-2.42.12.tar.xz"
+sha256="b9505b3445b9a7e48ced34760c3bcb73e966df3ac94c95a148cb669ab748e3c7"
+depends="glib,libpng,libjpeg-turbo,tiff"
+
+build() {
+    mkdir -p build
+    meson setup build \
+        --cross-file="${SYSROOT}/../scripts/kratos-cross-file.txt" \
+        --prefix=/usr \
+        --libdir=lib \
+        -Dintrospection=disabled \
+        -Dman=false \
+        -Dgtk_doc=false \
+        -Dinstalled_tests=false \
+        -Drelocatable=true
+    ninja -C build
+}
+
+package() {
+    DESTDIR="${PKGDIR}" ninja -C build install
+}

@@ -5,29 +5,27 @@ arch=x86_64
 license="GPL-2.0-or-later"
 description="D-Bus message bus system"
 source="https://dbus.freedesktop.org/releases/dbus/dbus-1.16.2.tar.xz"
-sha256="PLACEHOLDER_sha256_dbus_1.16.2"
+sha256="0ba2a1a4b16afe7bceb2c07e9ce99a8c2c3508e5dec290dbb643384bd6beb7e2"
 depends="expat,libxcrypt"
 
 build() {
-    ./configure \
-        --host="${TARGET}" \
-        --build=x86_64-pc-linux-gnu \
+    mkdir -p build
+    meson setup build \
+        --cross-file="${SYSROOT}/../scripts/kratos-cross-file.txt" \
         --prefix=/usr \
         --sysconfdir=/etc \
         --localstatedir=/var \
-        --runstatedir=/run \
-        --disable-static \
-        --disable-doxygen-docs \
-        --disable-xml-docs \
-        --disable-tests \
-        --with-console-auth-dir=/run/console \
-        --with-system-pid-file=/run/dbus/pid \
-        --with-system-socket=/run/dbus/system_bus_socket
-    make
+        -Druntime_dir=/run \
+        -Dsystem_socket=/run/dbus/system_bus_socket \
+        -Dsystem_pid_file=/run/dbus/pid \
+        -Dxml_docs=disabled \
+        -Ddoxygen_docs=disabled \
+        -Dmodular_tests=disabled \
+        -Dinstalled_tests=false
+    ninja -C build
 }
 
 package() {
-    make DESTDIR="${PKGDIR}" install
-    # Create system socket directory
+    DESTDIR="${PKGDIR}" ninja -C build install
     install -dm755 "${PKGDIR}/run/dbus"
 }

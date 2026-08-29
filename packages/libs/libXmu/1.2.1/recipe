@@ -5,7 +5,7 @@ arch=x86_64
 license="MIT"
 description="X Miscellaneous Utility library"
 source="https://xorg.freedesktop.org/releases/individual/lib/libXmu-1.2.1.tar.xz"
-sha256="PLACEHOLDER_sha256_libXmu_1.2.1"
+sha256="fcb27793248a39e5fcc5b9c4aec40cc0734b3ca76aac3d7d1c264e7f7e14e8b2"
 depends="libXt,libXext,libX11,xorgproto"
 
 build() {

@@ -1,0 +1,17 @@
+name=lz4
+version=1.10.0
+release=1
+arch=x86_64
+license="BSD-2-Clause"
+description="Extremely Fast Compression algorithm"
+source="https://github.com/lz4/lz4/archive/refs/tags/v1.10.0.tar.gz"
+sha256="537512904744b35e232912055ccf8ec66d768639ff3abe5788d90d792ec5f48b"
+depends=""
+
+build() {
+    make CC="${CC}" AR="${AR}"
+}
+
+package() {
+    make CC="${CC}" PREFIX=/usr DESTDIR="${PKGDIR}" install
+}

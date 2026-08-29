@@ -5,7 +5,7 @@ arch=x86_64
 license="LGPL-2.1-or-later"
 description="Desktop notification library"
 source="https://download.gnome.org/sources/libnotify/0.8/libnotify-0.8.3.tar.xz"
-sha256="PLACEHOLDER_sha256_libnotify_0.8.3"
+sha256="ee8f3ef946156ad3406fdf45feedbdcd932dbd211ab4f16f75eba4f36fb2f6c0"
 depends="glib,gtk+3,dbus"
 
 build() {

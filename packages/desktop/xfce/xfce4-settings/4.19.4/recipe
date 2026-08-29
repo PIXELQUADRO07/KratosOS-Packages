@@ -1,0 +1,29 @@
+name=xfce4-settings
+version=4.19.4
+release=1
+arch=x86_64
+license="GPL-2.0-or-later"
+description="Settings manager for Xfce"
+source="https://archive.xfce.org/src/xfce/xfce4-settings/4.19/xfce4-settings-4.19.4.tar.bz2"
+sha256="a18885b66d255dc7ea8e95b77bc6283ae3388adc280ba287079dcb2207dc23af"
+depends="libxfce4util,libxfce4ui,xfconf,garcon,exo,libnotify,libX11,libXrandr,libXcursor,libXi,libxfce4windowing"
+
+build() {
+    export CFLAGS="${CFLAGS} -I${SYSROOT}/usr/include/xorg"
+    ./configure \
+        --host="${TARGET}" \
+        --build=x86_64-pc-linux-gnu \
+        --prefix=/usr \
+        --sysconfdir=/etc \
+        --disable-static \
+        --enable-sound-settings=no \
+        --enable-xcursor \
+        --enable-xrandr \
+        --enable-x11 \
+        --disable-wayland
+    make
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}

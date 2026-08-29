@@ -5,7 +5,7 @@ arch=x86_64
 license="GPL-2.0-or-later"
 description="Desktop manager for the Xfce desktop environment"
 source="https://archive.xfce.org/src/xfce/xfdesktop/4.19/xfdesktop-4.19.5.tar.bz2"
-sha256="PLACEHOLDER_sha256_xfdesktop4_4.19.5"
+sha256="95e21be4a6ad802de80e8402b17704266a6f80b8cb9d97b6c7934f5cb4b2f472"
 depends="libxfce4util,libxfce4ui,xfconf,garcon,exo,libwnck3,libnotify,thunar"
 
 build() {

@@ -5,7 +5,7 @@ arch=x86_64
 license="MIT"
 description="X.Org init script and xinit utility"
 source="https://xorg.freedesktop.org/releases/individual/app/xinit-1.4.2.tar.xz"
-sha256="PLACEHOLDER_sha256_xinit_1.4.2"
+sha256="b7d8dc8d22ef9f15985a10b606ee4f2aad6828befa437359934647e88d331f23"
 depends="xorg-server,libX11"
 
 build() {

@@ -5,7 +5,7 @@ arch=x86_64
 license="MIT"
 description="X.org VESA video driver (generic fallback)"
 source="https://xorg.freedesktop.org/releases/individual/driver/xf86-video-vesa-2.6.0.tar.xz"
-sha256="PLACEHOLDER_sha256_xf86-video-vesa_2.6.0"
+sha256="10082771b1a8f659c60b3d9b70456a4b59948a75b3cade2dfa33b8b05e549bb1"
 depends="xorg-server"
 
 build() {

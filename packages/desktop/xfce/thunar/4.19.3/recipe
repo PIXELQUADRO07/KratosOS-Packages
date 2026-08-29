@@ -5,10 +5,11 @@ arch=x86_64
 license="GPL-2.0-or-later"
 description="Modern, fast and easy-to-use file manager for Xfce"
 source="https://archive.xfce.org/src/xfce/thunar/4.19/thunar-4.19.3.tar.bz2"
-sha256="PLACEHOLDER_sha256_thunar_4.19.3"
+sha256="9a7876352e8a54dd5a52c64affb54e7c8582e64dd569d9fe43af5835d9485b37"
 depends="libxfce4util,libxfce4ui,xfconf,exo,glib,gtk+3,libnotify"
 
 build() {
+    export CFLAGS="${CFLAGS} -include stdint.h"
     ./configure \
         --host="${TARGET}" \
         --build=x86_64-pc-linux-gnu \

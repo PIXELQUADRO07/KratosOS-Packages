@@ -1,0 +1,29 @@
+name=vte3
+version=0.58.3
+release=1
+arch=x86_64
+license="LGPL-3.0-or-later"
+description="Virtual Terminal Emulator widget for GTK"
+source="https://download.gnome.org/sources/vte/0.58/vte-0.58.3.tar.xz"
+sha256="22dcb54ac2ad1a56ab0a745e16ccfeb383f0b5860b5bfa1784561216f98d4975"
+depends="gtk+3,pcre2,fribidi,zlib"
+
+build() {
+    sed -i 's/static volatile gsize g_define_type_id__volatile = 0;/static size_t g_define_type_id__volatile = 0;/' src/vtetypebuiltins.cc.template
+    sed -i 's/&g_define_type_id__volatile/(size_t*)\&g_define_type_id__volatile/' src/vtetypebuiltins.cc.template
+    meson setup build \
+        --cross-file "${MESON_CROSS}" \
+        --prefix=/usr \
+        --libdir=lib \
+        -Dgir=false \
+        -Dvapi=false \
+        -Dgtk3=true \
+        -Dgtk4=false \
+        -Ddocs=false \
+        -Dgnutls=false
+    ninja -C build
+}
+
+package() {
+    DESTDIR="${PKGDIR}" ninja -C build install
+}

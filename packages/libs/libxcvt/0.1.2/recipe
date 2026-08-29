@@ -1,0 +1,22 @@
+name=libxcvt
+version=0.1.2
+release=1
+arch=x86_64
+license="MIT"
+description="VESA CVT standard timing modelines generator"
+source="https://xorg.freedesktop.org/releases/individual/lib/libxcvt-0.1.2.tar.xz"
+sha256="0561690544796e25cfbd71806ba1b0d797ffe464e9796411123e79450f71db38"
+depends=""
+
+build() {
+    mkdir -p build
+    meson setup build \
+        --cross-file="${SYSROOT}/../scripts/kratos-cross-file.txt" \
+        --prefix=/usr \
+        --libdir=lib
+    ninja -C build
+}
+
+package() {
+    DESTDIR="${PKGDIR}" ninja -C build install
+}

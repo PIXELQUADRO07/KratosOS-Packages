@@ -1,0 +1,23 @@
+name=shared-mime-info
+version=2.4
+release=1
+arch=x86_64
+license="GPL-2.0-or-later"
+description="Shared MIME info database"
+source="https://gitlab.freedesktop.org/xdg/shared-mime-info/-/archive/2.4/shared-mime-info-2.4.tar.gz"
+sha256="531291d0387eb94e16e775d7e73788d06d2b2fdd8cd2ac6b6b15287593b6a2de"
+depends="glib,libxml2"
+
+build() {
+    mkdir -p build
+    meson setup build \
+        --cross-file="${SYSROOT}/../scripts/kratos-cross-file.txt" \
+        --prefix=/usr \
+        -Dbuild-tests=false \
+        -Dupdate-mimedb=false
+    ninja -C build
+}
+
+package() {
+    DESTDIR="${PKGDIR}" ninja -C build install
+}

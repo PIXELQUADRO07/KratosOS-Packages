@@ -1,0 +1,28 @@
+name=libxfce4windowing
+version=4.19.10
+release=1
+arch=x86_64
+license="LGPL-2.0-or-later"
+description="Windowing concept abstraction library for Xfce"
+source="https://archive.xfce.org/src/xfce/libxfce4windowing/4.19/libxfce4windowing-4.19.10.tar.bz2"
+sha256="356a08b92a04b887fefa0675cba705dc2e7d337d37f0ee6f28a7e9a1491e62d5"
+depends="glib,gtk+3,libwnck3,libX11,libXrandr"
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --build=x86_64-pc-linux-gnu \
+        --prefix=/usr \
+        --sysconfdir=/etc \
+        --disable-static \
+        --disable-introspection \
+        --disable-vala \
+        --enable-x11 \
+        --disable-wayland
+    make
+}
+
+package() {
+    mkdir -p "${PKGDIR}/usr/lib/pkgconfig"
+    make DESTDIR="${PKGDIR}" install
+}

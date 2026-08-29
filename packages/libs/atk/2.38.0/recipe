@@ -1,0 +1,24 @@
+name=atk
+version=2.38.0
+release=1
+arch=x86_64
+license="LGPL-2.0-or-later"
+description="Accessibility toolkit for GNOME"
+source="https://download.gnome.org/sources/atk/2.38/atk-2.38.0.tar.xz"
+sha256="ac4de2a4ef4bd5665052952fe169657e65e895c5057dffb3c2a810f6191a0c36"
+depends="glib"
+
+build() {
+    mkdir -p build
+    meson setup build \
+        --cross-file="${SYSROOT}/../scripts/kratos-cross-file.txt" \
+        --prefix=/usr \
+        --libdir=lib \
+        -Ddocs=false \
+        -Dintrospection=false
+    ninja -C build
+}
+
+package() {
+    DESTDIR="${PKGDIR}" ninja -C build install
+}

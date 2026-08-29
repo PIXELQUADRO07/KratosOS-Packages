@@ -9,6 +9,7 @@ sha256="841c82901282902725762df03adbbcd68153d4cdfb0d61df0cfd73ad677ae089"
 depends="libX11,libXext,libXfixes,libXfont2,libXrender,libpciaccess,libdrm,mesa,pixman,fontconfig,freetype,openssl,libxcb,libxkbcommon,xkeyboard-config"
 
 build() {
+    export CFLAGS="${CFLAGS} -Wno-error=array-bounds -Wno-error=stringop-truncation -Wno-array-bounds"
     ./configure \
         --host="${TARGET}" \
         --build=x86_64-pc-linux-gnu \
@@ -16,6 +17,8 @@ build() {
         --sysconfdir=/etc \
         --localstatedir=/var \
         --runstatedir=/run \
+        --disable-selective-werror \
+        --disable-strict-compilation \
         --enable-xorg \
         --enable-xvfb \
         --enable-xnest \

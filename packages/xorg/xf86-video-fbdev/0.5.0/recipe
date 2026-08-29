@@ -5,7 +5,7 @@ arch=x86_64
 license="MIT"
 description="X.org framebuffer video driver"
 source="https://xorg.freedesktop.org/releases/individual/driver/xf86-video-fbdev-0.5.0.tar.bz2"
-sha256="PLACEHOLDER_sha256_xf86-video-fbdev_0.5.0"
+sha256="dcc3d85f378022180e437a9ec00a59b6cb7680ff79c40394d695060af2374699"
 depends="xorg-server"
 
 build() {

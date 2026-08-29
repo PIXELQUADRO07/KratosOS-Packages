@@ -5,17 +5,22 @@ arch=x86_64
 license="MIT"
 description="X.org libinput input driver (mouse, keyboard, touchpad)"
 source="https://xorg.freedesktop.org/releases/individual/driver/xf86-input-libinput-1.5.0.tar.xz"
-sha256="PLACEHOLDER_sha256_xf86-input-libinput_1.5.0"
+sha256="2524c35f196554ea11aef3bba1cf324759454e1d49f98ac026ace2f6003580e6"
 depends="xorg-server,libinput"
 
 build() {
     ./configure \
         --host="${TARGET}" \
         --build=x86_64-pc-linux-gnu \
-        --prefix=/usr
+        --prefix=/usr \
+        --with-sdkdir=/usr/include/xorg
     make
 }
 
 package() {
     make DESTDIR="${PKGDIR}" install
+    if [ -d "${PKGDIR}/home" ]; then
+        cp -a "${PKGDIR}/home/ghost/Github/Kratos-OS/build/sysroot/usr/"* "${PKGDIR}/usr/" 2>/dev/null || true
+        rm -rf "${PKGDIR}/home"
+    fi
 }
