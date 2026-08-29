@@ -1,11 +1,11 @@
 name=xkbcomp
-version=1.8.10
+version=1.5.0
 release=1
 arch=x86_64
 license="MIT"
 description="XKB keymap compiler — required by Xorg to compile keyboard layouts at startup"
-source="https://xorg.freedesktop.org/releases/individual/app/xkbcomp-1.8.10.tar.xz"
-sha256="PLACEHOLDER"
+source="https://xorg.freedesktop.org/releases/individual/app/xkbcomp-1.5.0.tar.xz"
+sha256="2ac31f26600776db6d9cd79b3fcd272263faebac7eb85fb2f33c7141b8486060"
 depends="libxkbfile,libX11"
 
 build() {
