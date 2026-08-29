@@ -1,0 +1,21 @@
+name=xauth
+version=1.1.3
+release=1
+arch=x86_64
+license="MIT"
+description="X authority file utility — manages .Xauthority cookies for X11 sessions"
+source="https://xorg.freedesktop.org/releases/individual/app/xauth-1.1.3.tar.xz"
+sha256="PLACEHOLDER"
+depends="libX11,libXau,libXext,libXmu"
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --build=x86_64-pc-linux-gnu \
+        --prefix=/usr
+    make
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}
