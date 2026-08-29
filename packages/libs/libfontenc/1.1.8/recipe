@@ -5,7 +5,7 @@ arch=x86_64
 license="MIT"
 description="X font encoding library"
 source="https://xorg.freedesktop.org/releases/individual/lib/libfontenc-1.1.8.tar.xz"
-sha256="PLACEHOLDER_sha256_libfontenc_1.1.8"
+sha256="7b02c3d405236e0d86806b1de9d6868fe60c313628b38350b032914aa4fd14c6"
 depends="zlib,xorgproto"
 
 build() {

@@ -1,9 +1,9 @@
 [binaries]
-c = 'x86_64-kratos-linux-gnu-gcc'
-cpp = 'x86_64-kratos-linux-gnu-g++'
-ar = 'x86_64-kratos-linux-gnu-ar'
-strip = 'x86_64-kratos-linux-gnu-strip'
-pkgconfig = 'pkg-config'
+c = '/home/ghost/Github/Kratos-OS/build/tools/bin/x86_64-kratos-linux-gnu-gcc'
+cpp = '/home/ghost/Github/Kratos-OS/build/tools/bin/x86_64-kratos-linux-gnu-g++'
+ar = '/home/ghost/Github/Kratos-OS/build/tools/bin/x86_64-kratos-linux-gnu-ar'
+strip = '/home/ghost/Github/Kratos-OS/build/tools/bin/x86_64-kratos-linux-gnu-strip'
+pkgconfig = '/usr/bin/pkg-config'
 
 [host_machine]
 system = 'linux'

@@ -15,6 +15,19 @@
       "installed_size": 0
     },
     {
+      "name": "at-spi2-core",
+      "version": "2.50.2",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Protocol definitions and service for accessibility (atk-bridge)",
+      "license": "LGPL-2.1-or-later",
+      "sha256": "60d4f361e38f3c4f264fba87025c50ef18efe49be3e3a05c7403ba364d104dab",
+      "url": "packages/at-spi2-core-2.50.2-1-x86_64.kpkg",
+      "depends": "glib,dbus,libX11,libXtst,libXi",
+      "size": 1401856,
+      "installed_size": 4181928
+    },
+    {
       "name": "atk",
       "version": "2.28.1",
       "release": 1,
@@ -26,6 +39,19 @@
       "depends": "glibc,glib",
       "size": 644608,
       "installed_size": 2962091
+    },
+    {
+      "name": "atk",
+      "version": "2.38.0",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Accessibility toolkit for GNOME",
+      "license": "LGPL-2.0-or-later",
+      "sha256": "c76cf527ac4719f5525c1233837b5ad89ba1bb0e031364ba5b07e03bc0a666f2",
+      "url": "packages/atk-2.38.0-1-x86_64.kpkg",
+      "depends": "glib",
+      "size": 516608,
+      "installed_size": 1864418
     },
     {
       "name": "bash",
@@ -93,6 +119,19 @@
       "installed_size": 0
     },
     {
+      "name": "dbus",
+      "version": "1.16.2",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "D-Bus message bus system",
+      "license": "GPL-2.0-or-later",
+      "sha256": "b5e00072961c239b135322f3c90bdca762c5b6a7bf5a539b02dff31c5d4149e7",
+      "url": "packages/dbus-1.16.2-1-x86_64.kpkg",
+      "depends": "expat,libxcrypt",
+      "size": 899072,
+      "installed_size": 2310070
+    },
+    {
       "name": "development",
       "version": "1.0",
       "release": 1,
@@ -130,6 +169,32 @@
       "depends": "hello",
       "size": 4608,
       "installed_size": 0
+    },
+    {
+      "name": "eudev",
+      "version": "3.2.14",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Standalone udev and libudev implementation",
+      "license": "GPL-2.0",
+      "sha256": "dbc1fd5bb1f7dae4784da85e0cae832eedc40b7d45efac10fde4eeac7ad65b12",
+      "url": "packages/eudev-3.2.14-1-x86_64.kpkg",
+      "depends": "kmod",
+      "size": 4124160,
+      "installed_size": 14148377
+    },
+    {
+      "name": "exo",
+      "version": "4.19.1",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Application development library for Xfce",
+      "license": "GPL-2.0-or-later",
+      "sha256": "d5eaab5a45692f784f2af61c1f717f9e63a00c155793181a6ee7ddcd2c5edf54",
+      "url": "packages/exo-4.19.1-1-x86_64.kpkg",
+      "depends": "libxfce4util,libxfce4ui,gtk+3",
+      "size": 459264,
+      "installed_size": 2437093
     },
     {
       "name": "expat",
@@ -197,6 +262,19 @@
       "installed_size": 397278
     },
     {
+      "name": "garcon",
+      "version": "4.19.2",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Freedesktop.org compliant menu implementation for Xfce",
+      "license": "LGPL-2.0-or-later",
+      "sha256": "b74ec882daac89f373fa0f1ee5668a8e17b12b5f3b0cace69ae0e99d8ee3d8d4",
+      "url": "packages/garcon-4.19.2-1-x86_64.kpkg",
+      "depends": "libxfce4util,libxfce4ui,glib,gtk+3",
+      "size": 219648,
+      "installed_size": 1048277
+    },
+    {
       "name": "gcc-libs",
       "version": "15.2.0",
       "release": 1,
@@ -223,6 +301,19 @@
       "installed_size": 1572568
     },
     {
+      "name": "gdk-pixbuf",
+      "version": "2.42.12",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Image loading library",
+      "license": "LGPL-2.0-or-later",
+      "sha256": "1d4ce3c7981f9fe65ffdd78caf78cda2ac11539de91560135b97dc7e258d9308",
+      "url": "packages/gdk-pixbuf-2.42.12-1-x86_64.kpkg",
+      "depends": "glib,libpng,libjpeg-turbo,tiff",
+      "size": 990208,
+      "installed_size": 3407101
+    },
+    {
       "name": "glib",
       "version": "2.56.4",
       "release": 1,
@@ -234,6 +325,19 @@
       "depends": "glibc,zlib,pcre,libffi,util-linux",
       "size": 10947072,
       "installed_size": 45041754
+    },
+    {
+      "name": "glib",
+      "version": "2.78.6",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Low-level core library that forms the basis for projects such as GTK+ and GNOME",
+      "license": "LGPL-2.1-or-later",
+      "sha256": "4576db927ea09beab879284a09d6ba752ad8cdf4af5c25b2d47bbdf360ef9127",
+      "url": "packages/glib-2.78.6-1-x86_64.kpkg",
+      "depends": "glibc,zlib,pcre2,libffi,util-linux,libmount",
+      "size": 10206720,
+      "installed_size": 28959972
     },
     {
       "name": "grep",
@@ -255,11 +359,11 @@
       "arch": "x86_64",
       "description": "Multi-platform toolkit for creating graphical user interfaces",
       "license": "LGPL-2.1-or-later",
-      "sha256": "a6c30199ff1807c07ff1b18709670279498d7c5b9c8a46b4a5305c31f8644d18",
+      "sha256": "efb5a7ab2f2ddbc7c335700edbeb840be5a508a025cf9b33b79deaaed4324127",
       "url": "packages/gtk+-3.24.30-1-x86_64.kpkg",
       "depends": "glibc,glib,atk,gdk-pixbuf,pango,cairo,libX11,libXext,libXcursor,libXfixes,libXi,libXrandr,libXcomposite,libXdamage",
-      "size": 4608,
-      "installed_size": 0
+      "size": 18843648,
+      "installed_size": 66987061
     },
     {
       "name": "gzip",
@@ -301,6 +405,19 @@
       "installed_size": 307278
     },
     {
+      "name": "iceauth",
+      "version": "1.0.10",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "ICE authority file utility",
+      "license": "MIT",
+      "sha256": "3a1633596b17e04d0933e00444110916867f6b2cfc62e8e42af960551c75fe64",
+      "url": "packages/iceauth-1.0.10-1-x86_64.kpkg",
+      "depends": "libICE",
+      "size": 22528,
+      "installed_size": 43725
+    },
+    {
       "name": "iproute2",
       "version": "7.1.0",
       "release": 1,
@@ -312,6 +429,32 @@
       "depends": "glibc,libmnl",
       "size": 1844736,
       "installed_size": 4894727
+    },
+    {
+      "name": "libICE",
+      "version": "1.1.1",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Inter-Client Exchange library (X11)",
+      "license": "MIT",
+      "sha256": "fb9d6e5e001a92c58eece97963a55bc6c698e8c37386c42f47252bb466784ece",
+      "url": "packages/libICE-1.1.1-1-x86_64.kpkg",
+      "depends": "xorgproto,libxcrypt",
+      "size": 214528,
+      "installed_size": 642735
+    },
+    {
+      "name": "libSM",
+      "version": "1.2.4",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Session Management library (X11)",
+      "license": "MIT",
+      "sha256": "8e278767764536668eb3afd86b44fe992b6efff7f936746190b181c7a329a072",
+      "url": "packages/libSM-1.2.4-1-x86_64.kpkg",
+      "depends": "libICE,xorgproto",
+      "size": 104448,
+      "installed_size": 374315
     },
     {
       "name": "libX11",
@@ -338,6 +481,19 @@
       "depends": "xorgproto",
       "size": 24576,
       "installed_size": 51386
+    },
+    {
+      "name": "libXaw",
+      "version": "1.0.16",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "X.Org Athena Widgets library",
+      "license": "MIT",
+      "sha256": "ce66b8b62a4c9c56f621c62717ee66bc93b47c1b582752da6545db9fe9f57fa0",
+      "url": "packages/libXaw-1.0.16-1-x86_64.kpkg",
+      "depends": "libX11,libXext,libXt,libXmu,libXpm,xorgproto",
+      "size": 545280,
+      "installed_size": 1898215
     },
     {
       "name": "libXcomposite",
@@ -418,6 +574,32 @@
       "installed_size": 228939
     },
     {
+      "name": "libXfont2",
+      "version": "2.0.7",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "X font handling library (version 2)",
+      "license": "MIT",
+      "sha256": "b84b0195115c39a579afa83ed72d90a6384692d2738d1db5f3997e0f8abf2b73",
+      "url": "packages/libXfont2-2.0.7-1-x86_64.kpkg",
+      "depends": "freetype,libfontenc,xtrans",
+      "size": 451072,
+      "installed_size": 923695
+    },
+    {
+      "name": "libXft",
+      "version": "2.3.8",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "FreeType-based font drawing library for X",
+      "license": "MIT",
+      "sha256": "b714917ee4f5c6f16a2d4645e31c6c0fc070665195fdc3349c48a74a46073d80",
+      "url": "packages/libXft-2.3.8-1-x86_64.kpkg",
+      "depends": "libX11,libXrender,freetype,fontconfig",
+      "size": 315392,
+      "installed_size": 689413
+    },
+    {
       "name": "libXi",
       "version": "1.8.1",
       "release": 1,
@@ -442,6 +624,32 @@
       "depends": "glibc,libX11,libXext,xorgproto",
       "size": 31744,
       "installed_size": 68430
+    },
+    {
+      "name": "libXmu",
+      "version": "1.2.1",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "X Miscellaneous Utility library",
+      "license": "MIT",
+      "sha256": "f298fb55a8e962f2acb8da4f9da14959334e312a4d636cb0cffa369a695f6504",
+      "url": "packages/libXmu-1.2.1-1-x86_64.kpkg",
+      "depends": "libXt,libXext,libX11,xorgproto",
+      "size": 307712,
+      "installed_size": 836835
+    },
+    {
+      "name": "libXpm",
+      "version": "3.5.17",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "X Pixmap library",
+      "license": "MIT",
+      "sha256": "6599390f3bd8e2c1f2d80a2145a5769f79ef3965f7d88e23ea7a3edcd324fab1",
+      "url": "packages/libXpm-3.5.17-1-x86_64.kpkg",
+      "depends": "libX11,xorgproto",
+      "size": 228352,
+      "installed_size": 552151
     },
     {
       "name": "libXrandr",
@@ -470,6 +678,58 @@
       "installed_size": 491461
     },
     {
+      "name": "libXres",
+      "version": "1.2.2",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "X11 Resource extension library",
+      "license": "MIT",
+      "sha256": "2d79457fc5bca9efa450dd703763c6b5ef28c677f7604f5798eb488a5e1dbfaf",
+      "url": "packages/libXres-1.2.2-1-x86_64.kpkg",
+      "depends": "libX11,libXext,xorgproto",
+      "size": 34816,
+      "installed_size": 72193
+    },
+    {
+      "name": "libXt",
+      "version": "1.3.1",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "X Toolkit Intrinsics library",
+      "license": "MIT",
+      "sha256": "79ee5e328c71e441a02dc458701cbeaf4e52e2f190ec9a364ea0929b163878cc",
+      "url": "packages/libXt-1.3.1-1-x86_64.kpkg",
+      "depends": "libSM,libICE,libX11,xorgproto",
+      "size": 1232896,
+      "installed_size": 3923627
+    },
+    {
+      "name": "libXtst",
+      "version": "1.2.4",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "X11 Testing -- Resource extension library",
+      "license": "MIT",
+      "sha256": "de337b0f5d29ac730ae69a472d2690df5dcc62400b13ac9f23fca30b9d65ad3f",
+      "url": "packages/libXtst-1.2.4-1-x86_64.kpkg",
+      "depends": "libX11,libXext,libXi,xorgproto",
+      "size": 78848,
+      "installed_size": 222694
+    },
+    {
+      "name": "libXxf86vm",
+      "version": "1.1.5",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "X.Org XFree86-VidModeExtension library",
+      "license": "MIT",
+      "sha256": "4ffb2e24eafae7fb5254924f0257214bc3adbfa386be8949b1b9df2466911f03",
+      "url": "packages/libXxf86vm-1.1.5-1-x86_64.kpkg",
+      "depends": "libX11,libXext,xorgproto",
+      "size": 48640,
+      "installed_size": 114696
+    },
+    {
       "name": "libbsd",
       "version": "0.12.2",
       "release": 1,
@@ -496,6 +756,58 @@
       "installed_size": 370297
     },
     {
+      "name": "libdisplay-info",
+      "version": "0.2.0",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "EDID and DisplayID library",
+      "license": "MIT",
+      "sha256": "e64145e56f57ddaa691b059cba4487e9715ee3c3e47da03973fb74d9148d746d",
+      "url": "packages/libdisplay-info-0.2.0-1-x86_64.kpkg",
+      "depends": "",
+      "size": 132096,
+      "installed_size": 392689
+    },
+    {
+      "name": "libdrm",
+      "version": "2.4.124",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Direct Rendering Manager runtime library",
+      "license": "MIT",
+      "sha256": "e99035f219d58ba10e3fe4f30af98d464c51502fdbb7b324deb7bf0d8fa96f4d",
+      "url": "packages/libdrm-2.4.124-1-x86_64.kpkg",
+      "depends": "libpciaccess",
+      "size": 706048,
+      "installed_size": 1928948
+    },
+    {
+      "name": "libepoxy",
+      "version": "1.5.10",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Library for handling OpenGL function pointer management",
+      "license": "MIT",
+      "sha256": "88f41435a2a1d52dcfc4a2e59e59ba43a04c6a34497930b5429ed6c70c5cc43c",
+      "url": "packages/libepoxy-1.5.10-1-x86_64.kpkg",
+      "depends": "mesa,libX11",
+      "size": 1430016,
+      "installed_size": 6103778
+    },
+    {
+      "name": "libevdev",
+      "version": "1.13.3",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Wrapper library for Linux evdev input interface",
+      "license": "MIT",
+      "sha256": "0f5f5426ba65babdcf9e8e77924c9e185ffdeb34fd43d2cee5c147ade65bc1df",
+      "url": "packages/libevdev-1.13.3-1-x86_64.kpkg",
+      "depends": "",
+      "size": 124416,
+      "installed_size": 433178
+    },
+    {
       "name": "libffi",
       "version": "3.4.6",
       "release": 1,
@@ -507,6 +819,32 @@
       "depends": "glibc",
       "size": 49664,
       "installed_size": 139367
+    },
+    {
+      "name": "libfontenc",
+      "version": "1.1.8",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "X font encoding library",
+      "license": "MIT",
+      "sha256": "6456d3237ed36ad979bac5dc19b40fdec1ed2630d80d4cbd502403c1711322a9",
+      "url": "packages/libfontenc-1.1.8-1-x86_64.kpkg",
+      "depends": "zlib,xorgproto",
+      "size": 39936,
+      "installed_size": 83142
+    },
+    {
+      "name": "libinput",
+      "version": "1.27.1",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Input device management and event handling library",
+      "license": "MIT",
+      "sha256": "1d76b3dfea6ddb605e36e5c5c5ba71d44cc9c4c9e764609d1dc016ac91834331",
+      "url": "packages/libinput-1.27.1-1-x86_64.kpkg",
+      "depends": "libevdev,mtdev,libwacom",
+      "size": 1182720,
+      "installed_size": 3358149
     },
     {
       "name": "libjpeg-turbo",
@@ -548,6 +886,19 @@
       "installed_size": 75315
     },
     {
+      "name": "libnotify",
+      "version": "0.8.3",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Desktop notification library",
+      "license": "LGPL-2.1-or-later",
+      "sha256": "bf2ec3e76a3164f2c0dfb5b354059ea1164ae6069cdf5c0fe4151f10746cf210",
+      "url": "packages/libnotify-0.8.3-1-x86_64.kpkg",
+      "depends": "glib,gtk+3,dbus",
+      "size": 93184,
+      "installed_size": 223585
+    },
+    {
       "name": "libpcap",
       "version": "1.10.4",
       "release": 1,
@@ -559,6 +910,19 @@
       "depends": "glibc",
       "size": 1199104,
       "installed_size": 3294288
+    },
+    {
+      "name": "libpciaccess",
+      "version": "0.18.1",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Generic PCI access library",
+      "license": "MIT",
+      "sha256": "8e166e3b6ee78a83bd4459e7fb54d2a13b62b46cac0f0d39963ceb5830266bd4",
+      "url": "packages/libpciaccess-0.18.1-1-x86_64.kpkg",
+      "depends": "zlib",
+      "size": 69632,
+      "installed_size": 162549
     },
     {
       "name": "libpng",
@@ -613,6 +977,19 @@
       "installed_size": 4474050
     },
     {
+      "name": "libwnck3",
+      "version": "43.0",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Window Navigator Construction Kit",
+      "license": "LGPL-2.0-or-later",
+      "sha256": "6ac267271aa60fd5602e55fffe6d7529d00c867acf6b36322460ebf43f273c4c",
+      "url": "packages/libwnck3-43.0-1-x86_64.kpkg",
+      "depends": "gtk+3,libX11,libXres,startup-notification",
+      "size": 975872,
+      "installed_size": 3195195
+    },
+    {
       "name": "libxcb",
       "version": "1.17.0",
       "release": 1,
@@ -639,6 +1016,84 @@
       "installed_size": 260152
     },
     {
+      "name": "libxcvt",
+      "version": "0.1.2",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "VESA CVT standard timing modelines generator",
+      "license": "MIT",
+      "sha256": "8e776e5d316b7bb4757a6ac998fd67d566bbe90420c0f4064c503f0ba77ba222",
+      "url": "packages/libxcvt-0.1.2-1-x86_64.kpkg",
+      "depends": "",
+      "size": 23040,
+      "installed_size": 55106
+    },
+    {
+      "name": "libxfce4ui",
+      "version": "4.19.6",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Widget library for Xfce",
+      "license": "LGPL-2.0-or-later",
+      "sha256": "caeec4cf5c97406e23624e10bc3ec6f4a74864309a49e158d6b55ce4b506c11b",
+      "url": "packages/libxfce4ui-4.19.6-1-x86_64.kpkg",
+      "depends": "libxfce4util,xfconf,gtk+3,libX11,libSM,libICE,startup-notification",
+      "size": 527360,
+      "installed_size": 2144335
+    },
+    {
+      "name": "libxfce4util",
+      "version": "4.19.4",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Basic utility library for Xfce",
+      "license": "LGPL-2.0-or-later",
+      "sha256": "305d09bb745f8232658333d9bac78826545540df608f0f42d5784000eeb71d55",
+      "url": "packages/libxfce4util-4.19.4-1-x86_64.kpkg",
+      "depends": "glib",
+      "size": 175104,
+      "installed_size": 1006077
+    },
+    {
+      "name": "libxfce4windowing",
+      "version": "4.19.10",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Windowing concept abstraction library for Xfce",
+      "license": "LGPL-2.0-or-later",
+      "sha256": "acd333c5fda42674d5bc11cf34be02f52308e3063292863abfba65fb4a46c18f",
+      "url": "packages/libxfce4windowing-4.19.10-1-x86_64.kpkg",
+      "depends": "glib,gtk+3,libwnck3,libX11,libXrandr",
+      "size": 200192,
+      "installed_size": 1054457
+    },
+    {
+      "name": "libxkbcommon",
+      "version": "1.7.0",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Keyboard handling library (XKB)",
+      "license": "MIT",
+      "sha256": "9f0b8d6b2b9b9e9a8a8363d2b16b1622b40e07d67c5fcc837ffb6a4bb17c7d09",
+      "url": "packages/libxkbcommon-1.7.0-1-x86_64.kpkg",
+      "depends": "libxcb,xkeyboard-config",
+      "size": 519168,
+      "installed_size": 1541812
+    },
+    {
+      "name": "libxkbfile",
+      "version": "1.1.3",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "X.Org xkbfile library",
+      "license": "MIT",
+      "sha256": "84e26b0c6414ccbeea69ef16e52ac5a5a64293ffad10e3e82de589ecc96af9e8",
+      "url": "packages/libxkbfile-1.1.3-1-x86_64.kpkg",
+      "depends": "libX11,xorgproto",
+      "size": 90112,
+      "installed_size": 212476
+    },
+    {
       "name": "libxml2",
       "version": "2.13.3",
       "release": 1,
@@ -650,6 +1105,71 @@
       "depends": "zlib,xz",
       "size": 2659328,
       "installed_size": 8202542
+    },
+    {
+      "name": "libxshmfence",
+      "version": "1.3.2",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Shared memory SyncFence synchronization library",
+      "license": "MIT",
+      "sha256": "f98a303b5e0142d1f16e0a53c1a54fd02f3be268ccf8f25352272d5c08166871",
+      "url": "packages/libxshmfence-1.3.2-1-x86_64.kpkg",
+      "depends": "xorgproto",
+      "size": 12800,
+      "installed_size": 25984
+    },
+    {
+      "name": "libyaml",
+      "version": "0.2.5",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "C library for parsing and emitting YAML",
+      "license": "MIT",
+      "sha256": "d0a225ba7484c3e877a461450ee2ef7cbb968e2389d5f8662cbd7e706ac542a6",
+      "url": "packages/libyaml-0.2.5-1-x86_64.kpkg",
+      "depends": "",
+      "size": 72704,
+      "installed_size": 202693
+    },
+    {
+      "name": "lz4",
+      "version": "1.10.0",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Extremely Fast Compression algorithm",
+      "license": "BSD-2-Clause",
+      "sha256": "13936a6a7aaa5e17a2ac4863cb6cb5d2a94f9efb9076f8920b6b99ca727cf901",
+      "url": "packages/lz4-1.10.0-1-x86_64.kpkg",
+      "depends": "",
+      "size": 342528,
+      "installed_size": 800600
+    },
+    {
+      "name": "mesa",
+      "version": "24.3.4",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Open-source OpenGL/Vulkan implementation (software rendering)",
+      "license": "MIT",
+      "sha256": "d0c5579540387b7f39bd7a23cc9b573e10112acca01a8658a5250697331f8220",
+      "url": "packages/mesa-24.3.4-1-x86_64.kpkg",
+      "depends": "libdrm,libX11,libXext,libXfixes,libxcb,libxkbcommon,zlib,zstd,expat,libxml2",
+      "size": 37540352,
+      "installed_size": 93834563
+    },
+    {
+      "name": "mtdev",
+      "version": "1.1.7",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Multitouch Protocol Translation Library",
+      "license": "MIT",
+      "sha256": "f93dfac8e37c9ef765b26ab5b9d2184b8515308ee0a873f5a6f5e185e10b8e5f",
+      "url": "packages/mtdev-1.1.7-1-x86_64.kpkg",
+      "depends": "",
+      "size": 53248,
+      "installed_size": 120969
     },
     {
       "name": "ncurses",
@@ -808,6 +1328,19 @@
       "installed_size": 10354481
     },
     {
+      "name": "shared-mime-info",
+      "version": "2.4",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Shared MIME info database",
+      "license": "GPL-2.0-or-later",
+      "sha256": "b958dfc1cbe7e42bf346f86b032448edc115fb8d683faf47c23cf249fbac64ba",
+      "url": "packages/shared-mime-info-2.4-1-x86_64.kpkg",
+      "depends": "glib,libxml2",
+      "size": 1329664,
+      "installed_size": 5243912
+    },
+    {
       "name": "sleuthkit",
       "version": "4.12.1",
       "release": 1,
@@ -832,6 +1365,19 @@
       "depends": "glibc",
       "size": 7181312,
       "installed_size": 15415196
+    },
+    {
+      "name": "startup-notification",
+      "version": "0.12",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "X11 application startup notification library",
+      "license": "LGPL-2.0-or-later",
+      "sha256": "cfe4de73d25e39f7e6614f354abc05df0636c00b677e846e6967ba5150b35f45",
+      "url": "packages/startup-notification-0.12-1-x86_64.kpkg",
+      "depends": "libX11,libxcb,xcb-util",
+      "size": 66048,
+      "installed_size": 154514
     },
     {
       "name": "sudo",
@@ -871,6 +1417,19 @@
       "depends": "glibc,libpcap",
       "size": 4694016,
       "installed_size": 11312802
+    },
+    {
+      "name": "thunar",
+      "version": "4.19.3",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Modern, fast and easy-to-use file manager for Xfce",
+      "license": "GPL-2.0-or-later",
+      "sha256": "4cc63394f4c380b0f245a3611b613f950aebffa2b2137699e36d6a1c2728f7bb",
+      "url": "packages/thunar-4.19.3-1-x86_64.kpkg",
+      "depends": "libxfce4util,libxfce4ui,xfconf,exo,glib,gtk+3,libnotify",
+      "size": 2568704,
+      "installed_size": 8766258
     },
     {
       "name": "tiff",
@@ -938,6 +1497,19 @@
       "installed_size": 31927006
     },
     {
+      "name": "vte3",
+      "version": "0.58.3",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Virtual Terminal Emulator widget for GTK",
+      "license": "LGPL-3.0-or-later",
+      "sha256": "cf5f81fe18a3ea83ab7856354fd070271190745c9ed8be445a9e7956b5642f70",
+      "url": "packages/vte3-0.58.3-1-x86_64.kpkg",
+      "depends": "gtk+3,pcre2,fribidi,zlib",
+      "size": 329216,
+      "installed_size": 901137
+    },
+    {
       "name": "wget",
       "version": "1.24.5",
       "release": 1,
@@ -964,6 +1536,188 @@
       "installed_size": 1075415
     },
     {
+      "name": "xcb-util",
+      "version": "0.4.1",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "XCB utility libraries",
+      "license": "MIT",
+      "sha256": "4de316f7ef6f3f6a152b0a7877bee7c113e23e48e7789ddda1d7888a5333056a",
+      "url": "packages/xcb-util-0.4.1-1-x86_64.kpkg",
+      "depends": "libxcb",
+      "size": 28160,
+      "installed_size": 67045
+    },
+    {
+      "name": "xf86-input-libinput",
+      "version": "1.5.0",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "X.org libinput input driver (mouse, keyboard, touchpad)",
+      "license": "MIT",
+      "sha256": "12bc976708e73f9b12229fa8d7f1b60a3fea03495de83e096677465f7bd7d3f1",
+      "url": "packages/xf86-input-libinput-1.5.0-1-x86_64.kpkg",
+      "depends": "xorg-server,libinput",
+      "size": 58880,
+      "installed_size": 158811
+    },
+    {
+      "name": "xf86-video-fbdev",
+      "version": "0.5.0",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "X.org framebuffer video driver",
+      "license": "MIT",
+      "sha256": "2c314e482c5b0ea88cc5bcefa53cabdf66797d3381ad9f5b3423073799ea5521",
+      "url": "packages/xf86-video-fbdev-0.5.0-1-x86_64.kpkg",
+      "depends": "xorg-server",
+      "size": 17920,
+      "installed_size": 37885
+    },
+    {
+      "name": "xf86-video-vesa",
+      "version": "2.6.0",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "X.org VESA video driver (generic fallback)",
+      "license": "MIT",
+      "sha256": "e11ddf74e4f5e834bbc85092c45d4658c9d66b64e80a07936e3908155c8418b5",
+      "url": "packages/xf86-video-vesa-2.6.0-1-x86_64.kpkg",
+      "depends": "xorg-server",
+      "size": 22016,
+      "installed_size": 46177
+    },
+    {
+      "name": "xfce4-panel",
+      "version": "4.19.6",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Panel for the Xfce desktop environment",
+      "license": "GPL-2.0-or-later",
+      "sha256": "709a11bcd8ff448887f88587123f25b31897f8e40dc4b5fd9912d574879df0b2",
+      "url": "packages/xfce4-panel-4.19.6-1-x86_64.kpkg",
+      "depends": "libxfce4util,libxfce4ui,xfconf,garcon,exo,libwnck3,gtk+3",
+      "size": 1672192,
+      "installed_size": 4944983
+    },
+    {
+      "name": "xfce4-session",
+      "version": "4.19.3",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Session manager for the Xfce desktop environment",
+      "license": "GPL-2.0-or-later",
+      "sha256": "9f11e14c5c6e86f90b5bc67bb73aea56d844d034f27eb668935039873f71996a",
+      "url": "packages/xfce4-session-4.19.3-1-x86_64.kpkg",
+      "depends": "libxfce4util,libxfce4ui,xfconf,libSM,libICE,libwnck3,libxfce4windowing,iceauth",
+      "size": 526848,
+      "installed_size": 1734639
+    },
+    {
+      "name": "xfce4-settings",
+      "version": "4.19.4",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Settings manager for Xfce",
+      "license": "GPL-2.0-or-later",
+      "sha256": "7bb1b02ed605029715b718a06fc9de5ca455526248069161f16e6e4de33df51d",
+      "url": "packages/xfce4-settings-4.19.4-1-x86_64.kpkg",
+      "depends": "libxfce4util,libxfce4ui,xfconf,garcon,exo,libnotify,libX11,libXrandr,libXcursor,libXi,libxfce4windowing",
+      "size": 1802240,
+      "installed_size": 5579992
+    },
+    {
+      "name": "xfce4-terminal",
+      "version": "1.1.3",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Terminal emulator for Xfce",
+      "license": "GPL-2.0-or-later",
+      "sha256": "3e48207d09ba403e4ec14f763a28267d04f91fd9d914c26a3380c0cfc8c1cfd2",
+      "url": "packages/xfce4-terminal-1.1.3-1-x86_64.kpkg",
+      "depends": "libxfce4util,libxfce4ui,xfconf,vte3,gtk+3",
+      "size": 689152,
+      "installed_size": 1993728
+    },
+    {
+      "name": "xfconf",
+      "version": "4.19.4",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Configuration storage system for Xfce",
+      "license": "GPL-2.0-or-later",
+      "sha256": "0d4128eb979063d58c1e1bc2762567147d88ac956e0304d743ce77769106a91e",
+      "url": "packages/xfconf-4.19.4-1-x86_64.kpkg",
+      "depends": "libxfce4util,dbus,glib",
+      "size": 272384,
+      "installed_size": 1188430
+    },
+    {
+      "name": "xfdesktop4",
+      "version": "4.19.5",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Desktop manager for the Xfce desktop environment",
+      "license": "GPL-2.0-or-later",
+      "sha256": "001009000e1a5491355c7d45d36023d4a1c83939fa4adb17ade17f275f9edbc1",
+      "url": "packages/xfdesktop4-4.19.5-1-x86_64.kpkg",
+      "depends": "libxfce4util,libxfce4ui,xfconf,garcon,exo,libwnck3,libnotify,thunar",
+      "size": 1097216,
+      "installed_size": 3078028
+    },
+    {
+      "name": "xfwm4",
+      "version": "4.19.1",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Window manager for the Xfce desktop environment",
+      "license": "GPL-2.0-or-later",
+      "sha256": "9af856174b70749c984e312d5cca41ef4a6949cd1211a0457973f06c46915ff4",
+      "url": "packages/xfwm4-4.19.1-1-x86_64.kpkg",
+      "depends": "libxfce4util,libxfce4ui,xfconf,libwnck3,libepoxy,libXrender,libXrandr,libXcomposite,libXdamage,libXfixes",
+      "size": 678912,
+      "installed_size": 2477754
+    },
+    {
+      "name": "xinit",
+      "version": "1.4.2",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "X.Org init script and xinit utility",
+      "license": "MIT",
+      "sha256": "5c13bafa09a7050ad2e9b93293b80b1be29bf17bb5ced1ace8c63067022bfa2f",
+      "url": "packages/xinit-1.4.2-1-x86_64.kpkg",
+      "depends": "xorg-server,libX11",
+      "size": 20480,
+      "installed_size": 45592
+    },
+    {
+      "name": "xkeyboard-config",
+      "version": "2.43",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "X keyboard layout descriptions",
+      "license": "MIT",
+      "sha256": "b309300484eb2af28d796696e5dcd48743e403c0aeb16dca7ead255a3faf1ce2",
+      "url": "packages/xkeyboard-config-2.43-1-x86_64.kpkg",
+      "depends": "xorgproto",
+      "size": 1732096,
+      "installed_size": 6888601
+    },
+    {
+      "name": "xorg-server",
+      "version": "21.1.15",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "X.Org X server",
+      "license": "MIT",
+      "sha256": "edbdc049bf17b3ec0856812e6ce00d5a6ab042522394e3264a6da620ceb02caa",
+      "url": "packages/xorg-server-21.1.15-1-x86_64.kpkg",
+      "depends": "libX11,libXext,libXfixes,libXfont2,libXrender,libpciaccess,libdrm,mesa,pixman,fontconfig,freetype,openssl,libxcb,libxkbcommon,xkeyboard-config",
+      "size": 3965952,
+      "installed_size": 9583326
+    },
+    {
       "name": "xorgproto",
       "version": "2024.1",
       "release": 1,
@@ -975,6 +1729,19 @@
       "depends": "",
       "size": 745984,
       "installed_size": 4034936
+    },
+    {
+      "name": "xterm",
+      "version": "393",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "X terminal emulator",
+      "license": "MIT",
+      "sha256": "113aa980cf2d420e840a36166c9d85aeb4e97c52b8682e48e3311f17cc5e8cca",
+      "url": "packages/xterm-393-1-x86_64.kpkg",
+      "depends": "libXft,libXt,libXmu,ncurses",
+      "size": 482816,
+      "installed_size": 1307670
     },
     {
       "name": "xtrans",

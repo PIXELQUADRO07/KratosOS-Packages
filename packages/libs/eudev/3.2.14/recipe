@@ -1,0 +1,25 @@
+name=eudev
+version=3.2.14
+release=1
+arch=x86_64
+license="GPL-2.0"
+description="Standalone udev and libudev implementation"
+source="https://github.com/eudev-project/eudev/releases/download/v3.2.14/eudev-3.2.14.tar.gz"
+sha256="8da4319102f24abbf7fff5ce9c416af848df163b29590e666d334cc1927f006f"
+depends="kmod"
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --build=x86_64-pc-linux-gnu \
+        --prefix=/usr \
+        --sysconfdir=/etc \
+        --disable-manpages \
+        --disable-static \
+        --enable-kmod
+    make
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}

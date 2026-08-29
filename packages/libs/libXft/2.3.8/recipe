@@ -5,7 +5,7 @@ arch=x86_64
 license="MIT"
 description="FreeType-based font drawing library for X"
 source="https://xorg.freedesktop.org/releases/individual/lib/libXft-2.3.8.tar.xz"
-sha256="PLACEHOLDER_sha256_libXft_2.3.8"
+sha256="5e8c3c4bc2d4c0a40aef6b4b38ed2fb74301640da29f6528154b5009b1c6dd49"
 depends="libX11,libXrender,freetype,fontconfig"
 
 build() {

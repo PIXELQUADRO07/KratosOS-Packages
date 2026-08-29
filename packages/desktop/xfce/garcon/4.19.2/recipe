@@ -5,7 +5,7 @@ arch=x86_64
 license="LGPL-2.0-or-later"
 description="Freedesktop.org compliant menu implementation for Xfce"
 source="https://archive.xfce.org/src/xfce/garcon/4.19/garcon-4.19.2.tar.bz2"
-sha256="PLACEHOLDER_sha256_garcon_4.19.2"
+sha256="b2c8de6c3c258574f357ee23bf183dd8c73773724c7d1bed1187a9d789ededed"
 depends="libxfce4util,libxfce4ui,glib,gtk+3"
 
 build() {

@@ -1,0 +1,22 @@
+name=libdisplay-info
+version=0.2.0
+release=1
+arch=x86_64
+license="MIT"
+description="EDID and DisplayID library"
+source="https://gitlab.freedesktop.org/emersion/libdisplay-info/-/archive/0.2.0/libdisplay-info-0.2.0.tar.bz2"
+sha256="f6cf2ddbba3753ae38de5113d1fcb8fab977dfaf5fb07b38cd68d8482765e208"
+depends=""
+
+build() {
+    meson setup build \
+        --cross-file "${MESON_CROSS}" \
+        --prefix=/usr \
+        --buildtype=release \
+        -Ddefault_library=shared
+    ninja -C build
+}
+
+package() {
+    DESTDIR="${PKGDIR}" ninja -C build install
+}

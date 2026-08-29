@@ -5,11 +5,12 @@ arch=x86_64
 license="LGPL-2.1-or-later"
 description="Multi-platform toolkit for creating graphical user interfaces"
 source="https://download.gnome.org/sources/gtk+/3.24/gtk+-3.24.30.tar.xz"
-sha256="ba7510745e10c00661f7dbdc4bc7f1012287e2a450ed9676be869505f6e6761c"
+sha256="ba75bfff320ad1f4cfbee92ba813ec336322cc3c660d406aad014b07087a3ba9"
 depends="glibc,glib,atk,gdk-pixbuf,pango,cairo,libX11,libXext,libXcursor,libXfixes,libXi,libXrandr,libXcomposite,libXdamage"
 
 build() {
-    export PATH="${SYSROOT}/usr/bin:${PATH}"
+    sed -i 's/gtk_widget_queue_resize (label)/gtk_widget_queue_resize (GTK_WIDGET (label))/g' gtk/gtklabel.c
+    sed -i 's/_gtk_get_slowdown (gdouble factor)/_gtk_get_slowdown (void)/g' gtk/gtkprogresstracker.c
     ./configure \
         --host="${TARGET}" \
         --build=x86_64-pc-linux-gnu \

@@ -5,7 +5,7 @@ arch=x86_64
 license="GPL-2.0-or-later"
 description="Configuration storage system for Xfce"
 source="https://archive.xfce.org/src/xfce/xfconf/4.19/xfconf-4.19.4.tar.bz2"
-sha256="PLACEHOLDER_sha256_xfconf_4.19.4"
+sha256="9c1d70be5a86141944d8a69fcc836dee0bd47e60ec9b0d2bca2bb2c4725618ec"
 depends="libxfce4util,dbus,glib"
 
 build() {
@@ -21,5 +21,6 @@ build() {
 }
 
 package() {
+    mkdir -p "${PKGDIR}/usr/lib/pkgconfig"
     make DESTDIR="${PKGDIR}" install
 }

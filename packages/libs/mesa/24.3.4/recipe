@@ -5,7 +5,7 @@ arch=x86_64
 license="MIT"
 description="Open-source OpenGL/Vulkan implementation (software rendering)"
 source="https://archive.mesa3d.org/mesa-24.3.4.tar.xz"
-sha256="PLACEHOLDER_sha256_mesa_24.3.4"
+sha256="e641ae27191d387599219694560d221b7feaa91c900bcec46bf444218ed66025"
 depends="libdrm,libX11,libXext,libXfixes,libxcb,libxkbcommon,zlib,zstd,expat,libxml2"
 
 build() {
@@ -14,17 +14,15 @@ build() {
         --cross-file="${SYSROOT}/../scripts/kratos-cross-file.txt" \
         --prefix=/usr \
         --libdir=lib \
-        -Dgallium-drivers=swrast,virgl \
+        -Dgallium-drivers=softpipe,virgl \
         -Dvulkan-drivers="" \
         -Dglx=dri \
         -Dopengl=true \
         -Degl=enabled \
-        -Dgles1=disabled \
         -Dgles2=disabled \
         -Dplatforms=x11 \
         -Dllvm=disabled \
         -Dshared-glapi=enabled \
-        -Ddri3=disabled \
         -Dtools="" \
         -Dglx-direct=true
     ninja -C build

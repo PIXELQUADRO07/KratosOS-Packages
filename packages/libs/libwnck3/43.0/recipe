@@ -5,7 +5,7 @@ arch=x86_64
 license="LGPL-2.0-or-later"
 description="Window Navigator Construction Kit"
 source="https://download.gnome.org/sources/libwnck/43/libwnck-43.0.tar.xz"
-sha256="PLACEHOLDER_sha256_libwnck3_43.0"
+sha256="905bcdb85847d6b8f8861e56b30cd6dc61eae67ecef4cd994a9f925a26a2c1fe"
 depends="gtk+3,libX11,libXres,startup-notification"
 
 build() {

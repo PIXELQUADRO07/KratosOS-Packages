@@ -5,7 +5,7 @@ arch=x86_64
 license="MIT"
 description="X terminal emulator"
 source="https://invisible-mirror.net/archives/xterm/xterm-393.tgz"
-sha256="PLACEHOLDER_sha256_xterm_393"
+sha256="dc3abf533d66ae3db49e6783b0e1e29f0e4d045b4b3dac797a5e93be2735ec7b"
 depends="libXft,libXt,libXmu,ncurses"
 
 build() {

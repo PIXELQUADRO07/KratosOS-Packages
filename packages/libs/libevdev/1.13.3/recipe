@@ -5,7 +5,7 @@ arch=x86_64
 license="MIT"
 description="Wrapper library for Linux evdev input interface"
 source="https://www.freedesktop.org/software/libevdev/libevdev-1.13.3.tar.xz"
-sha256="PLACEHOLDER_sha256_libevdev_1.13.3"
+sha256="abf1aace86208eebdd5d3550ffded4c8d73bb405b796d51c389c9d0604cbcfbf"
 depends=""
 
 build() {

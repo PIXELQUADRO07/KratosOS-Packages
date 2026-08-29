@@ -1,0 +1,4 @@
+#!/bin/sh
+SYSROOT="/home/ghost/Github/Kratos-OS/build/sysroot"
+export PYTHONPATH="$SYSROOT/usr/share/glib-2.0:${PYTHONPATH:-}"
+exec /usr/bin/python3 "$SYSROOT/usr/bin/gdbus-codegen" "$@"

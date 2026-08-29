@@ -1,0 +1,25 @@
+name=at-spi2-core
+version=2.50.2
+release=1
+arch=x86_64
+license="LGPL-2.1-or-later"
+description="Protocol definitions and service for accessibility (atk-bridge)"
+source="https://download.gnome.org/sources/at-spi2-core/2.50/at-spi2-core-2.50.2.tar.xz"
+sha256="5b81b1461a62dd8fbed1a276fa9ef5b7112f9ae5ff86e1e32ad9644b654ff78c"
+depends="glib,dbus,libX11,libXtst,libXi"
+
+build() {
+    mkdir -p build
+    meson setup build \
+        --cross-file="${SYSROOT}/../scripts/kratos-cross-file.txt" \
+        --prefix=/usr \
+        --libdir=lib \
+        --sysconfdir=/etc \
+        -Dintrospection=disabled \
+        -Ddocs=false
+    ninja -C build
+}
+
+package() {
+    DESTDIR="${PKGDIR}" ninja -C build install
+}

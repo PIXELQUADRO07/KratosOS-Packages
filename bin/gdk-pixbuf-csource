@@ -1,0 +1,3 @@
+#!/bin/sh
+SYSROOT="/home/ghost/Github/Kratos-OS/build/sysroot"
+exec "$SYSROOT/lib64/ld-linux-x86-64.so.2" --library-path "$SYSROOT/usr/lib:$SYSROOT/lib" "$SYSROOT/usr/bin/gdk-pixbuf-csource" "$@"

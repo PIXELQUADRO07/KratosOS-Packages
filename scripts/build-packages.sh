@@ -118,14 +118,19 @@ if [ -n "$source" ]; then
     tar -xf "$ARCHIVE" -C "$SOURCES_DIR"
 
     if [ ! -d "$SRC_DIR" ]; then
-        # Fallback check if the archive extracted into a slightly different directory
-        EXTRACTED_DIR=$(find "$SOURCES_DIR" -maxdepth 1 -mindepth 1 -type d -name "$name-*" | head -n 1)
-        if [ -n "$EXTRACTED_DIR" ]; then
-            echo "[~] Renaming extracted directory $EXTRACTED_DIR to $SRC_DIR"
-            mv "$EXTRACTED_DIR" "$SRC_DIR"
+        TAR_STEM="${TARBALL_NAME%.tar.*}"
+        if [ -d "$SOURCES_DIR/$TAR_STEM" ]; then
+            echo "[~] Renaming extracted directory $SOURCES_DIR/$TAR_STEM to $SRC_DIR"
+            mv "$SOURCES_DIR/$TAR_STEM" "$SRC_DIR"
         else
-            echo "[!] Error: Extracted directory not found at $SRC_DIR"
-            exit 1
+            EXTRACTED_DIR=$(find "$SOURCES_DIR" -maxdepth 1 -mindepth 1 -type d -name "$name-*" | head -n 1)
+            if [ -n "$EXTRACTED_DIR" ]; then
+                echo "[~] Renaming extracted directory $EXTRACTED_DIR to $SRC_DIR"
+                mv "$EXTRACTED_DIR" "$SRC_DIR"
+            else
+                echo "[!] Error: Extracted directory not found at $SRC_DIR"
+                exit 1
+            fi
         fi
     fi
 else
@@ -141,7 +146,7 @@ rm -rf "$STAGE_DIR"
 mkdir -p "$STAGE_DIR"
 
 # 9. Setup Cross-Compile Environment
-export PATH="$KRATOS_TOOLS/bin:$PATH"
+export PATH="$REPO_ROOT/bin:$KRATOS_TOOLS/bin:$PATH"
 export SYSROOT="$KRATOS_SYSROOT"
 export PKG_CONFIG_LIBDIR="${SYSROOT}/usr/lib/pkgconfig:${SYSROOT}/usr/share/pkgconfig"
 export PKG_CONFIG_SYSROOT_DIR="${SYSROOT}"
@@ -154,6 +159,11 @@ export RANLIB="$TARGET-ranlib"
 export STRIP="$TARGET-strip"
 export PKGDIR="$STAGE_DIR"
 export MESON_CROSS="$SCRIPT_DIR/kratos-cross-file.txt"
+export ac_cv_func_malloc_0_nonnull=yes
+export ac_cv_func_realloc_0_nonnull=yes
+export lf_cv_sane_realloc=yes
+export CFLAGS="${CFLAGS:--O2 -pipe} -std=gnu17 -Wno-incompatible-pointer-types -Wno-implicit-function-declaration -Wno-error"
+export CXXFLAGS="${CXXFLAGS:--O2 -pipe} -Wno-error"
 
 echo "=================================================="
 echo "   Building Package: $name-$version-$release"

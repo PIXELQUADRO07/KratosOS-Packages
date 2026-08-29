@@ -5,7 +5,7 @@ arch=x86_64
 license="GPL-2.0-or-later"
 description="Panel for the Xfce desktop environment"
 source="https://archive.xfce.org/src/xfce/xfce4-panel/4.19/xfce4-panel-4.19.6.tar.bz2"
-sha256="PLACEHOLDER_sha256_xfce4-panel_4.19.6"
+sha256="85709595886918cf255945d54d8895c0ab1b7aeec6be38df169ab6cfc3e672a0"
 depends="libxfce4util,libxfce4ui,xfconf,garcon,exo,libwnck3,gtk+3"
 
 build() {

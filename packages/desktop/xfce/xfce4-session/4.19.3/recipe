@@ -5,17 +5,20 @@ arch=x86_64
 license="GPL-2.0-or-later"
 description="Session manager for the Xfce desktop environment"
 source="https://archive.xfce.org/src/xfce/xfce4-session/4.19/xfce4-session-4.19.3.tar.bz2"
-sha256="PLACEHOLDER_sha256_xfce4-session_4.19.3"
-depends="libxfce4util,libxfce4ui,xfconf,libSM,libICE,libwnck3,polkit"
+sha256="06d267e6b633aacd7ef0e1b5865ac5b42a7713267317c0d1cadf66f0bfdce3a9"
+depends="libxfce4util,libxfce4ui,xfconf,libSM,libICE,libwnck3,libxfce4windowing,iceauth"
 
 build() {
+    export ac_cv_path_ICEAUTH=/usr/bin/iceauth
     ./configure \
         --host="${TARGET}" \
         --build=x86_64-pc-linux-gnu \
         --prefix=/usr \
         --sysconfdir=/etc \
         --disable-static \
-        --disable-systemd
+        --disable-systemd \
+        --enable-x11 \
+        --disable-wayland
     make
 }
 

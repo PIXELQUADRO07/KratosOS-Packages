@@ -5,7 +5,7 @@ arch=x86_64
 license="MIT"
 description="Session Management library (X11)"
 source="https://xorg.freedesktop.org/releases/individual/lib/libSM-1.2.4.tar.xz"
-sha256="PLACEHOLDER_sha256_libSM_1.2.4"
+sha256="fdcbe51e4d1276b1183da77a8a4e74a137ca203e0bcfb20972dd5f3347e97b84"
 depends="libICE,xorgproto"
 
 build() {

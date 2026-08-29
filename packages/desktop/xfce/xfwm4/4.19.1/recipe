@@ -5,7 +5,7 @@ arch=x86_64
 license="GPL-2.0-or-later"
 description="Window manager for the Xfce desktop environment"
 source="https://archive.xfce.org/src/xfce/xfwm4/4.19/xfwm4-4.19.1.tar.bz2"
-sha256="PLACEHOLDER_sha256_xfwm4_4.19.1"
+sha256="89e8066dbc8d20ee2b46a7d79810f9dce20e1ca1ac8d7809a5461d21304a03b5"
 depends="libxfce4util,libxfce4ui,xfconf,libwnck3,libepoxy,libXrender,libXrandr,libXcomposite,libXdamage,libXfixes"
 
 build() {

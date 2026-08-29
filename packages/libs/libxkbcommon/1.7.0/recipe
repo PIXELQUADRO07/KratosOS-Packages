@@ -5,7 +5,7 @@ arch=x86_64
 license="MIT"
 description="Keyboard handling library (XKB)"
 source="https://xkbcommon.org/download/libxkbcommon-1.7.0.tar.xz"
-sha256="PLACEHOLDER_sha256_libxkbcommon_1.7.0"
+sha256="65782f0a10a4b455af9c6baab7040e2f537520caa2ec2092805cdfd36863b247"
 depends="libxcb,xkeyboard-config"
 
 build() {

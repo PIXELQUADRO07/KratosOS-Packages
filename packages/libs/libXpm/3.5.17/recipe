@@ -5,7 +5,7 @@ arch=x86_64
 license="MIT"
 description="X Pixmap library"
 source="https://xorg.freedesktop.org/releases/individual/lib/libXpm-3.5.17.tar.xz"
-sha256="PLACEHOLDER_sha256_libXpm_3.5.17"
+sha256="64b31f81019e7d388c822b0b28af8d51c4622b83f1f0cb6fa3fc95e271226e43"
 depends="libX11,xorgproto"
 
 build() {

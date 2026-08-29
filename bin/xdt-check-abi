@@ -1,0 +1,47 @@
+#!/bin/bash
+#
+# xdt-check-abi -- checks actual library ABI vs. an expected description file
+#
+# Copyright (C) 2024 Brian Tarricone <brian@tarricone.org>
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+symbol_file="$1"
+lib_file="$2"
+
+if [ -z "$symbol_file" -o -z "$lib_file" ]; then
+    echo "Usage: $0 SYMBOL_FILE LIBRARY_FILE" >&2
+    exit 1
+fi
+
+if [ ! -e "$symbol_file" ]; then
+    echo "Symbol file '$symbol_file' does not exist" >&2
+    exit 1
+elif [ ! -e "$lib_file" ]; then
+    echo "Library '$lib_file' does not exist" >&2
+    exit 1
+fi
+
+op=$(diff -U0 \
+    --label expected-abi \
+    <(sed '/^#/d; /^[[:space:]]*$/d; s/^var://; s/[[:space:]].*//' "$symbol_file" | sort | uniq) \
+    --label actual-abi \
+    <(nm -D "$lib_file" | awk '/ [DRTG] / && !/ _edata/{ print $3 }' | sort | uniq))
+
+if [ -n "$op" ]; then
+    echo "ERROR: ABI is not as expected" >&2
+    echo >&2
+    echo "$op" >&2
+    exit 1
+fi

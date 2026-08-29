@@ -1,0 +1,22 @@
+name=libXtst
+version=1.2.4
+release=1
+arch=x86_64
+license="MIT"
+description="X11 Testing -- Resource extension library"
+source="https://xorg.freedesktop.org/releases/individual/lib/libXtst-1.2.4.tar.xz"
+sha256="84f5f30b9254b4ffee14b5b0940e2622153b0d3aed8286a3c5b7eeb340ca33c8"
+depends="libX11,libXext,libXi,xorgproto"
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --build=x86_64-pc-linux-gnu \
+        --prefix=/usr \
+        --disable-static
+    make
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}
