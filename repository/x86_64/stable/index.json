@@ -1523,6 +1523,19 @@
       "installed_size": 845096
     },
     {
+      "name": "xauth",
+      "version": "1.1.5",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "X authority file utility \u2014 manages .Xauthority cookies for X11 sessions",
+      "license": "MIT",
+      "sha256": "b80022392c3547584d1485b9624c509e61e63aaa0fc39cb6abb64a5ffb800036",
+      "url": "packages/xauth-1.1.5-1-x86_64.kpkg",
+      "depends": "libX11,libXau,libXext,libXmu",
+      "size": 31744,
+      "installed_size": 66674
+    },
+    {
       "name": "xcb-proto",
       "version": "1.17.0",
       "release": 1,
@@ -1690,6 +1703,19 @@
       "depends": "xorg-server,libX11",
       "size": 20480,
       "installed_size": 45592
+    },
+    {
+      "name": "xkbcomp",
+      "version": "1.5.0",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "XKB keymap compiler \u2014 required by Xorg to compile keyboard layouts at startup",
+      "license": "MIT",
+      "sha256": "048322fa73b6269311a10b2104db3c5010919d0282ee24167f889ed4afc0c3f9",
+      "url": "packages/xkbcomp-1.5.0-1-x86_64.kpkg",
+      "depends": "libxkbfile,libX11",
+      "size": 106496,
+      "installed_size": 240252
     },
     {
       "name": "xkeyboard-config",
