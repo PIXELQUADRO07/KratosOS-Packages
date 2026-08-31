@@ -18,10 +18,16 @@ build() {
         -Dman=false \
         -Dgtk_doc=false \
         -Dinstalled_tests=false \
+        -Dpng=enabled \
+        -Djpeg=enabled \
+        -Dtiff=enabled \
+        -Dgif=enabled \
+        -Dbuiltin_loaders=none \
         -Drelocatable=true
     ninja -C build
 }
 
 package() {
     DESTDIR="${PKGDIR}" ninja -C build install
+    test -f "${PKGDIR}/usr/lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-png.so"
 }

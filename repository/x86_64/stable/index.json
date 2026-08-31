@@ -145,6 +145,19 @@
       "installed_size": 20417216
     },
     {
+      "name": "desktop",
+      "version": "1.0",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "XFCE desktop environment group for KratosOS",
+      "license": "GPL-3.0",
+      "sha256": "815a57367e51c5aa556b9667f6e147503d6e61d563e6a2c66d53822055793793",
+      "url": "packages/desktop-1.0-1-x86_64.kpkg",
+      "depends": "xorg-server,xinit,xf86-video-vesa,xf86-video-fbdev,xf86-input-libinput,xkeyboard-config,hicolor-icon-theme,libxfce4util,xfconf,libxfce4ui,garcon,exo,xfce4-panel,xfwm4,xfdesktop4,xfce4-session,xfce4-settings,thunar,xfce4-terminal,dbus",
+      "size": 4608,
+      "installed_size": 0
+    },
+    {
       "name": "development",
       "version": "1.0",
       "release": 1,
@@ -302,29 +315,16 @@
     },
     {
       "name": "gdk-pixbuf",
-      "version": "2.36.12",
-      "release": 1,
-      "arch": "x86_64",
-      "description": "Image loading library used by GTK+",
-      "license": "LGPL-2.1-or-later",
-      "sha256": "7921a9d66c3f96951c71a6c77ac2978a4ef74c244a8e89f474649894f81bf5e3",
-      "url": "packages/gdk-pixbuf-2.36.12-1-x86_64.kpkg",
-      "depends": "glibc,glib,libpng,libjpeg-turbo,tiff,libX11",
-      "size": 643072,
-      "installed_size": 1572568
-    },
-    {
-      "name": "gdk-pixbuf",
       "version": "2.42.12",
       "release": 1,
       "arch": "x86_64",
       "description": "Image loading library",
       "license": "LGPL-2.0-or-later",
-      "sha256": "1d4ce3c7981f9fe65ffdd78caf78cda2ac11539de91560135b97dc7e258d9308",
+      "sha256": "53ce51786f4b36dbf41a78092a2fbd67b4427fc69b696ac60181d2aaf3264a04",
       "url": "packages/gdk-pixbuf-2.42.12-1-x86_64.kpkg",
       "depends": "glib,libpng,libjpeg-turbo,tiff",
-      "size": 990208,
-      "installed_size": 3407101
+      "size": 1002496,
+      "installed_size": 3444841
     },
     {
       "name": "glib",
@@ -416,6 +416,19 @@
       "depends": "",
       "size": 123904,
       "installed_size": 307278
+    },
+    {
+      "name": "hicolor-icon-theme",
+      "version": "0.18",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Fallback icon theme",
+      "license": "GPL-2.0-or-later",
+      "sha256": "ab4caf4e395d959da4048b64f9db8f3865692e1cb0e86bc09f5c4372b6822240",
+      "url": "packages/hicolor-icon-theme-0.18-1-x86_64.kpkg",
+      "depends": "",
+      "size": 5632,
+      "installed_size": 3354
     },
     {
       "name": "iceauth",
