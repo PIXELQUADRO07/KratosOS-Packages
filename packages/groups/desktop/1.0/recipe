@@ -6,7 +6,7 @@ license="GPL-3.0"
 description="XFCE desktop environment group for KratosOS"
 source=""
 sha256=""
-depends="xorg-server,xinit,xf86-video-vesa,xf86-video-fbdev,xf86-input-libinput,xkeyboard-config,libxfce4util,xfconf,libxfce4ui,garcon,exo,xfce4-panel,xfwm4,xfdesktop4,xfce4-session,xfce4-settings,thunar,xfce4-terminal,dbus"
+depends="xorg-server,xinit,xf86-video-vesa,xf86-video-fbdev,xf86-input-libinput,xkeyboard-config,hicolor-icon-theme,libxfce4util,xfconf,libxfce4ui,garcon,exo,xfce4-panel,xfwm4,xfdesktop4,xfce4-session,xfce4-settings,thunar,xfce4-terminal,dbus"
 
 build() {
     :
