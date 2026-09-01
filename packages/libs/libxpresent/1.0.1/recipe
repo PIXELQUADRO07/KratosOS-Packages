@@ -1,0 +1,22 @@
+name=libxpresent
+version=1.0.1
+release=1
+arch=x86_64
+license="MIT"
+description="X Present Extension library"
+source="https://www.x.org/archive/individual/lib/libXpresent-1.0.1.tar.xz"
+sha256="b964df9e5a066daa5e08d2dc82692c57ca27d00b8cc257e8e960c9f1cf26231b"
+depends="xorgproto,libX11,libXext,libXfixes,libXrandr"
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --prefix=/usr \
+        --sysconfdir=/etc \
+        --disable-static
+    make
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}

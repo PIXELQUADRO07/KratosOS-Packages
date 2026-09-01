@@ -1,0 +1,28 @@
+name=accountsservice
+version=23.13.9
+release=1
+arch=x86_64
+license="GPL-3.0-or-later"
+description="D-Bus service for accessing the list of users and manipulating them"
+source="https://www.freedesktop.org/software/accountsservice/accountsservice-23.13.9.tar.xz"
+sha256="adda4cdeae24fa0992e7df3ffff9effa7090be3ac233a3edfdf69d5a9c9b924f"
+depends="glib,polkit"
+
+build() {
+    mkdir -p build
+    meson setup build \
+        --cross-file="${SYSROOT}/../scripts/kratos-cross-file.txt" \
+        --prefix=/usr \
+        --libdir=lib \
+        --sysconfdir=/etc \
+        --localstatedir=/var \
+        -Dintrospection=false \
+        -Dgtk_doc=false \
+        -Dsystemdsystemunitdir=no \
+        -Dadmin_group=wheel
+    ninja -C build
+}
+
+package() {
+    DESTDIR="${PKGDIR}" ninja -C build install
+}

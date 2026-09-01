@@ -1,0 +1,25 @@
+name=libgudev
+version=238
+release=1
+arch=x86_64
+license="LGPL-2.1-only"
+description="GObject-based wrapper library for libudev"
+source="https://download.gnome.org/sources/libgudev/238/libgudev-238.tar.xz"
+sha256="61266ab1afc9d73dbc60a8b2af73e99d2fdff47d99544d085760e4fa667b5dd1"
+depends="glib,eudev"
+
+build() {
+    mkdir -p build
+    meson setup build \
+        --cross-file="${SYSROOT}/../scripts/kratos-cross-file.txt" \
+        --prefix=/usr \
+        --libdir=lib \
+        --sysconfdir=/etc \
+        -Dintrospection=disabled \
+        -Dtests=disabled
+    ninja -C build
+}
+
+package() {
+    DESTDIR="${PKGDIR}" ninja -C build install
+}

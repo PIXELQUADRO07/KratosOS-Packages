@@ -1,0 +1,22 @@
+name=xfce4-appfinder
+version=4.19.2
+release=1
+arch=x86_64
+license="GPL-2.0-or-later"
+description="Application finder for the Xfce desktop"
+source="https://archive.xfce.org/src/xfce/xfce4-appfinder/4.19/xfce4-appfinder-4.19.2.tar.bz2"
+sha256="e2f4878482bb8bbef63d9499329e46b2a1e0c5b984e8515e6aeec7efb5bfd330"
+depends="garcon,libxfce4ui,libxfce4util,xfconf,gtk+3"
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --prefix=/usr \
+        --sysconfdir=/etc \
+        --disable-static
+    make
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}

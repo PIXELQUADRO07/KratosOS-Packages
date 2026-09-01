@@ -1,0 +1,33 @@
+name=pulseaudio
+version=17.0
+release=1
+arch=x86_64
+license="GPL-2.0-or-later"
+description="PulseAudio sound server"
+source="https://www.freedesktop.org/software/pulseaudio/releases/pulseaudio-17.0.tar.xz"
+sha256="053794d6671a3e397d849e478a80b82a63cb9d8ca296bd35b73317bb5ceb87b5"
+depends="glib,dbus,libsndfile,alsa-lib"
+
+build() {
+    mkdir -p build
+    meson setup build \
+        --cross-file="${SYSROOT}/../scripts/kratos-cross-file.txt" \
+        --prefix=/usr \
+        --libdir=lib \
+        --sysconfdir=/etc \
+        --localstatedir=/var \
+        -Ddatabase=simple \
+        -Dbluez5=disabled \
+        -Dgtk=disabled \
+        -Dudev=disabled \
+        -Doss-output=disabled \
+        -Djack=disabled \
+        -Dlirc=disabled \
+        -Dman=false \
+        -Dtests=false
+    ninja -C build
+}
+
+package() {
+    DESTDIR="${PKGDIR}" ninja -C build install
+}
