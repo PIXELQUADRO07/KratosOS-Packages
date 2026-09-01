@@ -1,6 +1,6 @@
 name=gdk-pixbuf
 version=2.42.12
-release=1
+release=2
 arch=x86_64
 license="LGPL-2.0-or-later"
 description="Image loading library"
@@ -23,11 +23,24 @@ build() {
         -Dtiff=enabled \
         -Dgif=enabled \
         -Dbuiltin_loaders=none \
-        -Drelocatable=true
+        -Drelocatable=false
     ninja -C build
 }
 
 package() {
     DESTDIR="${PKGDIR}" ninja -C build install
     test -f "${PKGDIR}/usr/lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-png.so"
+
+    # Generate loaders.cache with absolute paths
+    # We use the cross-built query-loaders tool, which works on the host if it's the same arch
+    echo "[+] Generating loaders.cache..."
+    LD_LIBRARY_PATH="${SYSROOT}/usr/lib:${PKGDIR}/usr/lib" \
+    "${PKGDIR}/usr/bin/gdk-pixbuf-query-loaders" \
+    "${PKGDIR}/usr/lib/gdk-pixbuf-2.0/2.10.0/loaders"/*.so \
+    > "${PKGDIR}/usr/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache"
+
+    # Remove the staging prefix to make paths absolute for the target
+    sed -i "s|${PKGDIR}||g" "${PKGDIR}/usr/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache"
+
+    echo "[✓] loaders.cache generated successfully."
 }
