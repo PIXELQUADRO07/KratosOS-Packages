@@ -36,7 +36,7 @@ jobs:
           python-version: "3.x"
 
       - name: Rigenera index.json
-        run: python3 scripts/generate-index.sh
+        run: python3 scripts/generate-index.py
 
       - name: Verifica che l'indice non sia vuoto
         run: |
