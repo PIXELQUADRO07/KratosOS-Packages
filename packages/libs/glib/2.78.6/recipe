@@ -6,7 +6,7 @@ license="LGPL-2.1-or-later"
 description="Low-level core library that forms the basis for projects such as GTK+ and GNOME"
 source="https://download.gnome.org/sources/glib/2.78/glib-2.78.6.tar.xz"
 sha256="244854654dd82c7ebcb2f8e246156d2a05eb9cd1ad07ed7a779659b4602c9fae"
-depends="glibc,zlib,pcre2,libffi,util-linux,libmount"
+depends="glibc,zlib,pcre2,libffi,util-linux"
 
 build() {
     mkdir -p build
