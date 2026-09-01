@@ -1,0 +1,21 @@
+name=xrdb
+version=1.2.2
+release=1
+arch=x86_64
+license="MIT"
+description="X resource database utility — manages X11 resource properties and definitions"
+source="https://xorg.freedesktop.org/releases/individual/app/xrdb-1.2.2.tar.xz"
+sha256="31f5fcab231b38f255b00b066cf7ea3b496df712c9eb2d0d50c670b63e5033f4"
+depends="libX11,libXmu"
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --build=x86_64-pc-linux-gnu \
+        --prefix=/usr
+    make
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}
