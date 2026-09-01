@@ -1,4 +1,4 @@
-name=gtk+
+name=gtk+3
 version=3.24.30
 release=1
 arch=x86_64
