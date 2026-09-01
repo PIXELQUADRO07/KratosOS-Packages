@@ -73,11 +73,11 @@
       "arch": "x86_64",
       "description": "2D graphics library with support for multiple output devices",
       "license": "LGPL-2.1-or-later",
-      "sha256": "932e1d4c4a998c186c9b6c537c469bb226520015de87b75f1dd4360cec8667e6",
+      "sha256": "b26550d057ecb57f0640677062485dd2ae8c23788ddee68faa6a8c1f8f2eae0e",
       "url": "packages/cairo-1.16.0-1-x86_64.kpkg",
       "depends": "glibc,pixman,freetype,fontconfig,libpng,libX11,libXext,libXrender",
-      "size": 3343360,
-      "installed_size": 7626856
+      "size": 800256,
+      "installed_size": 1973536
     },
     {
       "name": "core",
@@ -255,11 +255,11 @@
       "arch": "x86_64",
       "description": "Library for configuring and customizing font access",
       "license": "MIT",
-      "sha256": "d2c7a020727d1d6960d64bfa6e8f811b6d45fb1e1addb39187814777aaa5bb1f",
+      "sha256": "c764a1de0ac368f21d3d3d0e2b435775668c672a70092d229a98a6d70c76ba64",
       "url": "packages/fontconfig-2.15.0-1-x86_64.kpkg",
       "depends": "freetype,expat,libxml2",
-      "size": 653312,
-      "installed_size": 1665829
+      "size": 231936,
+      "installed_size": 780597
     },
     {
       "name": "freetype",
@@ -327,6 +327,19 @@
       "installed_size": 3444841
     },
     {
+      "name": "gdk-pixbuf",
+      "version": "2.42.12",
+      "release": 2,
+      "arch": "x86_64",
+      "description": "Image loading library",
+      "license": "LGPL-2.0-or-later",
+      "sha256": "d023f54a40893e3dc68a886b01b9c00f611e11e833eb662f3bbd20b991e59a1c",
+      "url": "packages/gdk-pixbuf-2.42.12-2-x86_64.kpkg",
+      "depends": "glib,libpng,libjpeg-turbo,tiff",
+      "size": 1000960,
+      "installed_size": 3438321
+    },
+    {
       "name": "glib",
       "version": "2.56.4",
       "release": 1,
@@ -346,11 +359,11 @@
       "arch": "x86_64",
       "description": "Low-level core library that forms the basis for projects such as GTK+ and GNOME",
       "license": "LGPL-2.1-or-later",
-      "sha256": "4576db927ea09beab879284a09d6ba752ad8cdf4af5c25b2d47bbdf360ef9127",
+      "sha256": "5fad07689134b64e36acab658b9cd234eac6d6a0dc84fb311c2e61bb84a1eb28",
       "url": "packages/glib-2.78.6-1-x86_64.kpkg",
-      "depends": "glibc,zlib,pcre2,libffi,util-linux,libmount",
-      "size": 10206720,
-      "installed_size": 28959972
+      "depends": "glibc,zlib,pcre2,libffi,util-linux",
+      "size": 10207744,
+      "installed_size": 28964556
     },
     {
       "name": "grep",
@@ -366,14 +379,14 @@
       "installed_size": 915463
     },
     {
-      "name": "gtk+",
+      "name": "gtk+3",
       "version": "3.24.30",
       "release": 1,
       "arch": "x86_64",
       "description": "Multi-platform toolkit for creating graphical user interfaces",
       "license": "LGPL-2.1-or-later",
-      "sha256": "efb5a7ab2f2ddbc7c335700edbeb840be5a508a025cf9b33b79deaaed4324127",
-      "url": "packages/gtk+-3.24.30-1-x86_64.kpkg",
+      "sha256": "76f4367ca582579d181c11166c2fdb8187e145974e418c9fe239e780862e51d1",
+      "url": "packages/gtk+3-3.24.30-1-x86_64.kpkg",
       "depends": "glibc,glib,atk,gdk-pixbuf,pango,cairo,libX11,libXext,libXcursor,libXfixes,libXi,libXrandr,libXcomposite,libXdamage",
       "size": 18843648,
       "installed_size": 66987061
@@ -866,11 +879,11 @@
       "arch": "x86_64",
       "description": "Input device management and event handling library",
       "license": "MIT",
-      "sha256": "1d76b3dfea6ddb605e36e5c5c5ba71d44cc9c4c9e764609d1dc016ac91834331",
+      "sha256": "9e4e3f143f3d6e7e23a1ec0827c8f3329fb747dc3104cea89f6b18946ac9ca1b",
       "url": "packages/libinput-1.27.1-1-x86_64.kpkg",
-      "depends": "libevdev,mtdev,libwacom",
-      "size": 1182720,
-      "installed_size": 3358149
+      "depends": "libevdev,mtdev",
+      "size": 1883136,
+      "installed_size": 4782909
     },
     {
       "name": "libjpeg-turbo",
@@ -1178,11 +1191,11 @@
       "arch": "x86_64",
       "description": "Open-source OpenGL/Vulkan implementation (software rendering)",
       "license": "MIT",
-      "sha256": "d0c5579540387b7f39bd7a23cc9b573e10112acca01a8658a5250697331f8220",
+      "sha256": "469cae432256998b4e49dcee2b1eb7d51ca54ead1a12254fe5c57f651c428b4d",
       "url": "packages/mesa-24.3.4-1-x86_64.kpkg",
       "depends": "libdrm,libX11,libXext,libXfixes,libxcb,libxkbcommon,zlib,zstd,expat,libxml2",
-      "size": 37540352,
-      "installed_size": 93834563
+      "size": 37552640,
+      "installed_size": 93880307
     },
     {
       "name": "mtdev",
@@ -1692,14 +1705,14 @@
       "installed_size": 1188430
     },
     {
-      "name": "xfdesktop4",
+      "name": "xfdesktop",
       "version": "4.19.5",
       "release": 1,
       "arch": "x86_64",
       "description": "Desktop manager for the Xfce desktop environment",
       "license": "GPL-2.0-or-later",
-      "sha256": "001009000e1a5491355c7d45d36023d4a1c83939fa4adb17ade17f275f9edbc1",
-      "url": "packages/xfdesktop4-4.19.5-1-x86_64.kpkg",
+      "sha256": "dc70c35c9f5e547f572a2ecfd30bf4757fcd07e9e4c3f0c2f11d5a859ced8bae",
+      "url": "packages/xfdesktop-4.19.5-1-x86_64.kpkg",
       "depends": "libxfce4util,libxfce4ui,xfconf,garcon,exo,libwnck3,libnotify,thunar",
       "size": 1097216,
       "installed_size": 3078028
