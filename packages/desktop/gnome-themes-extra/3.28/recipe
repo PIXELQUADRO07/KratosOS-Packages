@@ -1,0 +1,23 @@
+name=gnome-themes-extra
+version=3.28
+release=1
+arch=x86_64
+license="LGPL-2.1-only"
+description="Extra themes for GNOME"
+source="https://download.gnome.org/sources/gnome-themes-extra/3.28/gnome-themes-extra-3.28.tar.xz"
+sha256="7c4ba0bff001f06d8983cfc105adaac42df1d1267a2591798a780bac557a5819"
+depends="gtk+3,librsvg,adwaita-icon-theme"
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --prefix=/usr \
+        --sysconfdir=/etc \
+        --disable-static \
+        --disable-gtk2-engine
+    make
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}

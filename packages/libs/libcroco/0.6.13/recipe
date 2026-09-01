@@ -1,0 +1,22 @@
+name=libcroco
+version=0.6.13
+release=1
+arch=x86_64
+license="LGPL-2.1-only"
+description="Cascading Style Sheets (CSS) parsing and manipulation toolkit"
+source="https://download.gnome.org/sources/libcroco/0.6/libcroco-0.6.13.tar.xz"
+sha256="767ec234ae7aa684695b3a735548224888132e063f92db585759b422570621d4"
+depends="glib,libxml2"
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --prefix=/usr \
+        --sysconfdir=/etc \
+        --disable-static
+    make
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}

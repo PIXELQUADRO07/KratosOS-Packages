@@ -2,6 +2,19 @@
   "version": 1,
   "packages": [
     {
+      "name": "adwaita-icon-theme",
+      "version": "46.2",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Adwaita icon theme",
+      "license": "LGPL-3.0-or-later OR CC-BY-SA-3.0",
+      "sha256": "b83409fa1dbfb2c860e162f6f1547f35d118d6ff83028bb693a71956f22aed10",
+      "url": "packages/adwaita-icon-theme-46.2-1-x86_64.kpkg",
+      "depends": "hicolor-icon-theme",
+      "size": 1462784,
+      "installed_size": 11744681
+    },
+    {
       "name": "all",
       "version": "1.0",
       "release": 1,
@@ -13,6 +26,19 @@
       "depends": "core,networking,cybersecurity,development,productivity",
       "size": 4608,
       "installed_size": 0
+    },
+    {
+      "name": "alsa-lib",
+      "version": "1.2.11",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Advanced Linux Sound Architecture (ALSA) library",
+      "license": "LGPL-2.1-only",
+      "sha256": "503f6e09652a35923459da6c37d354a48252986a34b1fba6faa23502d52fc077",
+      "url": "packages/alsa-lib-1.2.11-1-x86_64.kpkg",
+      "depends": "",
+      "size": 715264,
+      "installed_size": 2211625
     },
     {
       "name": "at-spi2-core",
@@ -169,6 +195,19 @@
       "depends": "vim",
       "size": 4608,
       "installed_size": 0
+    },
+    {
+      "name": "duktape",
+      "version": "2.7.0",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Embeddable Javascript engine",
+      "license": "MIT",
+      "sha256": "6152d9f57a5eda98ce1adbd7d07f86f8a3e97d9207e90da189e2f6cbc112e8f7",
+      "url": "packages/duktape-2.7.0-1-x86_64.kpkg",
+      "depends": "",
+      "size": 890880,
+      "installed_size": 2101686
     },
     {
       "name": "elfutils",
@@ -364,6 +403,19 @@
       "depends": "glibc,zlib,pcre2,libffi,util-linux",
       "size": 10207744,
       "installed_size": 28964556
+    },
+    {
+      "name": "gnome-themes-extra",
+      "version": "3.28",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Extra themes for GNOME",
+      "license": "LGPL-2.1-only",
+      "sha256": "2e9631d318136d70fd57280f6c0a159073afdd3fd8fde38d99c273f5271f21bd",
+      "url": "packages/gnome-themes-extra-3.28-1-x86_64.kpkg",
+      "depends": "gtk+3,librsvg,adwaita-icon-theme",
+      "size": 3006976,
+      "installed_size": 4440431
     },
     {
       "name": "grep",
@@ -782,6 +834,19 @@
       "installed_size": 495453
     },
     {
+      "name": "libcanberra",
+      "version": "0.30",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Implementation of the XDG Sound Theme and Name Specifications",
+      "license": "LGPL-2.1-only",
+      "sha256": "754389503fb5b90ce34382b04aec20d064bd978033164ad37373f1c34aaeca6c",
+      "url": "packages/libcanberra-0.30-1-x86_64.kpkg",
+      "depends": "glib,libsndfile,alsa-lib",
+      "size": 97792,
+      "installed_size": 365923
+    },
+    {
       "name": "libcap",
       "version": "2.73",
       "release": 1,
@@ -793,6 +858,19 @@
       "depends": "glibc",
       "size": 123904,
       "installed_size": 370297
+    },
+    {
+      "name": "libcroco",
+      "version": "0.6.13",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Cascading Style Sheets (CSS) parsing and manipulation toolkit",
+      "license": "LGPL-2.1-only",
+      "sha256": "4d3b86b2e0279290470c54d000bc70006ed0ba5c480e291c7311cd3e86ea4682",
+      "url": "packages/libcroco-0.6.13-1-x86_64.kpkg",
+      "depends": "glib,libxml2",
+      "size": 220672,
+      "installed_size": 1302679
     },
     {
       "name": "libdisplay-info",
@@ -873,6 +951,19 @@
       "installed_size": 83142
     },
     {
+      "name": "libgudev",
+      "version": "238",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "GObject-based wrapper library for libudev",
+      "license": "LGPL-2.1-only",
+      "sha256": "9b9bbe4194f37affe3768d27524f77843f64db854c1fd6cf5f82cfb9f8149f56",
+      "url": "packages/libgudev-238-1-x86_64.kpkg",
+      "depends": "glib,eudev",
+      "size": 62464,
+      "installed_size": 177075
+    },
+    {
       "name": "libinput",
       "version": "1.27.1",
       "release": 1,
@@ -938,6 +1029,19 @@
       "installed_size": 223585
     },
     {
+      "name": "libogg",
+      "version": "1.3.5",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Ogg Bitstream Library",
+      "license": "BSD-3-Clause",
+      "sha256": "2ec664552e6e468f792dff098a2ec7c084097c23e816b78d9cb2184a05ed2af7",
+      "url": "packages/libogg-1.3.5-1-x86_64.kpkg",
+      "depends": "",
+      "size": 217088,
+      "installed_size": 455797
+    },
+    {
       "name": "libpcap",
       "version": "1.10.4",
       "release": 1,
@@ -990,6 +1094,32 @@
       "installed_size": 190143
     },
     {
+      "name": "librsvg",
+      "version": "2.40.21",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "SVG rendering library",
+      "license": "LGPL-2.1-or-later",
+      "sha256": "fb43b33ad2bdcbfd638323d203d9af5ef4914eaa31c964f8341b04f80f0fa0ad",
+      "url": "packages/librsvg-2.40.21-1-x86_64.kpkg",
+      "depends": "glib,cairo,pango,gdk-pixbuf,libxml2",
+      "size": 177664,
+      "installed_size": 584786
+    },
+    {
+      "name": "libsndfile",
+      "version": "1.2.2",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "A C library for reading and writing files containing sampled sound",
+      "license": "LGPL-2.1-only",
+      "sha256": "1c2c77155e346046fb4830731b00e0d6f83136f747264a85d783ee945fe344e3",
+      "url": "packages/libsndfile-1.2.2-1-x86_64.kpkg",
+      "depends": "",
+      "size": 366080,
+      "installed_size": 1084678
+    },
+    {
       "name": "libtirpc",
       "version": "1.3.6",
       "release": 1,
@@ -1003,6 +1133,19 @@
       "installed_size": 536621
     },
     {
+      "name": "libtool",
+      "version": "2.4.7",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "GNU Generic Library Support Script",
+      "license": "GPL-2.0-or-later",
+      "sha256": "51d388c58ec17720d156dc0aea5d238d6680f5043f82c9ee8c2943c7d4f35053",
+      "url": "packages/libtool-2.4.7-1-x86_64.kpkg",
+      "depends": "",
+      "size": 659968,
+      "installed_size": 2597279
+    },
+    {
       "name": "libunistring",
       "version": "1.2",
       "release": 1,
@@ -1014,6 +1157,32 @@
       "depends": "glibc",
       "size": 1352704,
       "installed_size": 4474050
+    },
+    {
+      "name": "libusb",
+      "version": "1.0.27",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "A library that provides generic access to USB devices",
+      "license": "LGPL-2.1-only",
+      "sha256": "461148ba38f315f05ec66eca70854bfee01a0a736f5a962bf72effc9efd80367",
+      "url": "packages/libusb-1.0.27-1-x86_64.kpkg",
+      "depends": "",
+      "size": 86528,
+      "installed_size": 237693
+    },
+    {
+      "name": "libvorbis",
+      "version": "1.3.7",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Vorbis Audio Compression Library",
+      "license": "BSD-3-Clause",
+      "sha256": "42c40f600ea0f8a855ffb966d33aca64ddc49df7f2dc5acdba8d5006e621bd96",
+      "url": "packages/libvorbis-1.3.7-1-x86_64.kpkg",
+      "depends": "libogg",
+      "size": 419328,
+      "installed_size": 1643162
     },
     {
       "name": "libwnck3",
@@ -1144,6 +1313,19 @@
       "depends": "zlib,xz",
       "size": 2659328,
       "installed_size": 8202542
+    },
+    {
+      "name": "libxpresent",
+      "version": "1.0.1",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "X Present Extension library",
+      "license": "MIT",
+      "sha256": "bd475714dd616d0ba5c9953c8327bcb4cfa0f0c062a94af989285471488f03f2",
+      "url": "packages/libxpresent-1.0.1-1-x86_64.kpkg",
+      "depends": "xorgproto,libX11,libXext,libXfixes,libXrandr",
+      "size": 17408,
+      "installed_size": 42846
     },
     {
       "name": "libxshmfence",
@@ -1315,6 +1497,32 @@
       "installed_size": 6067040
     },
     {
+      "name": "polkit",
+      "version": "124",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Policy authorization framework",
+      "license": "LGPL-2.0-or-later",
+      "sha256": "fa607cfbaddffdf809ffaf24c42d7a399b26708588639e9abeab604cfeb7a36f",
+      "url": "packages/polkit-124-1-x86_64.kpkg",
+      "depends": "glib,dbus,libxcrypt,expat",
+      "size": 582144,
+      "installed_size": 1559977
+    },
+    {
+      "name": "polkit-gnome",
+      "version": "0.105",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "PolicyKit GNOME authentication agent",
+      "license": "LGPL-2.0-or-later",
+      "sha256": "d55e67b658d89e274e70b5b142bae190ba5b9b26d3c0df6f69648cd617e02e13",
+      "url": "packages/polkit-gnome-0.105-1-x86_64.kpkg",
+      "depends": "polkit,gtk+3",
+      "size": 80896,
+      "installed_size": 358292
+    },
+    {
       "name": "productivity",
       "version": "1.0",
       "release": 1,
@@ -1326,6 +1534,19 @@
       "depends": "",
       "size": 4608,
       "installed_size": 0
+    },
+    {
+      "name": "pulseaudio",
+      "version": "17.0",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "PulseAudio sound server",
+      "license": "GPL-2.0-or-later",
+      "sha256": "a03aed8c09b6d6672b853839c8f25c5aba606ebd056ef29790c9d4141c80100a",
+      "url": "packages/pulseaudio-17.0-1-x86_64.kpkg",
+      "depends": "glib,dbus,libsndfile,alsa-lib",
+      "size": 6998016,
+      "installed_size": 18442265
     },
     {
       "name": "readline",
@@ -1497,6 +1718,19 @@
       "installed_size": 0
     },
     {
+      "name": "upower",
+      "version": "1.90.2",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Abstraction for enumerating power devices",
+      "license": "GPL-2.0-or-later",
+      "sha256": "10e962c8e1fd1a85187559f7dd9f666e6ca435cd3bb54a895b2713e888915fac",
+      "url": "packages/upower-1.90.2-1-x86_64.kpkg",
+      "depends": "glib,dbus,libusb,libgudev",
+      "size": 471040,
+      "installed_size": 1217947
+    },
+    {
       "name": "util-linux",
       "version": "2.41",
       "release": 1,
@@ -1638,6 +1872,32 @@
       "depends": "xorg-server",
       "size": 22016,
       "installed_size": 46177
+    },
+    {
+      "name": "xfce4-appfinder",
+      "version": "4.19.2",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Application finder for the Xfce desktop",
+      "license": "GPL-2.0-or-later",
+      "sha256": "521af29a0460e662c44558754ce8ac631e357484256579f09b536c4d69bb2e2b",
+      "url": "packages/xfce4-appfinder-4.19.2-1-x86_64.kpkg",
+      "depends": "garcon,libxfce4ui,libxfce4util,xfconf,gtk+3",
+      "size": 227328,
+      "installed_size": 812349
+    },
+    {
+      "name": "xfce4-notifyd",
+      "version": "0.9.3",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Notification daemon for the Xfce desktop",
+      "license": "GPL-2.0-or-later",
+      "sha256": "dc9c6b26d6b7955f41f98f58e1199bc19b234c9a043fb18326f2353d9c85d497",
+      "url": "packages/xfce4-notifyd-0.9.3-1-x86_64.kpkg",
+      "depends": "libxfce4ui,libxfce4util,xfconf,gtk+3,libnotify,libcanberra",
+      "size": 326656,
+      "installed_size": 1157757
     },
     {
       "name": "xfce4-panel",

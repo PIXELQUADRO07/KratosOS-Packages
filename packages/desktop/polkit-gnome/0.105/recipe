@@ -1,0 +1,22 @@
+name=polkit-gnome
+version=0.105
+release=1
+arch=x86_64
+license="LGPL-2.0-or-later"
+description="PolicyKit GNOME authentication agent"
+source="https://download.gnome.org/sources/polkit-gnome/0.105/polkit-gnome-0.105.tar.xz"
+sha256="1784494963b8bf9a00eedc6cd3a2868fb123b8a5e516e66c5eda48df17ab9369"
+depends="polkit,gtk+3"
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --prefix=/usr \
+        --sysconfdir=/etc \
+        --disable-static
+    make
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}

@@ -1,0 +1,26 @@
+name=librsvg
+version=2.40.21
+release=1
+arch=x86_64
+license="LGPL-2.1-or-later"
+description="SVG rendering library"
+source="https://download.gnome.org/sources/librsvg/2.40/librsvg-2.40.21.tar.xz"
+sha256="f7628905f1cada84e87e2b14883ed57d8094dca3281d5bcb24ece4279e9a92ba"
+depends="glib,cairo,pango,gdk-pixbuf,libxml2"
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --prefix=/usr \
+        --sysconfdir=/etc \
+        --disable-static \
+        --disable-introspection \
+        --disable-vala \
+        --disable-tools \
+        --without-croco
+    make
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}

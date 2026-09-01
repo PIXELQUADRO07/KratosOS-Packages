@@ -1,0 +1,17 @@
+name=duktape
+version=2.7.0
+release=1
+arch=x86_64
+license="MIT"
+description="Embeddable Javascript engine"
+source="https://duktape.org/duktape-2.7.0.tar.xz"
+sha256="90f8d2fa8b5567c6899830ddef2c03f3c27960b11aca222fa17aa7ac613c2890"
+depends=""
+
+build() {
+    make -f Makefile.sharedlibrary CC="${TARGET}-gcc"
+}
+
+package() {
+    make -f Makefile.sharedlibrary INSTALL_PREFIX=/usr DESTDIR="${PKGDIR}" install
+}
