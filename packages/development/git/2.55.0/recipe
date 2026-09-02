@@ -23,7 +23,7 @@ build() {
         --host="${TARGET}" \
         --build=x86_64-pc-linux-gnu \
         --prefix=/usr
-    make CC="${CC}" \
+    make CC="${CC}" CFLAGS="-O2" \
         NO_GETTEXT=1 \
         NO_TCLTK=1 \
         NO_PERL=1 \
@@ -39,4 +39,8 @@ package() {
         NO_PYTHON=1 \
         NO_CURL=1 \
         install
+
+    # Strip debug symbols — the git Makefile compiles with -g by default,
+    # which bloats every binary massively (300+ MB unstripped).
+    find "${PKGDIR}" -type f -perm -u+x -exec "${STRIP}" --strip-unneeded {} + 2>/dev/null || true
 }

@@ -210,6 +210,19 @@
       "installed_size": 0
     },
     {
+      "name": "dhcpcd",
+      "version": "10.5.2",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "DHCP, IPv4LL, IPv6RA and DHCPv6 client daemon",
+      "license": "BSD-2-Clause",
+      "sha256": "756435ba19a34fa76bb9878cd68fa6d3d3b4378bfaaeb54e0678b995d40b8bbe",
+      "url": "packages/dhcpcd-10.5.2-1-x86_64.kpkg",
+      "depends": "",
+      "size": 240128,
+      "installed_size": 560959
+    },
+    {
       "name": "duktape",
       "version": "2.7.0",
       "release": 1,
@@ -390,6 +403,19 @@
       "depends": "glib,libpng,libjpeg-turbo,tiff",
       "size": 1000960,
       "installed_size": 3438321
+    },
+    {
+      "name": "git",
+      "version": "2.55.0",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Distributed version control system (minimal build: no curl/perl/tcltk)",
+      "license": "GPL-2.0-only",
+      "sha256": "e539bdfb8d25f160e2b6eea4e822830a3dcc1e022ab8d00aed36aa0ddd64917a",
+      "url": "packages/git-2.55.0-1-x86_64.kpkg",
+      "depends": "zlib,openssl,expat",
+      "size": 299052544,
+      "installed_size": 608610683
     },
     {
       "name": "glib",
@@ -1027,6 +1053,19 @@
       "depends": "glibc",
       "size": 32256,
       "installed_size": 75315
+    },
+    {
+      "name": "libnl",
+      "version": "3.7.0",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Netlink protocol library (required by wpa_supplicant nl80211 driver)",
+      "license": "LGPL-2.1-only",
+      "sha256": "84a1c52fd599cc29a6acec6fa0e0df5785ff3e86cd360e79d2a2c873ed5396dc",
+      "url": "packages/libnl-3.7.0-1-x86_64.kpkg",
+      "depends": "",
+      "size": 492032,
+      "installed_size": 1496963
     },
     {
       "name": "libnotify",
@@ -1859,6 +1898,19 @@
       "depends": "",
       "size": 8704,
       "installed_size": 7465
+    },
+    {
+      "name": "wpa_supplicant",
+      "version": "2.12",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Client for WPA/WPA2/WPA3 and IEEE 802.1X wireless authentication",
+      "license": "BSD-3-Clause",
+      "sha256": "7588c522a9db36e55933389fd2308a2b89786823e3544230e01632a981957995",
+      "url": "packages/wpa_supplicant-2.12-1-x86_64.kpkg",
+      "depends": "openssl,libnl,dbus",
+      "size": 755712,
+      "installed_size": 1803067
     },
     {
       "name": "xauth",
