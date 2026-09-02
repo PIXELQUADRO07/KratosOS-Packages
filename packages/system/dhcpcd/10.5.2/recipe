@@ -1,0 +1,24 @@
+name=dhcpcd
+version=10.5.2
+release=1
+arch=x86_64
+license="BSD-2-Clause"
+description="DHCP, IPv4LL, IPv6RA and DHCPv6 client daemon"
+source="https://github.com/NetworkConfiguration/dhcpcd/releases/download/v10.5.2/dhcpcd-10.5.2.tar.xz"
+sha256="3e476657fdb6eeb38b277da3a48d0ac0113ecce5858ebdcddff2b629faed52b4"
+depends=""
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --build=x86_64-pc-linux-gnu \
+        --prefix=/usr \
+        --sysconfdir=/etc \
+        --libexecdir=/usr/lib/dhcpcd \
+        --dbdir=/var/lib/dhcpcd
+    make
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}
