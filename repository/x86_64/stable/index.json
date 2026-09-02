@@ -41,6 +41,19 @@
       "installed_size": 2211625
     },
     {
+      "name": "alsa-utils",
+      "version": "1.2.11",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Advanced Linux Sound Architecture (ALSA) utilities \u2014 amixer, aplay, arecord, alsamixer",
+      "license": "GPL-2.0-or-later",
+      "sha256": "cbbae3e001d559d62116bd8784c1318bcb73ed37fe22e1d6ef1a0edb20ca3b89",
+      "url": "packages/alsa-utils-1.2.11-1-x86_64.kpkg",
+      "depends": "alsa-lib",
+      "size": 262144,
+      "installed_size": 747255
+    },
+    {
       "name": "at-spi2-core",
       "version": "2.50.2",
       "release": 1,
@@ -1354,6 +1367,32 @@
       "installed_size": 202693
     },
     {
+      "name": "live",
+      "version": "1.0",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Live ISO environment with XFCE and Calamares Installer",
+      "license": "GPL-3.0",
+      "sha256": "92d31340deeaa2bd18bb232d13f124896142d3022b366a44c0539e3d76b1b95e",
+      "url": "packages/live-1.0-1-x86_64.kpkg",
+      "depends": "desktop,calamares,wireless-regdb,mkfontscale",
+      "size": 4608,
+      "installed_size": 0
+    },
+    {
+      "name": "live",
+      "version": "1.0.0",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Live ISO environment with XFCE and Calamares Installer",
+      "license": "GPL-3.0",
+      "sha256": "e9fb8c61514afeb510145ec91abd36a2332cb36b0b1856c4bdb0c85de977d62f",
+      "url": "packages/live-1.0.0-1-x86_64.kpkg",
+      "depends": "desktop,calamares,wireless-regdb,mkfontscale",
+      "size": 4608,
+      "installed_size": 0
+    },
+    {
       "name": "lz4",
       "version": "1.10.0",
       "release": 1,
@@ -1378,6 +1417,19 @@
       "depends": "libdrm,libX11,libXext,libXfixes,libxcb,libxkbcommon,zlib,zstd,expat,libxml2",
       "size": 37552640,
       "installed_size": 93880307
+    },
+    {
+      "name": "mkfontscale",
+      "version": "1.2.4",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Create an index of scalable font files for X \u2014 also provides mkfontdir",
+      "license": "MIT",
+      "sha256": "a645bafae931e17c4f132e403dd9ba7556fbb81aef75ec8fb2fb866396645e37",
+      "url": "packages/mkfontscale-1.2.4-1-x86_64.kpkg",
+      "depends": "freetype,libfontenc,xorgproto,zlib",
+      "size": 28672,
+      "installed_size": 60189
     },
     {
       "name": "mtdev",
@@ -1796,6 +1848,19 @@
       "installed_size": 845096
     },
     {
+      "name": "wireless-regdb",
+      "version": "2026.05.30",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Central Regulatory Domain Database for Linux wireless (regulatory.db)",
+      "license": "ISC",
+      "sha256": "b23f9cac1b0b90f312e5c0e135f745d3e3acd94704b26252b526a835cec9e429",
+      "url": "packages/wireless-regdb-2026.05.30-1-x86_64.kpkg",
+      "depends": "",
+      "size": 8704,
+      "installed_size": 7465
+    },
+    {
       "name": "xauth",
       "version": "1.1.5",
       "release": 1,
@@ -2054,6 +2119,19 @@
       "depends": "",
       "size": 745984,
       "installed_size": 4034936
+    },
+    {
+      "name": "xrdb",
+      "version": "1.2.2",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "X resource database utility \u2014 manages X11 resource properties and definitions",
+      "license": "MIT",
+      "sha256": "3ab5662c1acddfa1a6ab55eed6cf0925555e1e8f3bb3b363dae3e2ecc73b2260",
+      "url": "packages/xrdb-1.2.2-1-x86_64.kpkg",
+      "depends": "libX11,libXmu",
+      "size": 25600,
+      "installed_size": 57454
     },
     {
       "name": "xterm",

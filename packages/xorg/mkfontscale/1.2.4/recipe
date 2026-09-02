@@ -1,0 +1,21 @@
+name=mkfontscale
+version=1.2.4
+release=1
+arch=x86_64
+license="MIT"
+description="Create an index of scalable font files for X — also provides mkfontdir"
+source="https://xorg.freedesktop.org/archive/individual/app/mkfontscale-1.2.4.tar.xz"
+sha256="a01492a17a9b6c0ee3f92ee578850e305315b9f298da5f006a1cd4b51db01a5e"
+depends="freetype,libfontenc,xorgproto,zlib"
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --build=x86_64-pc-linux-gnu \
+        --prefix=/usr
+    make
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}

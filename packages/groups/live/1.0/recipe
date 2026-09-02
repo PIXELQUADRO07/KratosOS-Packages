@@ -6,7 +6,7 @@ license="GPL-3.0"
 description="Live ISO environment with XFCE and Calamares Installer"
 source=""
 sha256=""
-depends="desktop,calamares"
+depends="desktop,calamares,wireless-regdb,mkfontscale"
 
 build() {
     :

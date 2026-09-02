@@ -1,0 +1,19 @@
+name=wireless-regdb
+version=2026.05.30
+release=1
+arch=x86_64
+license="ISC"
+description="Central Regulatory Domain Database for Linux wireless (regulatory.db)"
+source="https://www.kernel.org/pub/software/network/wireless-regdb/wireless-regdb-2026.05.30.tar.xz"
+sha256="8a27bfc081bafed8c24dd70fab0d96f098e5a0bfcd08d3da672595f225ab8993"
+depends=""
+
+build() {
+    :
+}
+
+package() {
+    install -dm755 "${PKGDIR}/lib/firmware"
+    install -m644 regulatory.db "${PKGDIR}/lib/firmware/regulatory.db"
+    install -m644 regulatory.db.p7s "${PKGDIR}/lib/firmware/regulatory.db.p7s"
+}
