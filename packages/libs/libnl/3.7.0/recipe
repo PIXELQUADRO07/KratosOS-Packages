@@ -1,0 +1,24 @@
+name=libnl
+version=3.7.0
+release=1
+arch=x86_64
+license="LGPL-2.1-only"
+description="Netlink protocol library (required by wpa_supplicant nl80211 driver)"
+source="https://github.com/thom311/libnl/releases/download/libnl3_7_0/libnl-3.7.0.tar.gz"
+sha256="9fe43ccbeeea72c653bdcf8c93332583135cda46a79507bfd0a483bb57f65939"
+depends=""
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --build=x86_64-pc-linux-gnu \
+        --prefix=/usr \
+        --sysconfdir=/etc \
+        --disable-static \
+        --disable-cli
+    make
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}
