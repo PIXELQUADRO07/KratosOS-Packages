@@ -44,3 +44,6 @@ package() {
 7. If it build correctly check again the pacakge recipe and look for the sha256checksum and make sure it is not a placeholder.
 8. Exec the script `generate-index.py` to add the new packages to the index
 9. Commit and push
+
+
+website in development for better package handling....
