@@ -68,19 +68,6 @@
     },
     {
       "name": "atk",
-      "version": "2.28.1",
-      "release": 1,
-      "arch": "x86_64",
-      "description": "Accessibility Toolkit",
-      "license": "LGPL-2.1-or-later",
-      "sha256": "83064e322aba28badf78488fa40005978a06d9c074616abc1a883651fa1afd71",
-      "url": "packages/atk-2.28.1-1-x86_64.kpkg",
-      "depends": "glibc,glib",
-      "size": 644608,
-      "installed_size": 2962091
-    },
-    {
-      "name": "atk",
       "version": "2.38.0",
       "release": 1,
       "arch": "x86_64",
