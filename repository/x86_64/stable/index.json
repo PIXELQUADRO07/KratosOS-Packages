@@ -368,19 +368,6 @@
     {
       "name": "gdk-pixbuf",
       "version": "2.42.12",
-      "release": 1,
-      "arch": "x86_64",
-      "description": "Image loading library",
-      "license": "LGPL-2.0-or-later",
-      "sha256": "53ce51786f4b36dbf41a78092a2fbd67b4427fc69b696ac60181d2aaf3264a04",
-      "url": "packages/gdk-pixbuf-2.42.12-1-x86_64.kpkg",
-      "depends": "glib,libpng,libjpeg-turbo,tiff",
-      "size": 1002496,
-      "installed_size": 3444841
-    },
-    {
-      "name": "gdk-pixbuf",
-      "version": "2.42.12",
       "release": 2,
       "arch": "x86_64",
       "description": "Image loading library",
