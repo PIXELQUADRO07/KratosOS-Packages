@@ -45,7 +45,7 @@
       "version": "1.2.11",
       "release": 1,
       "arch": "x86_64",
-      "description": "Advanced Linux Sound Architecture (ALSA) utilities \u2014 amixer, aplay, arecord, alsamixer",
+      "description": "Advanced Linux Sound Architecture (ALSA) utilities — amixer, aplay, arecord, alsamixer",
       "license": "GPL-2.0-or-later",
       "sha256": "cbbae3e001d559d62116bd8784c1318bcb73ed37fe22e1d6ef1a0edb20ca3b89",
       "url": "packages/alsa-utils-1.2.11-1-x86_64.kpkg",
@@ -377,19 +377,6 @@
       "depends": "glib,libpng,libjpeg-turbo,tiff",
       "size": 1000960,
       "installed_size": 3438321
-    },
-    {
-      "name": "git",
-      "version": "2.55.0",
-      "release": 1,
-      "arch": "x86_64",
-      "description": "Distributed version control system (minimal build: no curl/perl/tcltk)",
-      "license": "GPL-2.0-only",
-      "sha256": "e539bdfb8d25f160e2b6eea4e822830a3dcc1e022ab8d00aed36aa0ddd64917a",
-      "url": "https://github.com/Kratos-OS/KratosOS-Packages/releases/download/binaries/git-2.55.0-1-x86_64.kpkg",
-      "depends": "zlib,openssl,expat",
-      "size": 299052544,
-      "installed_size": 608610683
     },
     {
       "name": "glib",
@@ -1410,7 +1397,7 @@
       "version": "1.2.4",
       "release": 1,
       "arch": "x86_64",
-      "description": "Create an index of scalable font files for X \u2014 also provides mkfontdir",
+      "description": "Create an index of scalable font files for X — also provides mkfontdir",
       "license": "MIT",
       "sha256": "a645bafae931e17c4f132e403dd9ba7556fbb81aef75ec8fb2fb866396645e37",
       "url": "packages/mkfontscale-1.2.4-1-x86_64.kpkg",
@@ -1640,19 +1627,6 @@
       "installed_size": 5243912
     },
     {
-      "name": "sleuthkit",
-      "version": "4.12.1",
-      "release": 1,
-      "arch": "x86_64",
-      "description": "The Sleuth Kit (TSK) is a library and collection of command line tools that allow you to investigate disk images",
-      "license": "GPL-2.0",
-      "sha256": "01dca43f41680625d0abc6f68c3d001515ce5e59373f53fb392ebccdc717931a",
-      "url": "packages/sleuthkit-4.12.1-1-x86_64.kpkg",
-      "depends": "glibc,zlib,sqlite,gcc-libs",
-      "size": 61445120,
-      "installed_size": 160795673
-    },
-    {
       "name": "sqlite",
       "version": "3.46.1",
       "release": 1,
@@ -1865,7 +1839,7 @@
       "version": "1.1.5",
       "release": 1,
       "arch": "x86_64",
-      "description": "X authority file utility \u2014 manages .Xauthority cookies for X11 sessions",
+      "description": "X authority file utility — manages .Xauthority cookies for X11 sessions",
       "license": "MIT",
       "sha256": "b80022392c3547584d1485b9624c509e61e63aaa0fc39cb6abb64a5ffb800036",
       "url": "packages/xauth-1.1.5-1-x86_64.kpkg",
@@ -2073,7 +2047,7 @@
       "version": "1.5.0",
       "release": 1,
       "arch": "x86_64",
-      "description": "XKB keymap compiler \u2014 required by Xorg to compile keyboard layouts at startup",
+      "description": "XKB keymap compiler — required by Xorg to compile keyboard layouts at startup",
       "license": "MIT",
       "sha256": "048322fa73b6269311a10b2104db3c5010919d0282ee24167f889ed4afc0c3f9",
       "url": "packages/xkbcomp-1.5.0-1-x86_64.kpkg",
@@ -2125,7 +2099,7 @@
       "version": "1.2.2",
       "release": 1,
       "arch": "x86_64",
-      "description": "X resource database utility \u2014 manages X11 resource properties and definitions",
+      "description": "X resource database utility — manages X11 resource properties and definitions",
       "license": "MIT",
       "sha256": "3ab5662c1acddfa1a6ab55eed6cf0925555e1e8f3bb3b363dae3e2ecc73b2260",
       "url": "packages/xrdb-1.2.2-1-x86_64.kpkg",
@@ -2184,6 +2158,32 @@
       "depends": "glibc",
       "size": 1510400,
       "installed_size": 3770988
+    },
+    {
+      "name": "git",
+      "version": "2.55.0",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Distributed version control system (minimal build: no curl/perl/tcltk)",
+      "license": "GPL-2.0-only",
+      "sha256": "e539bdfb8d25f160e2b6eea4e822830a3dcc1e022ab8d00aed36aa0ddd64917a",
+      "url": "https://github.com/PIXELQUADRO07/KratosOS-Packages/releases/download/binaries/git-2.55.0-1-x86_64.kpkg",
+      "depends": "zlib,openssl,expat",
+      "size": 299052544,
+      "installed_size": 608610683
+    },
+    {
+      "name": "sleuthkit",
+      "version": "4.12.1",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "The Sleuth Kit (TSK) is a library and collection of command line tools that allow you to investigate disk images",
+      "license": "GPL-2.0",
+      "sha256": "01dca43f41680625d0abc6f68c3d001515ce5e59373f53fb392ebccdc717931a",
+      "url": "https://github.com/PIXELQUADRO07/KratosOS-Packages/releases/download/binaries/sleuthkit-4.12.1-1-x86_64.kpkg",
+      "depends": "glibc,zlib,sqlite,gcc-libs",
+      "size": 61445120,
+      "installed_size": 160795673
     }
   ]
 }
