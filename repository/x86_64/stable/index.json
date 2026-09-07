@@ -412,7 +412,7 @@
       "description": "Distributed version control system (minimal build: no curl/perl/tcltk)",
       "license": "GPL-2.0-only",
       "sha256": "e539bdfb8d25f160e2b6eea4e822830a3dcc1e022ab8d00aed36aa0ddd64917a",
-      "url": "packages/git-2.55.0-1-x86_64.kpkg",
+      "url": "https://github.com/Kratos-OS/KratosOS-Packages/releases/download/binaries/git-2.55.0-1-x86_64.kpkg",
       "depends": "zlib,openssl,expat",
       "size": 299052544,
       "installed_size": 608610683
