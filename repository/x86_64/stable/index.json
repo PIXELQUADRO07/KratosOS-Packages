@@ -1368,19 +1368,6 @@
     },
     {
       "name": "live",
-      "version": "1.0",
-      "release": 1,
-      "arch": "x86_64",
-      "description": "Live ISO environment with XFCE and Calamares Installer",
-      "license": "GPL-3.0",
-      "sha256": "92d31340deeaa2bd18bb232d13f124896142d3022b366a44c0539e3d76b1b95e",
-      "url": "packages/live-1.0-1-x86_64.kpkg",
-      "depends": "desktop,calamares,wireless-regdb,mkfontscale",
-      "size": 4608,
-      "installed_size": 0
-    },
-    {
-      "name": "live",
       "version": "1.0.0",
       "release": 1,
       "arch": "x86_64",
