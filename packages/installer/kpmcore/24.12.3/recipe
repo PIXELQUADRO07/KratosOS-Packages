@@ -5,7 +5,7 @@ arch=x86_64
 license="GPL-3.0-or-later"
 description="KDE Partition Manager core library"
 source="https://download.kde.org/stable/release-service/24.12.3/src/kpmcore-24.12.3.tar.xz"
-sha256="PLACEHOLDER_sha256_kpmcore_24.12.3"
+sha256="eac5710efb9536b9de9d5abc5f81b7ab843a6069c52238792cb1a2782456aea7"
 depends="util-linux,e2fsprogs,dosfstools,parted"
 
 build() {
