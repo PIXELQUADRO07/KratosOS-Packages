@@ -406,19 +406,6 @@
     },
     {
       "name": "glib",
-      "version": "2.56.4",
-      "release": 1,
-      "arch": "x86_64",
-      "description": "Low-level core library that forms the basis for projects such as GTK+ and GNOME",
-      "license": "LGPL-2.1-or-later",
-      "sha256": "5307499c6ef613af79f4d256ff18bc933a073b978ccadb65c77f0d26d8e7e5be",
-      "url": "packages/glib-2.56.4-1-x86_64.kpkg",
-      "depends": "glibc,zlib,pcre,libffi,util-linux",
-      "size": 10947072,
-      "installed_size": 45041754
-    },
-    {
-      "name": "glib",
       "version": "2.78.6",
       "release": 1,
       "arch": "x86_64",
