@@ -5,15 +5,19 @@ arch=x86_64
 license="MIT"
 description="YAML parser and emitter in C++"
 source="https://github.com/jbeder/yaml-cpp/archive/refs/tags/0.8.0.tar.gz"
-sha256="PLACEHOLDER_sha256_yaml_cpp_0.8.0"
+sha256="fbe74bbdcee21d656715688706da3c8becfd946d92cd44705cc6098bb23b3a16"
 depends=""
 
 build() {
+    # Fix missing include for uint16_t/uint32_t
+    sed -i '1i#include <cstdint>' src/emitterutils.cpp
+
     mkdir -p build
     cd build
     cmake .. \
         -DCMAKE_INSTALL_PREFIX=/usr \
         -DCMAKE_BUILD_TYPE=Release \
+        -DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
         -DYAML_BUILD_SHARED_LIBS=ON \
         -DYAML_CPP_BUILD_TESTS=OFF \
         -DYAML_CPP_BUILD_TOOLS=OFF
@@ -21,6 +25,5 @@ build() {
 }
 
 package() {
-    cd build
     make DESTDIR="${PKGDIR}" install
 }

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated": "2026-09-07T14:13:44Z",
+  "generated": "2026-09-07T14:58:15Z",
   "arch": "x86_64",
   "lists": [
     {
@@ -93,6 +93,7 @@
         "at-spi2-core",
         "atk",
         "bash",
+        "boost",
         "cairo",
         "core",
         "coreutils",
@@ -252,6 +253,7 @@
         "xrdb",
         "xterm",
         "xtrans",
+        "yaml-cpp",
         "zlib",
         "zstd"
       ]

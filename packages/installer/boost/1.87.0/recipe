@@ -5,18 +5,15 @@ arch=x86_64
 license="BSL-1.0"
 description="Free peer-reviewed portable C++ source libraries"
 source="https://archives.boost.io/release/1.87.0/source/boost_1_87_0.tar.bz2"
-sha256="PLACEHOLDER_sha256_boost_1.87.0"
+sha256="af57be25cb4c4f4b413ed692fe378affb4352ea50fbe294a11ef548f4d527d89"
 depends="zlib,bzip2,zstd"
 
 build() {
-    ./bootstrap.sh --prefix=/usr
+    echo "using gcc : kratos : ${CXX} ;" > user-config.jam
+    ./bootstrap.sh --prefix=/usr --with-libraries=system,filesystem,program_options,date_time,thread
     ./b2 -j$(nproc) \
-        --target="${TARGET}" \
-        --with-system \
-        --with-filesystem \
-        --with-program_options \
-        --with-date_time \
-        --with-thread \
+        --user-config=user-config.jam \
+        toolset=gcc-kratos \
         link=shared \
         runtime-link=shared \
         variant=release \
@@ -24,5 +21,8 @@ build() {
 }
 
 package() {
-    ./b2 --prefix="${PKGDIR}/usr" install
+    ./b2 --user-config=user-config.jam \
+        toolset=gcc-kratos \
+        --prefix="${PKGDIR}/usr" \
+        install
 }

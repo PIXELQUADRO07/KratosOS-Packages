@@ -93,6 +93,19 @@
       "installed_size": 9169971
     },
     {
+      "name": "boost",
+      "version": "1.87.0",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "Free peer-reviewed portable C++ source libraries",
+      "license": "BSL-1.0",
+      "sha256": "ab447c4be5bbc15019b9603d9e40d8cd646c207a0affacdd6594bb0f68e7deac",
+      "url": "packages/boost-1.87.0-1-x86_64.kpkg",
+      "depends": "zlib,bzip2,zstd",
+      "size": 18128384,
+      "installed_size": 152437143
+    },
+    {
       "name": "cairo",
       "version": "1.16.0",
       "release": 1,
@@ -2132,6 +2145,19 @@
       "depends": "",
       "size": 52736,
       "installed_size": 213604
+    },
+    {
+      "name": "yaml-cpp",
+      "version": "0.8.0",
+      "release": 1,
+      "arch": "x86_64",
+      "description": "YAML parser and emitter in C++",
+      "license": "MIT",
+      "sha256": "dcac2a67a718f92c0d63086862b03fe1435dc9c8c8660c870d1741ffb0d4143e",
+      "url": "packages/yaml-cpp-0.8.0-1-x86_64.kpkg",
+      "depends": "",
+      "size": 259584,
+      "installed_size": 743478
     },
     {
       "name": "zlib",
