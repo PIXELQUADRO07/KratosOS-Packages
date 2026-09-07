@@ -190,9 +190,9 @@
       "arch": "x86_64",
       "description": "XFCE desktop environment group for KratosOS",
       "license": "GPL-3.0",
-      "sha256": "ef9e7e8d837698f481dedd1bb66fbc49865f8f13a340ad479ee3be00083e5686",
+      "sha256": "fb05557ae596c3ece1c5b7efbda55f77e066f721704879252fb4c3e6cf6ff379",
       "url": "packages/desktop-1.0.0-1-x86_64.kpkg",
-      "depends": "xorg-server,xinit,xf86-video-vesa,xf86-video-fbdev,xf86-input-libinput,xkeyboard-config,libxfce4util,xfconf,libxfce4ui,garcon,exo,xfce4-panel,xfwm4,xfdesktop,xfce4-session,xfce4-settings,thunar,xfce4-terminal,dbus",
+      "depends": "xorg-server,xinit,xf86-video-vesa,xf86-video-fbdev,xf86-input-libinput,xkeyboard-config,libxfce4util,xfconf,libxfce4ui,libxfce4windowing,garcon,exo,xfce4-panel,xfwm4,xfdesktop,xfce4-session,xfce4-settings,thunar,xfce4-terminal,xfce4-appfinder,xfce4-notifyd,dbus",
       "size": 4608,
       "installed_size": 0
     },
