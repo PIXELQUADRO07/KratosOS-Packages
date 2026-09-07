@@ -1,3 +1,10 @@
+<img width="500" height="500" alt="KratosOS" src="https://github.com/user-attachments/assets/fcb2e5b7-26ee-443e-a4ac-d41519a9e9fa" />
+
+
+
+
+
+
 # Official Kratos-OS packets repository
 
 all packets are already in kpg format ready to be installed and decompressed in the system with:
