@@ -1,0 +1,23 @@
+name=xfce4-power-manager
+version=4.20.0
+release=1
+arch=x86_64
+license="GPL-2.0-or-later"
+description="Power manager for the Xfce desktop environment"
+source="https://archive.xfce.org/src/xfce/xfce4-power-manager/4.20/xfce4-power-manager-4.20.0.tar.bz2"
+sha256="971391cef63352833bdd92df28957392e17e1f2b3d486c0f57294fd204d6ed29"
+depends="libxfce4util,libxfce4ui,xfconf,xfce4-panel,upower,libnotify"
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --build=x86_64-pc-linux-gnu \
+        --prefix=/usr \
+        --sysconfdir=/etc \
+        --disable-static
+    make -j$(nproc)
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}

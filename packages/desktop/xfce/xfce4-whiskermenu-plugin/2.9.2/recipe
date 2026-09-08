@@ -1,0 +1,25 @@
+name=xfce4-whiskermenu-plugin
+version=2.9.2
+release=1
+arch=x86_64
+license="GPL-2.0-or-later"
+description="Alternate application launcher for the Xfce desktop environment"
+source="https://archive.xfce.org/src/panel-plugins/xfce4-whiskermenu-plugin/2.9/xfce4-whiskermenu-plugin-2.9.2.tar.bz2"
+sha256="e2f28c066709bdcfe30236307026a562ec9aed790f9929a4e40aa411a5c7e3de"
+depends="libxfce4util,libxfce4ui,xfce4-panel,garcon,exo,gtk+3"
+
+build() {
+    mkdir -p build
+    cd build
+    cmake .. \
+        -DCMAKE_INSTALL_PREFIX=/usr \
+        -DCMAKE_BUILD_TYPE=Release \
+        -DENABLE_ACCOUNTS_SERVICE=OFF \
+        -DENABLE_GTK_LAYER_SHELL=OFF
+    make -j$(nproc)
+}
+
+package() {
+    cd "${SRC_DIR}/build"
+    make DESTDIR="${PKGDIR}" install
+}
