@@ -1,4 +1,9 @@
-<img width="500" height="500" alt="KratosOS" src="https://github.com/user-attachments/assets/fcb2e5b7-26ee-443e-a4ac-d41519a9e9fa" />
+<div align="center">
+  <img width="682" height="695" alt="Logo" src="https://github.com/user-attachments/assets/e9da0311-e670-4e15-a11e-892adddc634e" />
+
+</div>   
+
+
 
 
 
