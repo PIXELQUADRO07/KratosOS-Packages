@@ -1133,6 +1133,19 @@
       "installed_size": 584786
     },
     {
+      "name": "librsvg",
+      "version": "2.40.21",
+      "release": 2,
+      "arch": "x86_64",
+      "description": "SVG rendering library",
+      "license": "LGPL-2.1-or-later",
+      "sha256": "8057c5a1948987abac780b067a44ec390c6d7bdbe007e54eb1a751416a005e61",
+      "url": "packages/librsvg-2.40.21-2-x86_64.kpkg",
+      "depends": "glib,cairo,pango,gdk-pixbuf,libxml2",
+      "size": 176640,
+      "installed_size": 585726
+    },
+    {
       "name": "libsndfile",
       "version": "1.2.2",
       "release": 1,
