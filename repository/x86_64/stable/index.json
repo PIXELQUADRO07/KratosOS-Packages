@@ -2036,9 +2036,9 @@
       "arch": "x86_64",
       "description": "Alternate application launcher for the Xfce desktop environment",
       "license": "GPL-2.0-or-later",
-      "sha256": "b58b82791972c671cd31fffb70093349881efbc3bff6a72d94ed776a9ad8bcb2",
+      "sha256": "ea1546753a3645f37b54bbff8da39c4873672add101b03fae3e898a4c3b38d5d",
       "url": "packages/xfce4-whiskermenu-plugin-2.9.2-1-x86_64.kpkg",
-      "depends": "libxfce4util,libxfce4ui,xfce4-panel,garcon,exo,gtk+3",
+      "depends": "libxfce4util,libxfce4ui,xfce4-panel,garcon,exo,gtk+3,gcc-libs",
       "size": 300032,
       "installed_size": 827607
     },
