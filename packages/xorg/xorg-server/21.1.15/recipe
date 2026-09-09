@@ -1,6 +1,6 @@
 name=xorg-server
 version=21.1.15
-release=2
+release=3
 arch=x86_64
 license="MIT"
 description="X.Org X server"
@@ -11,6 +11,7 @@ depends="libX11,libXext,libXfixes,libXfont2,libXrender,libpciaccess,libdrm,mesa,
 build() {
     export CFLAGS="${CFLAGS} -Wno-error=array-bounds -Wno-error=stringop-truncation -Wno-array-bounds"
     sed -i 's|\$PKG_CONFIG --variable=dridriverdir dri|echo /usr/lib/dri|' configure
+    sed -i 's|XKB_BIN_DIRECTORY=$(pkg-config --variable bindir xkbcomp)|XKB_BIN_DIRECTORY=/usr/bin|' configure
     ./configure \
         --host="${TARGET}" \
         --build=x86_64-pc-linux-gnu \
@@ -34,6 +35,7 @@ build() {
         --enable-xf86vidmode \
         --with-xkb-path=/usr/share/X11/xkb \
         --with-xkb-output=/var/lib/xkb \
+        --with-xkb-bin-directory=/usr/bin \
         --with-fontrootdir=/usr/share/fonts
     make
 }

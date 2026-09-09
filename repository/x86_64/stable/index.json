@@ -2147,6 +2147,19 @@
       "installed_size": 7794591
     },
     {
+      "name": "xorg-server",
+      "version": "21.1.15",
+      "release": 3,
+      "arch": "x86_64",
+      "description": "X.Org X server",
+      "license": "MIT",
+      "sha256": "f14d17fd0093d9463ccfd01b69ab2af31fa9a145c0d49901bdd81df234b0404a",
+      "url": "packages/xorg-server-21.1.15-3-x86_64.kpkg",
+      "depends": "libX11,libXext,libXfixes,libXfont2,libXrender,libpciaccess,libdrm,mesa,pixman,fontconfig,freetype,openssl,libxcb,libxkbcommon,xkeyboard-config",
+      "size": 3130880,
+      "installed_size": 7794512
+    },
+    {
       "name": "xorgproto",
       "version": "2024.1",
       "release": 1,
