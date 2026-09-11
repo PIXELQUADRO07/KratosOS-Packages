@@ -1,9 +1,9 @@
 name=mesa
 version=24.3.4
-release=1
+release=2
 arch=x86_64
 license="MIT"
-description="Open-source OpenGL/Vulkan implementation (software rendering)"
+description="Open-source OpenGL/Vulkan implementation (iris+crocus+softpipe+virgl)"
 source="https://archive.mesa3d.org/mesa-24.3.4.tar.xz"
 sha256="e641ae27191d387599219694560d221b7feaa91c900bcec46bf444218ed66025"
 depends="libdrm,libX11,libXext,libXfixes,libxcb,libxkbcommon,zlib,zstd,expat,libxml2"
@@ -14,7 +14,7 @@ build() {
         --cross-file="${SYSROOT}/../scripts/kratos-cross-file.txt" \
         --prefix=/usr \
         --libdir=lib \
-        -Dgallium-drivers=softpipe,virgl \
+        -Dgallium-drivers=crocus,softpipe,virgl \
         -Dvulkan-drivers="" \
         -Dglx=dri \
         -Dopengl=true \
@@ -22,6 +22,7 @@ build() {
         -Dgles2=disabled \
         -Dplatforms=x11 \
         -Dllvm=disabled \
+         \
         -Dshared-glapi=enabled \
         -Dtools="" \
         -Dglx-direct=true

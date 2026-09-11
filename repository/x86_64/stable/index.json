@@ -1432,6 +1432,19 @@
       "installed_size": 93880307
     },
     {
+      "name": "mesa",
+      "version": "24.3.4",
+      "release": 2,
+      "arch": "x86_64",
+      "description": "Open-source OpenGL/Vulkan implementation (iris+crocus+softpipe+virgl)",
+      "license": "MIT",
+      "sha256": "b0e9aa341ad4433448f795ec0369f9200514c3b83204a4f37d41490130e782ad",
+      "url": "packages/mesa-24.3.4-2-x86_64.kpkg",
+      "depends": "libdrm,libX11,libXext,libXfixes,libxcb,libxkbcommon,zlib,zstd,expat,libxml2",
+      "size": 51622400,
+      "installed_size": 132303947
+    },
+    {
       "name": "mkfontscale",
       "version": "1.2.4",
       "release": 1,
