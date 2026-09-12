@@ -4,7 +4,7 @@ release=1
 arch=x86_64
 license="MIT"
 description="KratosOS Networking Tools Metapackage"
-depends="wget,iproute2"
+depends="wget,iproute2,dhcpcd,wpa_supplicant"
 
 build() {
     :
