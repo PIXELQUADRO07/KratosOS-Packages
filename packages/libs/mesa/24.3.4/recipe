@@ -14,6 +14,7 @@ build() {
         --cross-file="${SYSROOT}/../scripts/kratos-cross-file.txt" \
         --prefix=/usr \
         --libdir=lib \
+        --sysconfdir=/etc \
         -Dgallium-drivers=crocus,softpipe,virgl \
         -Dvulkan-drivers="" \
         -Dglx=dri \
@@ -22,7 +23,8 @@ build() {
         -Dgles2=disabled \
         -Dplatforms=x11 \
         -Dllvm=disabled \
-         \
+        -Ddri-drivers-path=/usr/lib/dri \
+        -Dgbm-backends-path=/usr/lib/gbm \
         -Dshared-glapi=enabled \
         -Dtools="" \
         -Dglx-direct=true
