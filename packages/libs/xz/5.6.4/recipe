@@ -1,0 +1,23 @@
+name=xz
+version=5.6.4
+release=1
+arch=x86_64
+license="Public Domain / LGPL-2.1+"
+description="XZ utils (lzma, xz, liblzma)"
+source="https://github.com/tukaani-project/xz/releases/download/v5.6.4/xz-5.6.4.tar.xz"
+sha256="829ccfe79d769748f7557e7a4429a64d06858e27e1e362e25d01ab7b931d9c95"
+depends=""
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --prefix=/usr \
+        --disable-static \
+        --disable-nls \
+        --disable-doc
+    make
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}

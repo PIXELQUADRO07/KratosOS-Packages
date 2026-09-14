@@ -1,0 +1,24 @@
+name=kmod
+version=33
+release=1
+arch=x86_64
+license="GPL-2.0-or-later"
+description="Kernel module utilities"
+source="https://mirrors.edge.kernel.org/pub/linux/utils/kernel/kmod/kmod-33.tar.xz"
+sha256="dc768b3155172091f56dc69430b5481f2d76ecd9ccb54ead8c2540dbcf5ea9bc"
+depends="zlib,xz,zstd"
+
+build() {
+    ./configure \
+        --host="${TARGET}" \
+        --prefix=/usr \
+        --with-xz \
+        --with-zlib \
+        --with-zstd \
+        --disable-manpages
+    make
+}
+
+package() {
+    make DESTDIR="${PKGDIR}" install
+}
