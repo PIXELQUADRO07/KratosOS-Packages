@@ -1,5 +1,5 @@
 <div align="center">
-  <img width="682" height="695" alt="Logo" src="https://github.com/user-attachments/assets/e9da0311-e670-4e15-a11e-892adddc634e" />
+<img width="568" height="468" alt="Grub-logo" src="https://github.com/user-attachments/assets/9c2e3523-5a12-4ab1-9f00-594cd0817043" />
 
 </div>   
 
