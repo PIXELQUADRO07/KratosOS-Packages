@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated": "2026-09-07T14:59:54Z",
+  "generated": "2026-10-01T13:54:24Z",
   "arch": "x86_64",
   "lists": [
     {
@@ -101,6 +101,7 @@
         "dbus",
         "dejavu-fonts",
         "desktop",
+        "desktop-file-utils",
         "development",
         "dhcpcd",
         "duktape",
@@ -116,7 +117,6 @@
         "garcon",
         "gcc-libs",
         "gdk-pixbuf",
-        "git",
         "glib",
         "gnome-themes-extra",
         "grep",
@@ -213,7 +213,6 @@
         "sed",
         "shadow",
         "shared-mime-info",
-        "sleuthkit",
         "sqlite",
         "startup-notification",
         "sudo",
@@ -239,9 +238,11 @@
         "xfce4-appfinder",
         "xfce4-notifyd",
         "xfce4-panel",
+        "xfce4-power-manager",
         "xfce4-session",
         "xfce4-settings",
         "xfce4-terminal",
+        "xfce4-whiskermenu-plugin",
         "xfconf",
         "xfdesktop",
         "xfwm4",

@@ -185,15 +185,15 @@
     },
     {
       "name": "desktop",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "release": 1,
       "arch": "x86_64",
       "description": "XFCE desktop environment group for KratosOS",
       "license": "GPL-3.0",
-      "sha256": "fb05557ae596c3ece1c5b7efbda55f77e066f721704879252fb4c3e6cf6ff379",
-      "url": "packages/desktop-1.0.0-1-x86_64.kpkg",
-      "depends": "xorg-server,xinit,xf86-video-vesa,xf86-video-fbdev,xf86-input-libinput,xkeyboard-config,libxfce4util,xfconf,libxfce4ui,libxfce4windowing,garcon,exo,xfce4-panel,xfwm4,xfdesktop,xfce4-session,xfce4-settings,thunar,xfce4-terminal,xfce4-appfinder,xfce4-notifyd,dbus",
-      "size": 4608,
+      "sha256": "e0234e0de0fe21af19e008ae8d2e590976354f622d474c8437e80e75c485bfa2",
+      "url": "packages/desktop-1.0.1-1-x86_64.kpkg",
+      "depends": "xorg-server,xinit,xf86-video-vesa,xf86-video-fbdev,xf86-input-libinput,xkeyboard-config,libxfce4util,xfconf,libxfce4ui,libxfce4windowing,garcon,exo,xfce4-panel,xfwm4,xfdesktop,xfce4-session,xfce4-settings,thunar,xfce4-terminal,xfce4-appfinder,xfce4-notifyd,dbus,mesa,xfce4-whiskermenu-plugin",
+      "size": 10240,
       "installed_size": 0
     },
     {
